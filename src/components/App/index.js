@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import axios from 'axios';
 
 // == Import
 import Header from 'src/components/Header';
