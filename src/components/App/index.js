@@ -6,6 +6,11 @@ import axios from 'axios';
 import Header from 'src/components/Header';
 import './styles.scss';
 
+axios.get('http://localhost:3001')
+  .then((response) => {
+    console.log(response);
+  });
+
 // == Composant
 const App = () => (
   <div className="app">
