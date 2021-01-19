@@ -6,9 +6,11 @@ import axios from 'axios';
 import Header from 'src/components/Header';
 import './styles.scss';
 
-axios.get('http://localhost:3001')
+const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/Projet_O-ne-RM/O\'NE%20RM/public/';
+
+axios.get(API_URL)
   .then((response) => {
-    console.log(response);
+    console.log(response.data);
   });
 
 // == Composant
