@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Field from './Field';
-
 import './styles.scss';
 
 const LoginForm = ({
@@ -38,13 +36,13 @@ const LoginForm = ({
       {!isLogged && (
 
         <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
-          <Field
+          <input
             name="email"
             placeholder="Adresse Email"
             manageChange={changeField}
             value={email}
           />
-          <Field
+          <input
             name="password"
             type="password"
             placeholder="Mot de passe"
@@ -56,6 +54,12 @@ const LoginForm = ({
             className="login-form-button"
           >
             OK
+          </button>
+          <button
+            type="submit"
+            className="register-form-button"
+          >
+            Créer un compte
           </button>
         </form>
       )}
