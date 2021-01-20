@@ -1,6 +1,10 @@
 .navbar-link {
+  color: white;
+  padding: 1em;
+  
   &:hover {
   color: white;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  background: rgb(0, 68, 255);
+  transition: 0.5s;
   }
 }

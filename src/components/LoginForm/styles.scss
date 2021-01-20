@@ -1,9 +1,8 @@
 .login-form {
-  width: 50%;
+  position: absolute;
 }
 .login-form-element {
-  display: flex;
-  align-items: center;
+  
 }
 .login-form-message {
   text-align: right;
@@ -12,7 +11,6 @@
 .login-form-logged {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 .login-form-button {
   font-weight: 700;
