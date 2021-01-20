@@ -1,11 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './navbar.scss';
 
 const NavBar = () => (
-  <nav className="navbar">
-    ici la navbar
-  </nav>
+  <NavLink
+    to=""
+    className="navbar-link"
+  >
+    ENTRAINEMENTS
+  </NavLink>
 );
 
 export default NavBar;
