@@ -3,8 +3,10 @@ import React from 'react';
 import axios from 'axios';
 
 // == Import
-import Header from 'src/containers/Header';
+import Header from 'src/components/Header';
 import Main from 'src/components/Main';
+import LoginForm from 'src/containers/LoginForm';
+import RegisterForm from 'src/containers/RegisterForm';
 import Footer from 'src/components/Footer';
 import './styles.scss';
 
@@ -16,10 +18,12 @@ axios.get(API_URL)
   });
 
 // == Composant
-const OneRM = () => (
+const OneRM = ({ isOpen, OpenREgister }) => (
   <div className="app">
     <Header />
     <Main />
+    {isOpen && <LoginForm />}
+    {OpenREgister && <RegisterForm />}
     <Footer />
   </div>
 );

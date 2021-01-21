@@ -6,9 +6,9 @@ import ButtonConnection from 'src/components/ButtonConnection';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
-const mapStateToProps = (state) => ({
+const mapStateToProps = () => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  isOpen: state.isOpen,
+
 });
 
 // === mapDispatchToProps

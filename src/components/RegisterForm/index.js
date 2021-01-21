@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './styles.scss';
-
-const LoginForm = ({
+const RegisterForm = ({
   email,
   password,
-  OpenRegisterForm,
+  lastname,
+  firstname,
+  OnSubmitRegister,
+  setValueLastname,
+  setValueFirstname,
   setValueEmail,
   setValuePassword,
-  submitLogIn,
+  CloseRegisterForm,
   // handleLogin,
   // handleLogout,
   isLogged,
@@ -38,7 +40,23 @@ const LoginForm = ({
       )}
       {!isLogged && (
         <div className="form-container">
-          <form autoComplete="off" className="login-form-element" method="post" onSubmit={handleSubmit}>
+          <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
+            <input
+              name="nom"
+              placeholder="Nom"
+              onChange={(event) => {
+                setValueLastname(event.target.value);
+              }}
+              value={lastname}
+            />
+            <input
+              name="prénom"
+              placeholder="Prénom"
+              onChange={(event) => {
+                setValueFirstname(event.target.value);
+              }}
+              value={firstname}
+            />
             <input
               name="email"
               placeholder="Adresse Email"
@@ -59,16 +77,16 @@ const LoginForm = ({
             <button
               type="submit"
               className="login-form-button"
-              onClick={submitLogIn}
+              onClick={OnSubmitRegister}
             >
               OK
             </button>
             <button
               type="button"
-              className="register-form-button"
-              onClick={OpenRegisterForm}
+              className="login-form-button"
+              onClick={CloseRegisterForm}
             >
-              Créer un compte
+              &#x25C4; RETOUR
             </button>
           </form>
         </div>
@@ -77,18 +95,26 @@ const LoginForm = ({
   );
 };
 
-LoginForm.propTypes = {
+RegisterForm.propTypes = {
   email: PropTypes.string.isRequired,
 
   password: PropTypes.string.isRequired,
 
+  lastname: PropTypes.string.isRequired,
+
+  firstname: PropTypes.string.isRequired,
+
+  setValueLastname: PropTypes.func.isRequired,
+
+  setValueFirstname: PropTypes.func.isRequired,
+
+  OnSubmitRegister: PropTypes.func.isRequired,
+
   setValueEmail: PropTypes.func.isRequired,
 
+  CloseRegisterForm: PropTypes.func.isRequired,
+
   setValuePassword: PropTypes.func.isRequired,
-
-  submitLogIn: PropTypes.func.isRequired,
-
-  OpenRegisterForm: PropTypes.func.isRequired,
 
   // handleLogin: PropTypes.func.isRequired,
 
@@ -100,9 +126,9 @@ LoginForm.propTypes = {
 
 };
 
-LoginForm.defaultProps = {
+RegisterForm.defaultProps = {
   isLogged: false,
   loggedMessage: 'Connecté',
 };
 
-export default LoginForm;
+export default RegisterForm;

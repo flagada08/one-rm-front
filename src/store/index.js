@@ -1,12 +1,21 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import oneRmReducer from 'src/reducers/oneRmReducer';
+import loginMiddleware from 'src/middlewares/loginMiddleware';
+import registerMiddleware from 'src/middlewares/registerMiddleware';
 
-const enhancers = composeWithDevTools();
+import reducers from 'src/reducers';
+
+const enhancers = composeWithDevTools(
+  applyMiddleware(
+    loginMiddleware,
+    registerMiddleware,
+    // ... d'autres middlewares
+  ),
+);
 
 const store = createStore(
-  oneRmReducer,
+  reducers,
   enhancers,
 );
 
