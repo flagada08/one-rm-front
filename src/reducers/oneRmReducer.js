@@ -1,4 +1,4 @@
-import { FORM_CONNECTION } from 'src/actions/formConnection';
+import { FORM_CONNECTION, CLOSE_LOGIN_FORM } from 'src/actions/formConnection';
 import { FORM_REGISTER, CLOSE_FORM_REGISTER } from 'src/actions/formRegister';
 
 const initialState = {
@@ -26,6 +26,12 @@ function oneRmReducer(state = initialState, action = {}) {
         ...state,
         OpenREgister: false,
         isOpen: true,
+      };
+
+    case CLOSE_LOGIN_FORM:
+      return {
+        ...state,
+        isOpen: false,
       };
 
     default:

@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { formConnection } from 'src/actions/formConnection';
+import { formConnection, closeLoginForm } from 'src/actions/formConnection';
 
 // on importe le composant de présentation
 import ButtonConnection from 'src/components/ButtonConnection';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-
+  isOpen: state.oneRM.isOpen,
 });
 
 // === mapDispatchToProps
@@ -17,6 +17,10 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   toggleSettingOpen: () => {
     dispatch(formConnection());
+  },
+
+  closeLoginForm: () => {
+    dispatch(closeLoginForm());
   },
 });
 

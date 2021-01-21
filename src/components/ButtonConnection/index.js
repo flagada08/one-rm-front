@@ -5,22 +5,24 @@ import './ButtonConnection.scss';
 
 const ButtonConnection = ({
   toggleSettingOpen,
+  isOpen,
+  closeLoginForm,
 }) => (
   <div>
     <button
       className="ButtonConnection"
       type="button"
-      onClick={
-          toggleSettingOpen
-      }
+      onClick={!isOpen ? toggleSettingOpen : closeLoginForm}
     >
-      CONNEXION
+      {!isOpen ? 'CONNEXION' : 'X'}
     </button>
   </div>
 );
 
 ButtonConnection.propTypes = {
   toggleSettingOpen: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  closeLoginForm: PropTypes.func.isRequired,
 };
 
 export default ButtonConnection;
