@@ -3,12 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 import './burgerliste.scss';
 
-const BurgerListe = (BurgerMenuIsOpen) => (
+const BurgerListe = () => (
   <div className="burgerliste">
     <NavLink
       to="/"
       className="navbar-link"
-      onClick={!BurgerMenuIsOpen}
     >
       ACCUEIL
     </NavLink>
