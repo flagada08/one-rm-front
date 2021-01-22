@@ -8,7 +8,7 @@ import LoginForm from 'src/components/LoginForm';
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  isOpen: state.oneRM.OpenREgister,
+  isOpen: state.header.OpenREgister,
   email: state.loginForm.email,
   password: state.loginForm.password,
 });

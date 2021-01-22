@@ -2,9 +2,10 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-name: glissement;
-  top: 50px;
+  left: 0px;
+  top: 56px;
   height: 175px;
   background-color: black;
   width: 100%;
@@ -19,7 +20,7 @@
 @keyframes glissement {
   from {
     margin-left: 100%;
-    width: 300%;
+    width: 100%;
   }
 
   to {

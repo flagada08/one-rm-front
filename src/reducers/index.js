@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 // on importe tous les reducers
 import LoginFormReducer from './LoginFormReducer';
 import RegisterFormReducer from './RegisterFormReducer';
-import oneRmReducer from './oneRmReducer';
+import HeaderReducer from './HeaderReducer';
 import BurgerMenuReducer from './BurgerMenuReducer';
 // etc
 // le reducer principal, qui regroupe les autres
@@ -11,7 +11,7 @@ import BurgerMenuReducer from './BurgerMenuReducer';
 const rootReducer = combineReducers({
   loginForm: LoginFormReducer,
   registerForm: RegisterFormReducer,
-  oneRM: oneRmReducer,
+  header: HeaderReducer,
   burgerMenu: BurgerMenuReducer,
   // etc
 });

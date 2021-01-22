@@ -15,7 +15,7 @@ import RegisterForm from 'src/components/RegisterForm';
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  OpenREgister: state.oneRM.OpenREgister,
+  OpenREgister: state.header.OpenREgister,
   firstname: state.registerForm.firstname,
   lastname: state.registerForm.lastname,
   email: state.registerForm.email,

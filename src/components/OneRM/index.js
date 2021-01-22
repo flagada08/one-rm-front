@@ -4,11 +4,10 @@ import axios from 'axios';
 import { Switch, Route } from 'react-router-dom';
 
 // == Import
-import Header from 'src/components/Header';
+import Header from 'src/containers/Header';
 import Main from 'src/components/Main';
-import LoginForm from 'src/containers/LoginForm';
-import RegisterForm from 'src/containers/RegisterForm';
 import Footer from 'src/components/Footer';
+import ExercisePage from 'src/components/ExercisePage';
 import ProfilPage from 'src/components/ProfilPage';
 
 import './styles.scss';
@@ -21,20 +20,21 @@ axios.get(API_URL)
   });
 
 // == Composant
-const OneRM = ({ isOpen, OpenREgister }) => (
+const OneRM = () => (
   <div className="app">
 
     <div>
       <Switch>
-        <Route exact path="/profil">
-          <ProfilPage />
-        </Route>
         <Route exact path="/">
           <Header />
           <Main />
-          {isOpen && <LoginForm />}
-          {OpenREgister && <RegisterForm />}
           <Footer />
+        </Route>
+        <Route exact path="/profil">
+          <ProfilPage />
+        </Route>
+        <Route exact path="/exercices">
+          <ExercisePage />
         </Route>
       </Switch>
     </div>

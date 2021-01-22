@@ -6,7 +6,7 @@ const initialState = {
   OpenREgister: false,
 };
 
-function oneRmReducer(state = initialState, action = {}) {
+function HeaderReducer(state = initialState, action = {}) {
   switch (action.type) {
     case FORM_CONNECTION:
       return {
@@ -39,4 +39,4 @@ function oneRmReducer(state = initialState, action = {}) {
   }
 }
 
-export default oneRmReducer;
+export default HeaderReducer;

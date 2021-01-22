@@ -4,28 +4,42 @@ import { NavLink } from 'react-router-dom';
 import './navbar.scss';
 
 const NavBar = () => (
-  <div>
+
+  <div className="navbar-container">
     <NavLink
-      to=""
+      to="/"
       className="navbar-link"
     >
-      A PROPOS
+      ACCUEIL
+    </NavLink>
+    <NavLink
+      to="/exercices"
+      className="navbar-link"
+    >
+      EXERCICES
+    </NavLink>
+
+    <NavLink
+      to="#"
+      className="navbar-link"
+    >
+      CHALLENGES
     </NavLink>
 
     <NavLink
       to="/profil"
       className="navbar-link"
     >
-      ENTRAINEMENTS
+      PROFIL
     </NavLink>
-
     <NavLink
-      to=""
+      to="/"
       className="navbar-link"
     >
-      CHALLENGES
+      A PROPOS
     </NavLink>
   </div>
+
 );
 
 export default NavBar;

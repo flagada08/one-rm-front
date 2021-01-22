@@ -1,6 +1,8 @@
 .burgerliste{
-  animation-name: glissements;
-  animation-duration: 2.5s;
+  display: flex;
+  flex-direction: column;
+  animation-name: glissement;
+  animation-duration: 1.5s;
   height: 150px;
   background-color: black;
   color: white;
@@ -8,17 +10,6 @@
   right: 0;
   padding: 4em 2em;
   width: 100%;
-  min-height: 100%;
-
-    @keyframes glissements {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
+  min-height: 50%;
+  font-weight: 1000;
 }

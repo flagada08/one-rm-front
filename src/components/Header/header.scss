@@ -19,15 +19,14 @@
       transition: 0.5s;
     }
   }
+
   @media (max-width: vars.$breakpoint-tablet) {
-    .ButtonConnection{
-      display: none;
-    }
-    .navbar-link{
+    .navbar-container, .ButtonConnection{
       display: none;
     }
   }
-  @media (min-width: 770px) {
+
+  @media (min-width: 769px) {
     .BurgerMenu{
       display: none;
     }

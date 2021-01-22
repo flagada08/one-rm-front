@@ -16,12 +16,15 @@ const BurgerMenu = ({
   return (
     <div
       className="BurgerMenu"
-      type="button"
-      onClick={toggleBurgerMenu}
     >
-      <div className={cssClassDiv1} />
-      <div className={cssClassDiv2} />
-      <div className={cssClassDiv3} />
+      <div
+        type="button"
+        onClick={toggleBurgerMenu}
+      >
+        <div className={cssClassDiv1} />
+        <div className={cssClassDiv2} />
+        <div className={cssClassDiv3} />
+      </div>
 
       <div>
         {BurgerMenuIsOpen && <BurgerListe />}

@@ -1,14 +1,43 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './burgerliste.scss';
 
-const BurgerListe = () => (
+const BurgerListe = (BurgerMenuIsOpen) => (
   <div className="burgerliste">
-    <ul>
-      <li>liste de liens</li>
-      <li>liste de liens</li>
-      <li>liste de liens</li>
-      <li>liste de liens</li>
-    </ul>
+    <NavLink
+      to="/"
+      className="navbar-link"
+      onClick={!BurgerMenuIsOpen}
+    >
+      ACCUEIL
+    </NavLink>
+    <NavLink
+      to="/exercices"
+      className="navbar-link"
+    >
+      EXERCICES
+    </NavLink>
+
+    <NavLink
+      to="#"
+      className="navbar-link"
+    >
+      CHALLENGES
+    </NavLink>
+
+    <NavLink
+      to="/profil"
+      className="navbar-link"
+    >
+      PROFIL
+    </NavLink>
+    <NavLink
+      to="/"
+      className="navbar-link"
+    >
+      A PROPOS
+    </NavLink>
   </div>
 );
 
