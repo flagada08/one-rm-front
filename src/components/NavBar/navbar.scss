@@ -1,10 +1,11 @@
+
 .navbar-link {
-  color: white;
-  padding: 1em;
-  font-size: x-small;
-  &:hover {
-  color: white;
-  background: rgb(0, 68, 255);
-  transition: 0.5s;
+    color: white;
+    padding: 0.5em;
+    font-size: small;
+    &:hover {
+    color: white;
+    background: rgb(0, 68, 255);
+    transition: 0.5s;
+    }
   }
-}

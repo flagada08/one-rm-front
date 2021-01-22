@@ -14,7 +14,7 @@ const ButtonConnection = ({
       type="button"
       onClick={!isOpen ? toggleSettingOpen : closeLoginForm}
     >
-      {!isOpen ? 'CONNEXION' : 'X'}
+      {!isOpen ? 'CONNEXION' : 'FERMER'}
     </button>
   </div>
 );

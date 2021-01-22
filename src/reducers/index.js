@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import LoginFormReducer from './LoginFormReducer';
 import RegisterFormReducer from './RegisterFormReducer';
 import oneRmReducer from './oneRmReducer';
+import BurgerMenuReducer from './BurgerMenuReducer';
 // etc
 // le reducer principal, qui regroupe les autres
 // combineReducers prend en argument un objet qui indique un nom pour
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   loginForm: LoginFormReducer,
   registerForm: RegisterFormReducer,
   oneRM: oneRmReducer,
+  burgerMenu: BurgerMenuReducer,
   // etc
 });
 export default rootReducer;

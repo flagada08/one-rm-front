@@ -1,7 +1,9 @@
 import React from 'react';
 
-import ButtonConnection from 'src/containers/ButtonConnection';
 import NavBar from 'src/components/NavBar';
+import BurgerMenu from 'src/containers/BurgerMenu';
+import ButtonConnection from 'src/containers/ButtonConnection';
+
 import './header.scss';
 
 const Header = () => (
@@ -10,6 +12,7 @@ const Header = () => (
       O'neRM
     </h1>
     <NavBar />
+    <BurgerMenu />
     <ButtonConnection />
   </div>
 );

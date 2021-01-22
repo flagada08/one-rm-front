@@ -13,7 +13,7 @@ const NavBar = () => (
     </NavLink>
 
     <NavLink
-      to=""
+      to="/profil"
       className="navbar-link"
     >
       ENTRAINEMENTS
