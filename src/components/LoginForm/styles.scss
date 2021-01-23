@@ -5,10 +5,11 @@
   animation-duration: 2s;
   animation-name: glissement;
   left: 0px;
-  top: 56px;
+  top: 167px;
   height: 175px;
   background-color: black;
   width: 100%;
+  z-index: 1;
 
   .login-form-element{
     display: flex;
