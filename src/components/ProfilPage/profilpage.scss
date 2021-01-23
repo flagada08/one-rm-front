@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .profile-card {
   overflow: hidden;
   text-align: center;
@@ -85,5 +87,30 @@
         justify-content: space-between;
         top: 45px;
         color: #f1f1f1;
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+      .bottom-section {
+        background: #f1f1f1;
+        padding: 60px 40px;
+        font-size: 20px;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+    
+        .border {
+          width: 1px;
+          height: 100px;
+          background: rgb(0, 0, 0);
+          margin: 0 30px;
+          transform: rotate(90deg);
+          align-self: center;
+        }
+        
+        .bottom-section span {
+          font-size: 14px;
+          display: block;
+        }
+      }
     }
 }
