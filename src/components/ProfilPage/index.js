@@ -3,7 +3,10 @@ import Header from 'src/containers/Header';
 import Footer from 'src/components/Footer';
 
 import {
-  Instagram, Facebook, Twitter, Youtube,
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
 } from 'react-feather';
 
 import './profilpage.scss';
