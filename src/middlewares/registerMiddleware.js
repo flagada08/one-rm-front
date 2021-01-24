@@ -15,16 +15,16 @@ const registerMiddleware = (store) => (next) => (action) => {
       } = store.getState().registerForm;
       console.log(email, password, lastname, firstname);
 
-      axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register', {
+      axios.post('http://ec2-54-226-80-94.compute-1.amazonaws.com/O-ne-RM/O-NE-RM/public/register', {
         // équivalent de email: email avec shorthand property
 
         gender: 'femme',
-        firstname: 'laurie',
-        lastname: 'bouleau',
+        firstname: 'raph',
+        lastname: 'raph',
         age: 25,
-        email: 'lauriebouleau@oclock.io',
+        email: 'raph@oclock.io',
         role: 'Gérant',
-        password: '123456',
+        password: 'raph',
         fitnessRoom: 3,
 
       }).then((response) => {

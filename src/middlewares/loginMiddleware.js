@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-import { SUBMIT_LOGIN } from 'src/actions/formInputLogin';
+import { SUBMIT_LOGIN, loggedIn } from 'src/actions/formInputLogin';
+import { closeLoginForm } from 'src/actions/formConnection';
 
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -10,12 +11,15 @@ const loginMiddleware = (store) => (next) => (action) => {
       const { email, password } = store.getState().loginForm;
       console.log(email, password);
 
-      axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register', {
-        // équivalent de email: email avec shorthand property
-        email,
+      axios.post('http://ec2-54-226-80-94.compute-1.amazonaws.com/O-ne-RM/O-NE-RM/public/api/login', {
+        username: email,
         password,
       }).then((response) => {
         console.log(response);
+        // je dispatch l'action qui permet la redirection si le membre et dans la base de données
+        store.dispatch(loggedIn());
+        // je dispatch l'action qui permet de fermer le formulaire
+        store.dispatch(closeLoginForm());
       }).catch((error) => {
         console.log(error);
       });
