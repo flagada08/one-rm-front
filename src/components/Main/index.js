@@ -1,46 +1,40 @@
 import React from 'react';
 import image from '/public/img/img-test.jpg';
+import challengeImage from '/public/img/challenge-image.png';
 import './main.scss';
 
 const Main = () => (
-  <div className="Main">
-    <div className="welcome-slider">
-      <h1 className="welcome">Bienvenue sur O'ne RM</h1>
-      <img className="slider" src={image} alt="slider" />
-      <article className="main-article">
-        <div className="main-challenges">
-          <h2 className="title-challenges">Challenges</h2>
-          <p>
-            Lorem Elsass ipsum hoplageiss ftomi! schneck gewurztraminer chambon
-            purus yeuh. Wurschtsalad quam, sagittis sit turpis réchime vulputate
-            eleifend elit amet, sed lotto-owe varius schpeck commodo jetz gehts
-            los non barapli Verdammi lacus Coopé de Truchtersheim Christkindelsmärik
-          </p>
-          <button>LIRE PLUS | S'ENREGISTRER</button>
-        </div>
-        <div className="main-workout-date">
-          <h2 className="workout-date">Date de Workout</h2>
-          <button>&#60;</button>
-          <button>&#62;</button>
-        </div>
-        <div>
-          <h3 className="workout-day">Workout du jour</h3>
-          <p>
-            Lorem Elsass ipsum hoplageiss ftomi! schneck gewurztraminer chambon
-            purus yeuh. Wurschtsalad quam, sagittis sit turpis réchime vulputate
-            eleifend elit amet,
-          </p>
-        </div>
-        <div>
-          <h3 className="title-challenge">Titre du challenge</h3>
-          <p>
-            Lorem Elsass ipsum hoplageiss ftomi! schneck gewurztraminer chambon purus yeuh.
-            Wurschtsalad quam, sagittis sit turpis réchime vulputate eleifend elit amet,
-          </p>
-        </div>
-      </article>
+  <main className="Main">
+    <div className="main-image-container">
+      <h1 className="main-title">Bienvenue sur O'ne RM</h1>
+      <img className="main-image" src={image} alt="slider" />
     </div>
-  </div>
+    <section className="main-section-container">
+      <div className="main-section">
+        <h2 className="main-section-title">Challenge</h2>
+        <p>
+          Lorem Elsass ipsum hoplageiss ftomi! schneck gewurztraminer chambon
+          purus yeuh. Wurschtsalad quam, sagittis sit turpis réchime vulputate
+          eleifend elit amet, sed lotto-owe varius schpeck commodo jetz gehts
+          los non barapli Verdammi lacus Coopé de Truchtersheim Christkindelsmärik
+        </p>
+      </div>
+      <div className="main-section">
+        <h2 className="main-section-title">Challenge</h2>
+        <img className="challenge-image" src={challengeImage} alt="challengeImage" />
+      </div>
+      <div className="main-section">
+        <h2 className="main-section-title">Challenge</h2>
+        <iframe
+          title="video"
+          src="https://www.youtube.com/embed/7PgQXWrPC6E"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </section>
+  </main>
 );
 
 export default Main;

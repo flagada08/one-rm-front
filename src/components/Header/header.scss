@@ -9,6 +9,10 @@
   font-weight: bolder;
   width: 100%;
 
+  .logo{
+    width: 10%;
+    animation: 1s linear 1s  running slidein;
+  }
   .header-title {
     color: white;
     font-size: x-large;
@@ -34,3 +38,7 @@
   }
 }
 
+@keyframes slidein {
+  from { transform: rotate(260deg); }
+  to   { transform: scaleX(0deg); }
+}
