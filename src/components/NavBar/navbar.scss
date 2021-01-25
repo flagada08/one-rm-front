@@ -1,3 +1,7 @@
+.navbar-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 
 .navbar-link {
     color: white;
@@ -9,3 +13,4 @@
     transition: 0.5s;
     }
   }
+}
