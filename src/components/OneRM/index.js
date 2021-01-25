@@ -14,11 +14,11 @@ import Page404 from 'src/components/Page404';
 
 import './styles.scss';
 
-const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/user/32/profil';
+const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/35/profil';
 const TOKEN = localStorage.getItem('token');
 console.log(TOKEN);
 
-axios.get(API_URL, { headers: { Authorization: TOKEN } })
+axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}`} })
   .then((response) => {
     console.log(response.data);
   });

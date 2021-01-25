@@ -17,7 +17,7 @@ const loginMiddleware = (store) => (next) => (action) => {
       axios.post(API_URL, {
         username: email,
         password,
-      }, { headers: { Authorization: TOKEN } }).then((response) => {
+      }, { headers: { Authorization: `Bearer ${TOKEN}` } }).then((response) => {
         console.log(response);
         // je dispatch l'action qui permet la redirection si le membre et dans la base de données
         store.dispatch(loggedIn());
