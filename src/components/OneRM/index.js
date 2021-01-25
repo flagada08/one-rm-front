@@ -1,7 +1,8 @@
 // == Import npm
 import React from 'react';
 import axios from 'axios';
-import { Switch, Route, Redirect } from 'react-router-dom';
+
+import { Switch, Route } from 'react-router-dom';
 
 // == Import
 import Header from 'src/containers/Header';
@@ -15,11 +16,11 @@ import './styles.scss';
 
 const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/user/32/profil';
 const TOKEN = localStorage.getItem('token');
+console.log(TOKEN);
 
 axios.get(API_URL, { headers: { Authorization: TOKEN } })
   .then((response) => {
     console.log(response.data);
-    console.log(localStorage.getItem('token'));
   });
 
 // == Composant

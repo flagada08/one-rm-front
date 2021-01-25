@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
   isOpen: state.header.isOpen,
   OpenREgister: state.header.OpenREgister,
   loggedIn: state.loginForm.loggedIn,
+  TOKEN: state.loginForm.TOKEN,
 });
 
 // === mapDispatchToProps

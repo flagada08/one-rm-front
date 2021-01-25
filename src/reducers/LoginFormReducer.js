@@ -10,6 +10,7 @@ const initialState = {
   email: '',
   password: '',
   loggedIn: false, //! remettre a false
+  TOKEN: localStorage.getItem('token') != null,
 };
 
 function LoginFormReducer(state = initialState, action = {}) {
@@ -35,12 +36,12 @@ function LoginFormReducer(state = initialState, action = {}) {
     case LOGGED_IN:
       return {
         ...state,
-        loggedIn: true,
+        TOKEN: true,
       };
     case LOGGED_OUT:
       return {
         ...state,
-        loggedIn: false,
+        TOKEN: false,
       };
 
     default:

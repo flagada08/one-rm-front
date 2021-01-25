@@ -6,17 +6,14 @@ import ButtonConnection from 'src/containers/ButtonConnection';
 import ButtonDeconnection from 'src/containers/ButtonDeconnection';
 import LoginForm from 'src/containers/LoginForm';
 import RegisterForm from 'src/containers/RegisterForm';
-import { Redirect } from 'react-router-dom';
 
 import './header.scss';
 
-const Header = ({ isOpen, OpenREgister, loggedIn }) => (
+const Header = ({ isOpen, OpenREgister, TOKEN }) => (
   <div className="header">
-    {loggedIn && <Redirect to="/profil" />}
-    {!loggedIn && <Redirect to="/" />}
     <img className="logo" src={logo} alt="logo" />
     <NavBar />
-    {!loggedIn ? <ButtonConnection /> : <ButtonDeconnection />}
+    {!TOKEN ? <ButtonConnection /> : <ButtonDeconnection />}
     <BurgerMenu />
     {isOpen && <LoginForm />}
     {OpenREgister && <RegisterForm />}

@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 import './navbar.scss';
 
-const NavBar = ({ loggedIn }) => (
+const NavBar = ({ TOKEN }) => (
 
   <div className="navbar-container">
-    { !loggedIn
+    { !TOKEN
     && (
     <NavLink
       to="/"
@@ -28,7 +28,7 @@ const NavBar = ({ loggedIn }) => (
     >
       CHALLENGES
     </NavLink>
-    {loggedIn && (
+    {TOKEN && (
     <NavLink
       to="/profil"
       className="navbar-link"
