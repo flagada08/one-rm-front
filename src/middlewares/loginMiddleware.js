@@ -11,13 +11,17 @@ const loginMiddleware = (store) => (next) => (action) => {
       const { email, password } = store.getState().loginForm;
       console.log(email, password);
 
-      axios.post('http://ec2-54-226-80-94.compute-1.amazonaws.com/O-ne-RM/O-NE-RM/public/api/login', {
+      const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/login_check';
+
+      axios.post(API_URL, {
         username: email,
         password,
       }).then((response) => {
         console.log(response);
         // je dispatch l'action qui permet la redirection si le membre et dans la base de données
         store.dispatch(loggedIn());
+        localStorage.setItem('token', response.data.token);
+        axios.defaults.headers.common.Authorization = response.data.token;
         // je dispatch l'action qui permet de fermer le formulaire
         store.dispatch(closeLoginForm());
       }).catch((error) => {

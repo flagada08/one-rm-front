@@ -1,13 +1,7 @@
 import React from 'react';
 import Header from 'src/containers/Header';
 import Footer from 'src/components/Footer';
-
-import {
-  Instagram,
-  Facebook,
-  Twitter,
-  Youtube,
-} from 'react-feather';
+import Chart from 'src/components/Chart';
 
 import './profilpage.scss';
 
@@ -21,13 +15,8 @@ const ProfilPage = () => (
         </div>
         <div className="name">Laurie-Mouthe</div>
         <div className="tag">@lauriemouthe</div>
-        <div className="social-media">
-          <a href="#"><Facebook /></a>
-          <a href="#"><Twitter /></a>
-          <a href="#"><Instagram /></a>
-          <a href="#"><Youtube /></a>
-        </div>
       </div>
+      <Chart />
       <div className="bottom-section">
         <div className="">Attributs de l'Athlète<span>Aime les entrecotes !</span></div>
         <div className="border" />

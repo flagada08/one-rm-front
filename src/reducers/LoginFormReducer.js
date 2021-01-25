@@ -3,12 +3,13 @@ import {
   FORM_INPUT_LOGIN_PASSWORD,
   SUBMIT_LOGIN,
   LOGGED_IN,
+  LOGGED_OUT,
 } from 'src/actions/formInputLogin';
 
 const initialState = {
   email: '',
   password: '',
-  loggedIn: false,
+  loggedIn: false, //! remettre a false
 };
 
 function LoginFormReducer(state = initialState, action = {}) {
@@ -35,6 +36,11 @@ function LoginFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         loggedIn: true,
+      };
+    case LOGGED_OUT:
+      return {
+        ...state,
+        loggedIn: false,
       };
 
     default:

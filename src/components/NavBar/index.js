@@ -3,15 +3,18 @@ import { NavLink } from 'react-router-dom';
 
 import './navbar.scss';
 
-const NavBar = () => (
+const NavBar = ({ loggedIn }) => (
 
   <div className="navbar-container">
+    { !loggedIn
+    && (
     <NavLink
       to="/"
       className="navbar-link"
     >
       ACCUEIL
     </NavLink>
+    )}
     <NavLink
       to="/exercices"
       className="navbar-link"
@@ -25,13 +28,15 @@ const NavBar = () => (
     >
       CHALLENGES
     </NavLink>
-
+    {loggedIn && (
     <NavLink
       to="/profil"
       className="navbar-link"
     >
       PROFIL
     </NavLink>
+    )}
+
     <NavLink
       to="/"
       className="navbar-link"

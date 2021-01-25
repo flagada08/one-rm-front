@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
 
 // on importe le composant de présentation
-import Header from 'src/components/Header';
+import NavBar from 'src/components/NavBar';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  isOpen: state.header.isOpen,
-  OpenREgister: state.header.OpenREgister,
   loggedIn: state.loginForm.loggedIn,
 });
 
@@ -20,4 +18,4 @@ const mapDispatchToProps = () => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

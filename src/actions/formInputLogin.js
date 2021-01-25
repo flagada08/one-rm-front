@@ -3,6 +3,7 @@ export const FORM_INPUT_LOGIN_EMAIL = 'FORM_INPUT_LOGIN_EMAIL';
 export const FORM_INPUT_LOGIN_PASSWORD = 'FORM_INPUT_LOGIN_PASSWORD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const LOGGED_IN = 'LOGGED_IN';
+export const LOGGED_OUT = 'LOGGED_OUT';
 
 export const formLoginInputEmail = (newValue) => ({
   type: FORM_INPUT_LOGIN_EMAIL,
@@ -20,4 +21,8 @@ export const submitLogin = () => ({
 
 export const loggedIn = () => ({
   type: LOGGED_IN,
+});
+
+export const loggedOut = () => ({
+  type: LOGGED_OUT,
 });

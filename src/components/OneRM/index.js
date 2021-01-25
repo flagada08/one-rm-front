@@ -13,20 +13,21 @@ import Page404 from 'src/components/Page404';
 
 import './styles.scss';
 
-const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/';
+const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/user/32/profil';
+const TOKEN = localStorage.getItem('token');
 
-axios.get(API_URL)
+axios.get(API_URL, { headers: { Authorization: TOKEN } })
   .then((response) => {
     console.log(response.data);
+    console.log(localStorage.getItem('token'));
   });
 
 // == Composant
-const OneRM = ({ loggedIn }) => (
+const OneRM = () => (
   <div className="app">
     <div>
       <Switch>
         <Route exact path="/">
-          {loggedIn && <Redirect to="/profil" />}
           <Header />
           <Main />
           <Footer />
