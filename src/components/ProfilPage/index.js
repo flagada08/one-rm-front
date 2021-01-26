@@ -1,20 +1,19 @@
 import React from 'react';
-import Header from 'src/containers/Header';
 import Footer from 'src/components/Footer';
 import Chart from 'src/components/Chart';
 
 import './profilpage.scss';
 
-const ProfilPage = () => (
+const ProfilPage = ({ data }) => (
   <div>
-    <Header />
     <div className="profile-card">
       <div className="top-section">
         <div className="pic">
           <img src="" alt="" />
         </div>
-        <div className="name">Laurie-Mouthe</div>
-        <div className="tag">@lauriemouthe</div>
+        <div className="name">{data.firstname}</div>
+        <div className="tag">{data.email}</div>
+        {console.log('les data sur la page profil => '.data)}
       </div>
       <Chart />
       <div className="bottom-section">

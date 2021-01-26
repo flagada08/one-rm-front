@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from 'src/containers/Header';
 import Footer from 'src/components/Footer';
 
 import './exercisepage.scss';
 
 const ExercisePage = () => (
   <div className="main">
-    <Header />
     <div className="exercise-container">
       <h2 className="exercise-title">
         ici le titre d'un exercice

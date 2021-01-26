@@ -4,10 +4,34 @@ export const FORM_INPUT_REGISTER_EMAIL = 'FORM_INPUT_REGISTER_EMAIL';
 export const FORM_INPUT_REGISTER_PASSWORD = 'FORM_INPUT_REGISTER_PASSWORD';
 export const FORM_INPUT_REGISTER_LASTNAME = 'FORM_INPUT_REGISTER_LASTNAME';
 export const FORM_INPUT_REGISTER_FIRSTNAME = 'FORM_INPUT_REGISTER_FIRSTNAME';
+export const FORM_INPUT_REGISTER_GENDER = 'FORM_INPUT_REGISTER_GENDER';
+export const FORM_INPUT_REGISTER_AGE = 'FORM_INPUT_REGISTER_AGE';
+export const FORM_INPUT_REGISTER_ROLE = 'FORM_INPUT_REGISTER_ROLE';
+export const FORM_INPUT_REGISTER_FITNESSROOM = 'FORM_INPUT_REGISTER_FITNESSROOM';
 export const SUBMIT_REGISTER = 'SUBMIT_REGISTER';
 
 export const formRegister = () => ({
   type: FORM_REGISTER,
+});
+
+export const formRegisterInputGender = (newValue) => ({
+  type: FORM_INPUT_REGISTER_GENDER,
+  newValue,
+});
+
+export const formRegisterInputFitnessRoom = (newValue) => ({
+  type: FORM_INPUT_REGISTER_FITNESSROOM,
+  newValue,
+});
+
+export const formRegisterInputRole = (newValue) => ({
+  type: FORM_INPUT_REGISTER_ROLE,
+  newValue,
+});
+
+export const formRegisterInputAge = (newValue) => ({
+  type: FORM_INPUT_REGISTER_AGE,
+  newValue,
 });
 
 export const formRegisterInputLastname = (newValue) => ({

@@ -1,6 +1,5 @@
 // == Import npm
 import React from 'react';
-import axios from 'axios';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -9,19 +8,11 @@ import Header from 'src/containers/Header';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 import ExercisePage from 'src/components/ExercisePage';
-import ProfilPage from 'src/components/ProfilPage';
+import ProfilPage from 'src/containers/PageProfil';
+import ExerciseRecap from 'src/components/ExerciseRecap';
 import Page404 from 'src/components/Page404';
 
 import './styles.scss';
-
-const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/35/profil';
-const TOKEN = localStorage.getItem('token');
-console.log(TOKEN);
-
-axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}`} })
-  .then((response) => {
-    console.log(response.data);
-  });
 
 // == Composant
 const OneRM = () => (
@@ -34,9 +25,15 @@ const OneRM = () => (
           <Footer />
         </Route>
         <Route exact path="/profil">
+          <Header />
           <ProfilPage />
         </Route>
+        <Route exact path="/recapexercices">
+          <Header />
+          <ExerciseRecap />
+        </Route>
         <Route exact path="/exercices">
+          <Header />
           <ExercisePage />
         </Route>
         <Route>

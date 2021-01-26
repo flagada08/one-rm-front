@@ -6,8 +6,16 @@ const RegisterForm = ({
   password,
   lastname,
   firstname,
+  role,
+  gender,
+  fitnessRoom,
+  age,
   OnSubmitRegister,
   setValueLastname,
+  setValueGender,
+  setValueRole,
+  setValueAge,
+  setValueFitnessRoom,
   setValueFirstname,
   setValueEmail,
   setValuePassword,
@@ -41,6 +49,38 @@ const RegisterForm = ({
       {!isLogged && (
         <div className="form-container">
           <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
+            <input
+              name="genre"
+              placeholder="GENRE"
+              onChange={(event) => {
+                setValueGender(event.target.value);
+              }}
+              value={gender}
+            />
+            <input
+              name="role"
+              placeholder="ROLE"
+              onChange={(event) => {
+                setValueRole(event.target.value);
+              }}
+              value={role}
+            />
+            <input
+              name="age"
+              placeholder="AGE"
+              onChange={(event) => {
+                setValueAge(event.target.value);
+              }}
+              value={age}
+            />
+            <input
+              name="fitnessroom"
+              placeholder="FITNESSROOM"
+              onChange={(event) => {
+                setValueFitnessRoom(event.target.value);
+              }}
+              value={fitnessRoom}
+            />
             <input
               name="nom"
               placeholder="Nom"
@@ -98,6 +138,14 @@ const RegisterForm = ({
 RegisterForm.propTypes = {
   email: PropTypes.string.isRequired,
 
+  role: PropTypes.string.isRequired,
+
+  gender: PropTypes.string.isRequired,
+
+  age: PropTypes.string.isRequired,
+
+  fitnessRoom: PropTypes.string.isRequired,
+
   password: PropTypes.string.isRequired,
 
   lastname: PropTypes.string.isRequired,
@@ -105,6 +153,14 @@ RegisterForm.propTypes = {
   firstname: PropTypes.string.isRequired,
 
   setValueLastname: PropTypes.func.isRequired,
+
+  setValueRole: PropTypes.func.isRequired,
+
+  setValueAge: PropTypes.func.isRequired,
+
+  setValueFitnessRoom: PropTypes.func.isRequired,
+
+  setValueGender: PropTypes.func.isRequired,
 
   setValueFirstname: PropTypes.func.isRequired,
 
