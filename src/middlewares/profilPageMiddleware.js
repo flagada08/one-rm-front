@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { fetchUserData } from 'src/actions/pageProfil';
-import { SUBMIT_LOGIN } from 'src/actions/formInputLogin';
+import { SUBMIT_LOGIN, LOGGED_OUT } from 'src/actions/formInputLogin';
 
 const profilPageMiddelware = (store) => (next) => (action) => {
   const fetchData = () => {
@@ -22,6 +22,13 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_LOGIN: {
       fetchData();
+      next(action);
+      break;
+    }
+    case LOGGED_OUT: {
+      let { data } = store.getState().profilPage;
+      data = '';
+      localStorage.removeItem('token');
       next(action);
       break;
     }

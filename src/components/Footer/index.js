@@ -28,7 +28,7 @@ const Footer = () => (
         to="/"
         className="navbar-link"
       >
-        mention l'égal
+        mention légal
       </NavLink>
       <NavLink
         to="/"

@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // == Import
 import Header from 'src/containers/Header';
