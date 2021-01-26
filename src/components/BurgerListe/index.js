@@ -3,15 +3,20 @@ import { NavLink } from 'react-router-dom';
 
 import './burgerliste.scss';
 
-const BurgerListe = () => (
+const BurgerListe = ({ TOKEN, toggleBurgerMenu }) => (
   <div className="burgerliste">
+    {!TOKEN
+    && (
     <NavLink
+      onClick={toggleBurgerMenu}
       to="/"
       className="navbar-link"
     >
       ACCUEIL
     </NavLink>
+    )}
     <NavLink
+      onClick={toggleBurgerMenu}
       to="/exercices"
       className="navbar-link"
     >
@@ -19,6 +24,7 @@ const BurgerListe = () => (
     </NavLink>
 
     <NavLink
+      onClick={toggleBurgerMenu}
       to="#"
       className="navbar-link"
     >
@@ -26,12 +32,23 @@ const BurgerListe = () => (
     </NavLink>
 
     <NavLink
+      onClick={toggleBurgerMenu}
       to="/profil"
       className="navbar-link"
     >
       PROFIL
     </NavLink>
+    {TOKEN && (
     <NavLink
+      onClick={toggleBurgerMenu}
+      to="/recapexercices"
+      className="navbar-link"
+    >
+      RECAP EXO
+    </NavLink>
+    )}
+    <NavLink
+      onClick={toggleBurgerMenu}
       to="/"
       className="navbar-link"
     >
