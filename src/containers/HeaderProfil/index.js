@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 
 // on importe le composant de présentation
-import ProfilPage from 'src/components/ProfilPage';
+import HeaderProfil from 'src/components/HeaderProfil';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
+  data: state.profilPage.data,
 });
 
 // === mapDispatchToProps
@@ -17,4 +18,4 @@ const mapDispatchToProps = () => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilPage);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderProfil);

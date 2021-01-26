@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { fetchUserData } from 'src/actions/pageProfil';
-import { SUBMIT_LOGIN, LOGGED_OUT } from 'src/actions/formInputLogin';
+import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
 
 const profilPageMiddelware = (store) => (next) => (action) => {
   const fetchData = () => {
@@ -10,7 +10,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data.email);
+        console.log(data);
         store.dispatch(fetchUserData(response.data));
         return data;
       })
@@ -20,14 +20,13 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   };
 
   switch (action.type) {
-    case SUBMIT_LOGIN: {
+    case LOGGED_IN: {
+      console.log('je passe par le login');
       fetchData();
       next(action);
       break;
     }
     case LOGGED_OUT: {
-      let { data } = store.getState().profilPage;
-      data = '';
       localStorage.removeItem('token');
       next(action);
       break;

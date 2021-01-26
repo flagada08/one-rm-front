@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderProfil from 'src/components/HeaderProfil';
+import HeaderProfil from 'src/containers/HeaderProfil';
 import Footer from 'src/components/Footer';
 
 import './profilpage.scss';

@@ -9,9 +9,8 @@ const HeaderProfil = ({ data }) => (
         <div className="pic">
           <img src="" alt="" />
         </div>
-        <div className="name">{data}</div>
-        <div className="tag">{data}</div>
-        {console.log('les data sur la page profil => '.data)}
+        <div className="name">{data.email}</div>
+        <div className="tag">{data.firstname}</div>
       </div>
     </div>
   </div>
