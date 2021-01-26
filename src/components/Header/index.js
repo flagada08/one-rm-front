@@ -11,7 +11,9 @@ import './header.scss';
 
 const Header = ({ isOpen, OpenREgister, TOKEN }) => (
   <div className="header">
-    <img className="logo" src={logo} alt="logo" />
+    <div className="pic">
+      <img className="logo" src={logo} alt="logo" />
+    </div>
     <NavBar />
     {!TOKEN ? <ButtonConnection /> : <ButtonDeconnection />}
     <BurgerMenu />

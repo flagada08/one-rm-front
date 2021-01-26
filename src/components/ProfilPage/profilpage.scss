@@ -1,5 +1,11 @@
 @use 'src/styles/vars';
 
+.main-section {
+  button {
+    margin: 15px;
+  }
+}
+
 .bottom-section {
   background: #f1f1f1;
   padding: 60px 40px;
@@ -9,9 +15,18 @@
   text-transform: uppercase;
 }
 
+.profil-page-title {
+  margin-top: 25px;
+  padding: 10px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
 .border {
   width: 1px;
-  height: 20px;
+  height: 50px;
   background: rgb(0, 0, 0);
   margin: 0 30px;
 }
@@ -48,6 +63,53 @@
       }
       
       .bottom-section span {
+        font-size: 14px;
+        display: block;
+      }
+    }
+  }
+
+.top-section {
+  background: #f1f1f1;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.top-section span {
+  font-size: 14px;
+  display: block;
+}
+
+  .social-media {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      top: 45px;
+      color: #f1f1f1;
+  }
+  
+  @media (max-width: vars.$breakpoint-tablet) {
+    .top-section {
+      background: #f1f1f1;
+      padding: 60px 40px;
+      font-size: 20px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+  
+      .border {
+        width: 1px;
+        height: 100px;
+        background: rgb(0, 0, 0);
+        margin: 0 30px;
+        transform: rotate(90deg);
+        align-self: center;
+      }
+      
+      .top-section span {
         font-size: 14px;
         display: block;
       }

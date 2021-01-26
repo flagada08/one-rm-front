@@ -1,10 +1,11 @@
 .profile-card {
   overflow: hidden;
   text-align: center;
-
+  
   .top-section {
     padding: 60px 40px;
-    background: #000000;
+    background: black;
+    display: block;
   }
 
   .pic {
@@ -39,6 +40,7 @@
       opacity: 0;
     }
   }
+
 
   .pic img {
     width: 100%;

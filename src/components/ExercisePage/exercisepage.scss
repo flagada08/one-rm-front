@@ -1,0 +1,78 @@
+@use 'src/styles/vars';
+
+.main {
+
+  .exercise-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 10px;
+    font-size: large;
+    background: #f1f1f1;
+
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .exercise-title {
+        font-size: x-large;
+        font-weight: bold;
+        margin: 10px;
+      }
+      
+      .exercise-media {
+        width: 250px;
+        height: 200px;
+        background: black;
+      }
+    }
+    .exercise-border {
+      width: 1px;
+      height: 265px;
+      background: rgb(0, 0, 0);
+      margin: 0 30px;
+    }
+    
+    .exercise-text {
+      width: 50%;
+      margin: 50px;
+      text-align: left;
+    }
+    
+    .exercise-difficulty {
+
+    }
+  }
+  
+  @media (max-width: vars.$breakpoint-tablet) {
+    .exercise-container {
+      display: flex;
+      flex-direction: column;
+      .exercise-border {
+        width: 1px;
+        height: 100px;
+        background: rgb(0, 0, 0);
+        margin: 0px;
+        transform: rotate(90deg);
+        align-self: center;
+      }
+      .exercise-text {
+        width: 85%;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+      }
+
+      .exercise-difficulty {
+        margin: 15px;
+      }
+
+    }
+  } 
+    
+}
+

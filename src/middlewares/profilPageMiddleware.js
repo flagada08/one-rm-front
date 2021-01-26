@@ -10,7 +10,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data.email);
+        console.log(response.data);
         store.dispatch(fetchUserData(response.data));
         return data;
       })
