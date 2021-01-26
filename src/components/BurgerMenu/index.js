@@ -1,5 +1,5 @@
 import React from 'react';
-import BurgerListe from 'src/components/BurgerListe';
+import BurgerListe from 'src/containers/BurgerListe';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 

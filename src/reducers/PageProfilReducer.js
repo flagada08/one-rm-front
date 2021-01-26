@@ -15,7 +15,7 @@ function PageProfilReducer(state = initialState, action = {}) {
     case LOGGED_OUT:
       return {
         ...state,
-        data: '',
+        data: [],
       };
 
     default:
