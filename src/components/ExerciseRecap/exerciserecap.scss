@@ -1,0 +1,42 @@
+@use 'src/styles/vars';
+
+
+.exercicerecap-container{
+
+  .exercice-title-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+    padding: 1em;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  .exercice-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em;
+    height: 4em;
+    padding: 1em;
+    font-size: x-small;
+    border: solid 1px black;
+  }
+  .exercice-pregression{
+    width: 40%;
+  }
+}
+@media (min-width: vars.$breakpoint-tablet) {
+  .exercices-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    .exercice-card{
+      width: 50%;
+      margin: 10px;
+    }
+    .exercice-title-container{
+      width: 50%;
+    }
+  }
+}

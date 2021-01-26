@@ -26,7 +26,7 @@
   }
 
   @media (max-width: vars.$breakpoint-tablet) {
-    .navbar-container, .ButtonConnection{
+    .navbar-container, .ButtonConnection, .ButtonDeconnection{
       display: none;
     }
   }
