@@ -2,7 +2,7 @@ import React from 'react';
 
 import './headerprofil.scss';
 
-const HeaderProfil = ({ data }) => (
+const HeaderProfil = ({ data, TOKEN }) => (
   <div>
     <div className="profile-card">
       <div className="top-section">

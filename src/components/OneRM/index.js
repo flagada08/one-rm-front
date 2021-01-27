@@ -16,7 +16,7 @@ import Page404 from 'src/components/Page404';
 import './styles.scss';
 
 // == Composant
-const OneRM = ({ loggedIn }) => (
+const OneRM = ({ loggedIn, }) => (
   <div className="app">
     <div>
       <Switch>
@@ -27,6 +27,7 @@ const OneRM = ({ loggedIn }) => (
           <Footer />
         </Route>
         <Route exact path="/profil">
+          { !loggedIn && <Redirect to="/" />}
           <Header />
           <ProfilPage />
         </Route>

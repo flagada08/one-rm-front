@@ -15,9 +15,8 @@ const ExerciseRecap = ({ dataExercises }) => (
         <div className="exercice-title">objectif</div>
         <div className="exercice-title">progression vers objectif</div>
       </div>
-      {console.log(dataExercises)
-      }
-      {dataExercises.map((exercise) => (
+      {console.log(dataExercises)}
+      {dataExercises && dataExercises.map((exercise) => (
 
         <Exercices
         // ! attention à changer !!
@@ -33,18 +32,11 @@ const ExerciseRecap = ({ dataExercises }) => (
 );
 
 // ExerciseRecap.propTypes = {
-//   dataExercises: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.string,
-//       repetition: PropTypes.num,
-//       weight: PropTypes.num,
-//     }).isRequired,
-//   ),
+//   dataExercises: PropTypes.array,
 // };
 
 // ExerciseRecap.defaultProps = {
-//   dataExercises: {},
-
+//   dataExercises: [],
 // };
 
 export default ExerciseRecap;
