@@ -9,7 +9,7 @@ import './chart.scss';
 // pour la durée de l'animation du graphique
 defaults.global.animation.duration = 6000;
 // pour utiliser une fonction quand la courbe est completement
-// terminer par une fonction par exemple (on complete est une fonction) => react chartjs-2
+// terminer par une fonction par exemple (oncomplete est une fonction) => react chartjs-2
 defaults.global.animation.onComplete = () => {
   console.log('graphique-coucou');
 };
@@ -48,6 +48,7 @@ const Chart = () => (
           ],
         }}
         options={{
+  
           scales: {
             yAxes: [
               {

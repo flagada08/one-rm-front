@@ -4,8 +4,9 @@ import Footer from 'src/components/Footer';
 import Exercices from 'src/components/Exercices';
 
 import './exerciserecap.scss';
+import { PropTypes } from 'prop-types';
 
-const ExerciseRecap = ({dataExercises}) => (
+const ExerciseRecap = ({ dataExercises }) => (
   <div className="exercicerecap-container">
     <HeaderProfil />
     <div className="exercices-container">
@@ -14,12 +15,16 @@ const ExerciseRecap = ({dataExercises}) => (
         <div className="exercice-title">objectif</div>
         <div className="exercice-title">progression vers objectif</div>
       </div>
+      {console.log(dataExercises)
+      }
       {dataExercises.map((exercise) => (
+
         <Exercices
-          key={exercise.id}
+        // ! attention à changer !!
+          key={Math.floor(Math.random() * Math.floor(1000))}
+          name={exercise.exercise.name}
           weight={exercise.weight}
           repetition={exercise.repetition}
-          name={exercise.name}
         />
       ))}
     </div>
@@ -27,8 +32,19 @@ const ExerciseRecap = ({dataExercises}) => (
   </div>
 );
 
-ExerciseRecap.propTypes = {
+// ExerciseRecap.propTypes = {
+//   dataExercises: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string,
+//       repetition: PropTypes.num,
+//       weight: PropTypes.num,
+//     }).isRequired,
+//   ),
+// };
 
-};
+// ExerciseRecap.defaultProps = {
+//   dataExercises: {},
+
+// };
 
 export default ExerciseRecap;

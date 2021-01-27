@@ -2,7 +2,7 @@ import React from 'react';
 import ProgressBar from 'src/components/ProgressBar';
 import { Link } from 'react-router-dom';
 
-const Exercise = (weight, repetition, name) => (
+const Exercise = ({name, weight, repetition}) => (
   <div className="exercice-card">
     <Link className="ecercice-link" to="/">{name}</Link>
     <div className="exercice-objectif">

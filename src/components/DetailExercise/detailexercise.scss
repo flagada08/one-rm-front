@@ -1,0 +1,36 @@
+.DetailExercise-container{
+
+  .mouvement-container{
+    border: solid 2px black;
+    padding: 1em;
+    width: 50%;
+    .mouvement-title{
+      font-size: small;
+    }
+    .mouvement-image{
+      width: 100%;
+      .image-exercise{
+        width: 100%;
+      }
+    }
+    .mouvement-difficulty{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .difficulte-title{
+        margin-top: 5px;
+      }
+      .star-container{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+        width: 40%;
+        .mouvement-star{
+        width: 100%;
+        color: red;
+      }
+      }
+      
+    }
+  }
+}
