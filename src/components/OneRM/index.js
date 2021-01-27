@@ -9,7 +9,7 @@ import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 import ExercisePage from 'src/components/ExercisePage';
 import ProfilPage from 'src/containers/PageProfil';
-import ExerciseRecap from 'src/components/ExerciseRecap';
+import ExerciseRecap from 'src/containers/ExercisesRecap';
 import Page404 from 'src/components/Page404';
 
 import './styles.scss';

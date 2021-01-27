@@ -2,11 +2,11 @@ import React from 'react';
 import ProgressBar from 'src/components/ProgressBar';
 import { Link } from 'react-router-dom';
 
-const Exercise = () => (
+const Exercise = (weight, repetition, name) => (
   <div className="exercice-card">
-    <Link className="ecercice-link" to="/">liens vers l'exercice</Link>
+    <Link className="ecercice-link" to="/">{name}</Link>
     <div className="exercice-objectif">
-      XXXX KG / REP
+      {weight} KG / {repetition} REP
     </div>
     <div className="exercice-pregression">
       <ProgressBar />

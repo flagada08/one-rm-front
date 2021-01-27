@@ -2,11 +2,10 @@ import React from 'react';
 import HeaderProfil from 'src/containers/HeaderProfil';
 import Footer from 'src/components/Footer';
 import Exercices from 'src/components/Exercices';
-import { Link } from 'react-router-dom';
 
 import './exerciserecap.scss';
 
-const ExerciseRecap = () => (
+const ExerciseRecap = ({dataExercises}) => (
   <div className="exercicerecap-container">
     <HeaderProfil />
     <div className="exercices-container">
@@ -15,15 +14,14 @@ const ExerciseRecap = () => (
         <div className="exercice-title">objectif</div>
         <div className="exercice-title">progression vers objectif</div>
       </div>
-      <Exercices />
-      <Exercices />
-      <Exercices />
-      <Exercices />
-      <Exercices />
-      <Exercices />
-      <Exercices />
-      <Exercices />
-      <Exercices />
+      {dataExercises.map((exercise) => (
+        <Exercices
+          key={exercise.id}
+          weight={exercise.weight}
+          repetition={exercise.repetition}
+          name={exercise.name}
+        />
+      ))}
     </div>
     <Footer />
   </div>
