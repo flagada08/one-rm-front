@@ -16,4 +16,3 @@ export const fetchUserDataPerformances = (dataPerformances) => ({
   type: FETCH_USER_DATA_PERFORMANCES,
   dataPerformances,
 });
-

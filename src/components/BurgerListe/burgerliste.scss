@@ -1,6 +1,7 @@
 .burgerliste{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   animation-name: glissement;
   animation-duration: 1.5s;
   height: 150px;
@@ -8,9 +9,14 @@
   color: white;
   position: fixed;
   right: 0;
-  padding: 4em 2em;
+  padding: 4em;
   width: 100%;
   min-height: 50%;
   font-weight: 1000;
   z-index: 1;
+  .login-link {
+    background: white;
+    color: black;
+    padding: 10px;
+  }
 }

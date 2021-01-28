@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { openBugerMenu } from 'src/actions/burgerMenu';
+import { formConnection } from 'src/actions/formConnection';
+import { loggedOut } from 'src/actions/formInputLogin';
 
 // on importe le composant de présentation
 import BurgerListe from 'src/components/BurgerListe';
@@ -18,6 +20,15 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   toggleBurgerMenu: () => {
     dispatch(openBugerMenu());
+  },
+
+  buttonConnect: () => {
+    dispatch(openBugerMenu());
+    dispatch(formConnection());
+  },
+
+  buttonDisconnect: () => {
+    dispatch(loggedOut());
   },
 });
 

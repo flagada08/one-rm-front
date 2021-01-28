@@ -5,6 +5,7 @@ import RegisterFormReducer from './RegisterFormReducer';
 import HeaderReducer from './HeaderReducer';
 import BurgerMenuReducer from './BurgerMenuReducer';
 import PageProfilReducer from './PageProfilReducer';
+import DetailExerciseReducer from './DetailExerciseReducer';
 // etc
 // le reducer principal, qui regroupe les autres
 // combineReducers prend en argument un objet qui indique un nom pour
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   header: HeaderReducer,
   burgerMenu: BurgerMenuReducer,
   profilPage: PageProfilReducer,
+  detailExercise: DetailExerciseReducer,
   // etc
 });
 export default rootReducer;

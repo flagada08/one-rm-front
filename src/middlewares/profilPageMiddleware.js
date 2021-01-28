@@ -32,7 +32,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
         console.log(error);
       });
   };
-// fonction qui permert la récupération les derniére performances
+  // fonction qui permert la récupération les derniére performances
   const fetchDataPerformances = () => {
     const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/getLastPerformances';
     const TOKEN = localStorage.getItem('token');

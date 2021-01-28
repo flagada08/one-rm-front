@@ -2,9 +2,18 @@ import React from 'react';
 import ProgressBar from 'src/components/ProgressBar';
 import { Link } from 'react-router-dom';
 
-const Exercise = ({name, weight, repetition}) => (
+const Exercise = ({
+  name, weight, repetition, id, clickOfExercise,
+}) => (
   <div className="exercice-card">
-    <Link className="ecercice-link" to="/">{name}</Link>
+    {console.log(id)}
+    <Link
+      onClick={(e) => clickOfExercise(e.target.dataset.id)}
+      className="ecercice-link"
+      to="/detailexercice"
+      data-id={id}
+    >{name}
+    </Link>
     <div className="exercice-objectif">
       {weight} KG / {repetition} REP
     </div>

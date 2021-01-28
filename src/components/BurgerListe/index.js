@@ -3,8 +3,30 @@ import { NavLink } from 'react-router-dom';
 
 import './burgerliste.scss';
 
-const BurgerListe = ({ TOKEN, toggleBurgerMenu }) => (
+const BurgerListe = ({ TOKEN, toggleBurgerMenu, buttonConnect, buttonDisconnect }) => (
   <div className="burgerliste">
+    <div className="login-link">
+      {!TOKEN
+      && (
+      <NavLink
+        onClick={buttonConnect}
+        to="/"
+        className="navbar-link"
+      >
+        CONNEXION
+      </NavLink>
+      )}
+      {TOKEN
+      && (
+      <NavLink
+        onClick={buttonDisconnect}
+        to="/"
+        className="navbar-link"
+      >
+        DECONNEXION
+      </NavLink>
+      )}
+    </div>
     {!TOKEN
     && (
     <NavLink
