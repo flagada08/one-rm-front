@@ -1,9 +1,10 @@
-import { FETCH_USER_DATA, FETCH_USER_DATA_EXERCISES } from 'src/actions/pageProfil';
+import { FETCH_USER_DATA, FETCH_USER_DATA_EXERCISES, FETCH_USER_DATA_PERFORMANCES } from 'src/actions/pageProfil';
 import { LOGGED_OUT } from 'src/actions/formInputLogin';
 
 const initialState = {
   data: '',
   dataExercises: '',
+  dataPerformances: '',
 };
 
 function PageProfilReducer(state = initialState, action = {}) {
@@ -17,6 +18,11 @@ function PageProfilReducer(state = initialState, action = {}) {
       return {
         ...state,
         dataExercises: action.dataExercises,
+      };
+    case FETCH_USER_DATA_PERFORMANCES:
+      return {
+        ...state,
+        dataPerformances: action.dataPerformances,
       };
     case LOGGED_OUT:
       return {

@@ -1,8 +1,10 @@
 .DetailExercise-container{
-
+display: flex;
+flex-wrap: wrap;
   .mouvement-container{
-    border: solid 2px black;
+    border: solid 1px black;
     padding: 1em;
+    margin-top: 1em;
     width: 50%;
     .mouvement-title{
       font-size: small;
@@ -31,6 +33,58 @@
       }
       }
       
+    }
+  }
+  .conseil-container{
+    width: 50%;
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    padding: 1em;
+    word-break: break-all;
+    .conseil-title{
+      font-size: small;
+      width: 100%;
+    }
+    .conseil-paragraph{
+      font-size: xx-small;
+    }
+  }
+  .performance-form-container{
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    width: 100%;
+    margin-top: 1em;
+    .performance-title{
+      width: 100%;
+      margin: 5px;
+      text-decoration: underline;
+    }
+    .performance-span{
+      width: 100%;
+      margin: 5px;
+    }
+    .performance-formulaire{
+      width: 100%;
+      .performance-input{
+      width: 60%;
+      text-align: center;
+    }
+    }
+    
+  }
+  .conseil-coach-container{
+    width: 100%;
+    margin-top: 10px;
+    border: solid 1px black;
+    .conseil-coach-title{
+      font-size: small;
+    }
+    .conseil-coach-message{
+      font-size: xx-small;
     }
   }
 }

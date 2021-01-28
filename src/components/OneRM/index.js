@@ -16,7 +16,7 @@ import Page404 from 'src/components/Page404';
 import './styles.scss';
 
 // == Composant
-const OneRM = ({ loggedIn, }) => (
+const OneRM = ({ loggedIn }) => (
   <div className="app">
     <div>
       <Switch>
@@ -26,24 +26,29 @@ const OneRM = ({ loggedIn, }) => (
           <Main />
           <Footer />
         </Route>
-        <Route exact path="/profil">
-          { !loggedIn && <Redirect to="/" />}
-          <Header />
-          <ProfilPage />
-        </Route>
-        <Route exact path="/recapexercices">
-          <Header />
-          <ExerciseRecap />
-        </Route>
         <Route exact path="/exercices">
           <Header />
           <ExercisePage />
         </Route>
-        <Route exact path="/detailexercice">
-          <Header />
-          <DetailExercise />
-          <Footer />
-        </Route>
+        {loggedIn
+        && (
+        <>
+          <Route exact path="/profil">
+            <Header />
+            <ProfilPage />
+          </Route>
+          <Route exact path="/recapexercices">
+            <Header />
+            <ExerciseRecap />
+          </Route>
+          <Route exact path="/detailexercice">
+            <Header />
+            <DetailExercise />
+            <Footer />
+          </Route>
+        </>
+        )}
+
         <Route>
           <Page404 />
         </Route>

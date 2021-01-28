@@ -9,7 +9,7 @@ import {
 const initialState = {
   email: '',
   password: '',
-  loggedIn: false, //! remettre a false
+  loggedIn: true, //! remettre a false
   TOKEN: localStorage.getItem('token') != null,
 };
 

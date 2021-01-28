@@ -6,7 +6,7 @@ import Exercices from 'src/components/Exercices';
 import './exerciserecap.scss';
 import { PropTypes } from 'prop-types';
 
-const ExerciseRecap = ({ dataExercises }) => (
+const ExerciseRecap = ({ dataExercises, dataPerformances }) => (
   <div className="exercicerecap-container">
     <HeaderProfil />
     <div className="exercices-container">
@@ -17,15 +17,18 @@ const ExerciseRecap = ({ dataExercises }) => (
       </div>
       {console.log(dataExercises)}
       {dataExercises && dataExercises.map((exercise) => (
+        dataPerformances.map((performance) => {
+          console.log(exercise);
+        })
+        // <Exercices
+        //   key={performance.exercise.id}
+        //   name={exercise.name}
+        //   weight={performance.weight}
+        //   repetition={performance.repetition}
+        // />
 
-        <Exercices
-        // ! attention à changer !!
-          key={Math.floor(Math.random() * Math.floor(1000))}
-          name={exercise.exercise.name}
-          weight={exercise.weight}
-          repetition={exercise.repetition}
-        />
       ))}
+
     </div>
     <Footer />
   </div>

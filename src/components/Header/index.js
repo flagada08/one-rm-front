@@ -9,7 +9,7 @@ import RegisterForm from 'src/containers/RegisterForm';
 
 import './header.scss';
 
-const Header = ({ isOpen, OpenREgister, TOKEN }) => (
+const Header = ({ isOpen, OpenREgister, TOKEN,  }) => (
   <div className="header">
     <div className="pic">
       <img className="logo" src={logo} alt="logo" />

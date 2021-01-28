@@ -39,6 +39,15 @@ const NavBar = ({ TOKEN }) => (
 
     {TOKEN && (
     <NavLink
+      to="/detailexercice"
+      className="navbar-link"
+    >
+      DETAIL
+    </NavLink>
+    )}
+
+    {TOKEN && (
+    <NavLink
       to="/recapexercices"
       className="navbar-link"
     >
