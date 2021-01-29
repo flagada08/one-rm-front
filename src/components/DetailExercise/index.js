@@ -35,8 +35,8 @@ const DetailExercise = ({ dataOneExercise, setNexPerf, newPerf, addPerf }) => (
         <h2 className="performance-title">Entrer votre nouvelle performance</h2>
         <span className="performance-span">Votre objectif: XX KG</span>
         <form className="performance-formulaire">
-          <input onChange={setNexPerf((event) => event.target.value)} className="performance-input" value={newPerf} />
-          <button type="submit" onClick={addPerf(dataOneExercise[0].exercise.id)}>ENVOYER</button>
+          <input onChange={()=> setNexPerf((event) => event.target.value)} className="performance-input" value={newPerf} />
+          <button type="button" onClick={() => addPerf(dataOneExercise[0].exercise.id)}>ENVOYER</button>
         </form>
       </div>
     </>

@@ -1,0 +1,19 @@
+.profil-form-page-container{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .user-input{
+    font-size: 1em;
+    padding: 0.3em;
+    margin: 10px;
+  }
+  .user-input:focus{
+    border: solid 1px lightblue;
+  }
+  .icon-input-user{
+    margin: 5px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,33 @@
+.member-liste-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 10px 0 10px;
+  background: #000000;
+  border-radius: 50% 50%;
+  .member-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 0.5em;
+    width: 70%;
+    .member-lastname{
+      color: white;
+    }
+    .member-firstname{
+      color: white;
+    }
+    .member-trash-icon{
+      cursor: pointer;
+      color: red;
+    }
+    .member-user-icon{
+      color: green;
+      width: 30px;
+      height: 30px;
+      background: gray;
+      border-radius: 100%;
+    }
+  }
+}

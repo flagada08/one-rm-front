@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { fetchUserDetailExercise, CLICK_OF_ONE_EXERCISE, POST_NEW_PERF } from 'src/actions/detailExercise';
-import { LOGGED_OUT } from 'src/actions/formInputLogin';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
   // fonction qui permert la récupération d'un exercice via son id
@@ -22,7 +21,8 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   const newPerformance = (id) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/newPerf`;
     const TOKEN = localStorage.getItem('token');
-    axios.post(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
+    const { newPerf } = store.getState().detailExercise;
+    axios.post(API_URL, { newPerf }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
         return data;
@@ -41,12 +41,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     }
     case POST_NEW_PERF: {
       console.log('j\'ai posté une new perf');
-      newPerformance(action.exerciseId);//! ajouter l'id
-      next(action);
-      break;
-    }
-    case LOGGED_OUT: {
-      localStorage.removeItem('token');
+      newPerformance(action.exerciseId);
       next(action);
       break;
     }

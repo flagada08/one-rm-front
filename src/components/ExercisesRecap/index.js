@@ -6,7 +6,7 @@ import Exercices from 'src/containers/Exercise';
 import './exerciserecap.scss';
 import { PropTypes } from 'prop-types';
 
-const ExerciseRecap = ({ dataExercises, dataPerformances }) => (
+const ExerciseRecap = ({ dataPerformances }) => (
   <div className="exercicerecap-container">
     <HeaderProfil />
     <div className="exercices-container">
@@ -15,30 +15,16 @@ const ExerciseRecap = ({ dataExercises, dataPerformances }) => (
         <div className="exercice-title">objectif</div>
         <div className="exercice-title">progression vers objectif</div>
       </div>
-      {console.log(dataExercises)}
       {console.log(dataPerformances)}
-      {dataExercises && dataExercises.map((exercise) => (
-        dataPerformances.map((performance) => {
-          if (exercise.id === performance.exercise.id) {
-            return (
-              <Exercices
-                key={exercise.id}
-                id={exercise.id}
-                name={exercise.name}
-                weight={performance.weight}
-                repetition={performance.repetition}
-              />
-            );
-          }
-          // return (
-          //   <Exercices
-          //     key={exercise.id}
-          //     name={exercise.name}
-          //     weight={0}
-          //     repetition={0}
-          //   />
-          // );
-        })
+      {dataPerformances && dataPerformances.map((exercise) => (
+
+        <Exercices
+          key={exercise.ID_exercise}
+          id={exercise.ID_exercise}
+          name={exercise.name}
+          weight={exercise.weight === null ? 0 : exercise.weight}
+          repetition={exercise.repetition === null ? 0 : exercise.repetition}
+        />
       ))}
 
     </div>
