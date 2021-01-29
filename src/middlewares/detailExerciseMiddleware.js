@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 import { fetchUserDetailExercise, CLICK_OF_ONE_EXERCISE, POST_NEW_PERF } from 'src/actions/detailExercise';
@@ -22,9 +23,20 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/newPerf`;
     const TOKEN = localStorage.getItem('token');
     const { newPerf } = store.getState().detailExercise;
-    axios.post(API_URL, { newPerf }, { headers: { Authorization: `Bearer ${TOKEN}` } })
+    const { newPerfWeight } = store.getState().detailExercise;
+    const newPerfRepetition = Number(newPerfWeight);
+    const newPerfParse = Number(newPerf);
+    axios.post(API_URL,
+      {
+        date: 'now',
+        repetition: newPerfRepetition,
+        weight: newPerfParse,
+        user: 1,
+      },
+      { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        console.log(data);
         return data;
       })
       .catch((error) => {

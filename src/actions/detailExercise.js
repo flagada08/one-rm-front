@@ -2,6 +2,7 @@ export const FETCH_USER_DETAIL_EXERCISE = 'FETCH_USER_DETAIL_EXERCISE';
 export const CLICK_OF_ONE_EXERCISE = 'CLICK_OF_ONE_EXERCISE';
 export const ADD_NEW_PERF = 'ADD_NEW_PERF';
 export const POST_NEW_PERF = 'POST_NEW_PERF';
+export const ADD_NEW_PERF_WEIGHT = 'ADD_NEW_PERF_WEIGHT';
 
 export const fetchUserDetailExercise = (detailExercise) => ({
   type: FETCH_USER_DETAIL_EXERCISE,
@@ -21,4 +22,9 @@ export const addNewPerf = (newPerf) => ({
 export const postNewPerf = (exerciseId) => ({
   type: POST_NEW_PERF,
   exerciseId,
+});
+
+export const addNewPerfWeight = (newPerfWeight) => ({
+  type: ADD_NEW_PERF_WEIGHT,
+  newPerfWeight,
 });

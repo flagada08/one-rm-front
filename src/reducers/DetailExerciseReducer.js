@@ -1,8 +1,9 @@
-import { FETCH_USER_DETAIL_EXERCISE, ADD_NEW_PERF } from 'src/actions/detailExercise';
+import { FETCH_USER_DETAIL_EXERCISE, ADD_NEW_PERF, ADD_NEW_PERF_WEIGHT } from 'src/actions/detailExercise';
 
 const initialState = {
   detailExercise: '',
   newPerf: '',
+  newPerfWeight: '',
 };
 
 function DetailExerciseReducer(state = initialState, action = {}) {
@@ -16,6 +17,11 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       return {
         ...state,
         newPerf: action.newPerf,
+      };
+    case ADD_NEW_PERF_WEIGHT:
+      return {
+        ...state,
+        newPerfWeight: action.newPerfWeight,
       };
     default:
       return state;
