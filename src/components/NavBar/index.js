@@ -3,18 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 import './navbar.scss';
 
-const NavBar = ({ TOKEN }) => (
+const NavBar = ({ TOKEN, clickOfRecapExercise }) => (
 
   <div className="navbar-container">
-    { !TOKEN
-    && (
     <NavLink
       to="/"
       className="navbar-link"
     >
       ACCUEIL
     </NavLink>
-    )}
     <NavLink
       to="/exercices"
       className="navbar-link"
@@ -50,6 +47,7 @@ const NavBar = ({ TOKEN }) => (
     <NavLink
       to="/recapexercices"
       className="navbar-link"
+      onClick={clickOfRecapExercise}
     >
       RECAP EXO
     </NavLink>

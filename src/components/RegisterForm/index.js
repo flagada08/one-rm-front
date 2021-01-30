@@ -51,6 +51,7 @@ const RegisterForm = ({
           <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
             <input
               name="genre"
+              className="login-form-input"
               placeholder="GENRE"
               onChange={(event) => {
                 setValueGender(event.target.value);
@@ -60,6 +61,7 @@ const RegisterForm = ({
             <input
               name="role"
               placeholder="ROLE"
+              className="login-form-input"
               onChange={(event) => {
                 setValueRole(event.target.value);
               }}
@@ -68,6 +70,7 @@ const RegisterForm = ({
             <input
               name="age"
               placeholder="AGE"
+              className="login-form-input"
               onChange={(event) => {
                 setValueAge(event.target.value);
               }}
@@ -76,6 +79,7 @@ const RegisterForm = ({
             <input
               name="fitnessroom"
               placeholder="FITNESSROOM"
+              className="login-form-input"
               onChange={(event) => {
                 setValueFitnessRoom(event.target.value);
               }}
@@ -84,6 +88,7 @@ const RegisterForm = ({
             <input
               name="nom"
               placeholder="Nom"
+              className="login-form-input"
               onChange={(event) => {
                 setValueLastname(event.target.value);
               }}
@@ -92,6 +97,7 @@ const RegisterForm = ({
             <input
               name="prénom"
               placeholder="Prénom"
+              className="login-form-input"
               onChange={(event) => {
                 setValueFirstname(event.target.value);
               }}
@@ -100,6 +106,7 @@ const RegisterForm = ({
             <input
               name="email"
               placeholder="Adresse Email"
+              className="login-form-input"
               onChange={(event) => {
                 setValueEmail(event.target.value);
               }}
@@ -108,26 +115,29 @@ const RegisterForm = ({
             <input
               name="password"
               type="password"
+              className="login-form-input"
               placeholder="Mot de passe"
               onChange={(event) => {
                 setValuePassword(event.target.value);
               }}
               value={password}
             />
-            <button
-              type="submit"
-              className="login-form-button"
-              onClick={OnSubmitRegister}
-            >
-              OK
-            </button>
-            <button
-              type="button"
-              className="login-form-button"
-              onClick={CloseRegisterForm}
-            >
-              &#x25C4; RETOUR
-            </button>
+            <div className="button-login-form-container">
+              <button
+                type="submit"
+                className="login-form-button"
+                onClick={OnSubmitRegister}
+              >
+                OK
+              </button>
+              <button
+                type="button"
+                className="login-form-button"
+                onClick={CloseRegisterForm}
+              >
+                &#x25C4; RETOUR
+              </button>
+            </div>
           </form>
         </div>
       )}

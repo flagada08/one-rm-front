@@ -23,7 +23,7 @@ const Main = () => (
         <h2 className="main-section-title">Challenge</h2>
         <img className="challenge-image" src={challengeImage} alt="challengeImage" />
       </div>
-      <div className="main-section">
+      <div className="main-video-section">
         <h2 className="main-section-title">Challenge</h2>
         <iframe
           title="video"

@@ -3,7 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 import './burgerliste.scss';
 
-const BurgerListe = ({ TOKEN, toggleBurgerMenu, buttonConnect, buttonDisconnect }) => (
+const BurgerListe = ({
+  TOKEN,
+  toggleBurgerMenu,
+  buttonConnect,
+  buttonDisconnect,
+}) => (
   <div className="burgerliste">
     <div className="login-link">
       {!TOKEN
@@ -27,8 +32,6 @@ const BurgerListe = ({ TOKEN, toggleBurgerMenu, buttonConnect, buttonDisconnect 
       </NavLink>
       )}
     </div>
-    {!TOKEN
-    && (
     <NavLink
       onClick={toggleBurgerMenu}
       to="/"
@@ -36,7 +39,6 @@ const BurgerListe = ({ TOKEN, toggleBurgerMenu, buttonConnect, buttonDisconnect 
     >
       ACCUEIL
     </NavLink>
-    )}
     <NavLink
       onClick={toggleBurgerMenu}
       to="/exercices"
@@ -52,7 +54,7 @@ const BurgerListe = ({ TOKEN, toggleBurgerMenu, buttonConnect, buttonDisconnect 
     >
       CHALLENGES
     </NavLink>
-
+    {TOKEN && (
     <NavLink
       onClick={toggleBurgerMenu}
       to="/profil"
@@ -60,6 +62,7 @@ const BurgerListe = ({ TOKEN, toggleBurgerMenu, buttonConnect, buttonDisconnect 
     >
       PROFIL
     </NavLink>
+    )}
     {TOKEN && (
     <NavLink
       onClick={toggleBurgerMenu}

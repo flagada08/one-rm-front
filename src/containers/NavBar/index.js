@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { clickOfRecapExercise } from 'src/actions/recapExercise';
 
 // on importe le composant de présentation
 import NavBar from 'src/components/NavBar';
@@ -12,9 +13,11 @@ const mapStateToProps = (state) => ({
 
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher des actions vers le store (mettre à jour le state)
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
-
+  clickOfRecapExercise: () => {
+    dispatch(clickOfRecapExercise());
+  },
 });
 
 // === création de l'assistant

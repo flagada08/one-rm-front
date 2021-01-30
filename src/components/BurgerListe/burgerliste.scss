@@ -4,19 +4,21 @@
   justify-content: space-between;
   animation-name: glissement;
   animation-duration: 1.5s;
-  height: 150px;
   background-color: black;
   color: white;
   position: fixed;
   right: 0;
+  top: 15%;
   padding: 4em;
   width: 100%;
   min-height: 50%;
   font-weight: 1000;
-  z-index: 1;
+  z-index: 999;
   .login-link {
-    background: white;
-    color: black;
+    align-self: center;
+    color: #FFFFFF;
+    background-color: rgb(0, 68, 255);
     padding: 10px;
+    margin: 0 50px 0;
   }
 }

@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-import { fetchUserData, fetchUserDataExercises, fetchUserDataPerformances } from 'src/actions/pageProfil';
+import { fetchUserData } from 'src/actions/pageProfil';
 import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
+import { formInputProfilUserData } from 'src/actions/formInputProfil';
 
 const profilPageMiddelware = (store) => (next) => (action) => {
   // fonction qui permert la récupération des données de l'utilisateur
@@ -11,35 +12,30 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        const {
+          lastname,
+          firstname,
+          email,
+          age,
+        } = data;
+        const { name } = data.fitnessRoom;
         store.dispatch(fetchUserData(response.data));
-        return data;
+        store.dispatch(formInputProfilUserData(lastname, firstname, email, age, name));
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  // fonction qui permert la récupération des données de l'exercice
-  const fetchDataExercises = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/workout';
+
+  // fonction qui permert la récupération des performances en fonction de l'exercice
+  const fetchDataGoals = () => {
+    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/1/recap';
     const TOKEN = localStorage.getItem('token');
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        store.dispatch(fetchUserDataExercises(response.data));
-        return data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  // fonction qui permert la récupération les derniére performances
-  const fetchDataPerformances = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/getLastPerformances';
-    const TOKEN = localStorage.getItem('token');
-    axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
-      .then((response) => {
-        const { data } = response;
-        store.dispatch(fetchUserDataPerformances(response.data));
+        console.log(data);
+
         return data;
       })
       .catch((error) => {
@@ -51,8 +47,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     case LOGGED_IN: {
       console.log('je passe par le login');
       fetchData();
-      fetchDataExercises();
-      fetchDataPerformances();
+      fetchDataGoals();
       next(action);
       break;
     }

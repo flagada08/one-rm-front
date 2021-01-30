@@ -2,9 +2,9 @@ import React from 'react';
 import HeaderProfil from 'src/containers/HeaderProfil';
 import Footer from 'src/components/Footer';
 import MemberListe from 'src/components/MemberListe';
+import ProfilFormPage from 'src/containers/ProfilFormPage';
 
 import './profilpage.scss';
-import ProfilFormPage from '../ProfilFormPage';
 
 const ProfilPage = ({ data }) => (
   <div className="main-section">

@@ -16,12 +16,12 @@ import Page404 from 'src/components/Page404';
 import './styles.scss';
 
 // == Composant
-const OneRM = ({ loggedIn }) => (
+const OneRM = ({ loggedIn, redirect }) => (
   <div className="app">
     <div>
       <Switch>
         <Route exact path="/">
-          {loggedIn && <Redirect to="/profil" />}
+          {redirect && <Redirect to="/profil" />}
           <Header />
           <Main />
           <Footer />

@@ -42,6 +42,7 @@ const LoginForm = ({
             <input
               name="email"
               placeholder="Adresse Email"
+              className="login-form-input"
               onChange={(event) => {
                 setValueEmail(event.target.value);
               }}
@@ -50,26 +51,29 @@ const LoginForm = ({
             <input
               name="password"
               type="password"
+              className="login-form-input"
               placeholder="Mot de passe"
               onChange={(event) => {
                 setValuePassword(event.target.value);
               }}
               value={password}
             />
-            <button
-              type="submit"
-              className="login-form-button"
-              onClick={submitLogIn}
-            >
-              OK
-            </button>
-            <button
-              type="button"
-              className="register-form-button"
-              onClick={OpenRegisterForm}
-            >
-              Créer un compte
-            </button>
+            <div className="button-login-form-container">
+              <button
+                type="submit"
+                className="login-form-button"
+                onClick={submitLogIn}
+              >
+                OK
+              </button>
+              <button
+                type="button"
+                className="register-form-button"
+                onClick={OpenRegisterForm}
+              >
+                Créer un compte
+              </button>
+            </div>
           </form>
         </div>
       )}

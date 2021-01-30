@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { SUBMIT_LOGIN, loggedIn } from 'src/actions/formInputLogin';
+import { SUBMIT_LOGIN, loggedIn, redirect } from 'src/actions/formInputLogin';
 import { closeLoginForm } from 'src/actions/formConnection';
 
 const TOKEN = localStorage.getItem('token');
@@ -23,6 +23,8 @@ const loginMiddleware = (store) => (next) => (action) => {
           // je dispatch l'action qui permet la redirection si le membre et dans la base de données
           localStorage.setItem('token', response.data.token);
           store.dispatch(loggedIn());
+          store.dispatch(redirect());
+          store.dispatch(redirect());
           // je dispatch l'action qui permet de fermer le formulaire
           store.dispatch(closeLoginForm());
         }).catch((error) => {

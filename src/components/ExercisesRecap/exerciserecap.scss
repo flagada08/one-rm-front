@@ -20,10 +20,21 @@
     padding: 1em;
     font-size: x-small;
     border: solid 1px black;
+
+    .exercice-pregression{
+      width: 40%;
+    }
+
+    .exercice-objectif{
+      width: 24%;
+    }
+    .exercice-objectif{
+      padding: 0.2em;
+      text-align: start;
+    }
   }
-  .exercice-pregression{
-    width: 40%;
-  }
+
+  
 }
 @media (min-width: vars.$breakpoint-tablet) {
   .exercices-container{

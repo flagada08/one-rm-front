@@ -16,7 +16,7 @@ defaults.global.animation.onComplete = () => {
 // pour regler la animation du hover
 defaults.global.hover.animationDuration = 600;
 
-const Chart = () => (
+const Chart = ({ ExerciceName }) => (
   <div className="chart-container">
     <div className="chart">
       <Line
@@ -24,18 +24,10 @@ const Chart = () => (
           labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
           datasets: [
             {
-              label: 'Exercice',
+              label: ExerciceName,
               // enleve le background de la ligne du graphique
               fill: false,
               data: [12, 19, 3, 5, 10, 3],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-              ],
               borderColor: [
                 'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
@@ -43,6 +35,15 @@ const Chart = () => (
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)',
+              ],
+            },
+            {
+              label: 'repetition',
+              // enleve le background de la ligne du graphique
+              fill: false,
+              data: [15, 28, 33, 1, 10, 58],
+              borderColor: [
+                'rgba(0, 181, 204, 1)',
               ],
             },
           ],

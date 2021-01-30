@@ -4,12 +4,14 @@ import {
   SUBMIT_LOGIN,
   LOGGED_IN,
   LOGGED_OUT,
+  REDIRECT,
 } from 'src/actions/formInputLogin';
 
 const initialState = {
   email: '',
   password: '',
-  loggedIn: false, //! remettre a false
+  loggedIn: false, // ! remettre a false
+  redirect: false,
   TOKEN: localStorage.getItem('token') != null,
 };
 
@@ -32,6 +34,11 @@ function LoginFormReducer(state = initialState, action = {}) {
         ...state,
         email: '',
         password: '',
+      };
+    case REDIRECT:
+      return {
+        ...state,
+        redirect: !state.redirect,
       };
     case LOGGED_IN:
       return {

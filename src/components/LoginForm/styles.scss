@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .form-container{
   position: absolute;
   display: flex;
@@ -5,29 +7,88 @@
   animation-duration: 2s;
   animation-name: glissement;
   left: 0px;
-  top: 167px;
-  height: 175px;
+  top: 126px;
+  height: 50%;
   background-color: black;
   width: 100%;
   z-index: 999;
-  
+  .button-login-form-container{
+    margin: 5px;
+    .login-form-button {
+      display: inline-block;
+      text-align: center;
+      font-size: 1em;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 2px 5px;
+      border: solid 1px transparent;
+      padding: 0.5em;
+      color: #FFFFFF;
+      background-color: rgb(0, 68, 255);
+      transition: 0.5s;
+        &:hover,
+        &:focus {
+          color: rgb(0, 68, 255);
+          background-color: white;
+        }
+    }
+    .register-form-button {
+      display: inline-block;
+      text-align: center;
+      font-size: 1em;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 2px 5px;
+      border: solid 1px transparent;
+      padding: 0.5em;
+      color: #FFFFFF;
+      background-color: rgb(0, 68, 255);
+      transition: 0.5s;
+        &:hover,
+        &:focus {
+          color: rgb(0, 68, 255);
+          background-color: white;
+        }
+    }
+}
   .login-form-element{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 1em;
+    width: 50%;
+
+    .login-form-input{
+      width: 100%;
+      margin: 5px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 1.5em;
+    }
+    .button-login-form-container{
+      width: 100%;
+    }
 }
 
-@keyframes glissement {
-  from {
-    margin-left: 100%;
-    width: 100%;
+  @keyframes glissement {
+    from {
+      margin-left: 100%;
+      width: 100%;
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
   }
-
-  to {
-    margin-left: 0%;
+  
+  @media (max-width: vars.$breakpoint-tablet) {
+    .login-form-element{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 1em;
     width: 100%;
+    }
   }
 }
-}
-

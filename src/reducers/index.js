@@ -9,6 +9,7 @@ import HeaderReducer from './HeaderReducer';
 import BurgerMenuReducer from './BurgerMenuReducer';
 import PageProfilReducer from './PageProfilReducer';
 import DetailExerciseReducer from './DetailExerciseReducer';
+import ProfilFormReducer from './ProfilFormReducer';
 
 const persistConfig = {
   key: 'root',
@@ -20,6 +21,7 @@ const persistConfig = {
     'burgerMenu',
     'profilPage',
     'detailExercise',
+    'profilForm',
   ],
 };
 
@@ -33,6 +35,7 @@ const rootReducer = combineReducers({
   burgerMenu: BurgerMenuReducer,
   profilPage: PageProfilReducer,
   detailExercise: DetailExerciseReducer,
+  profilForm: ProfilFormReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
