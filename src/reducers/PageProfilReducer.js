@@ -3,7 +3,6 @@ import { LOGGED_OUT } from 'src/actions/formInputLogin';
 
 const initialState = {
   data: '',
-  dataExercises: '',
   dataPerformances: '',
 };
 

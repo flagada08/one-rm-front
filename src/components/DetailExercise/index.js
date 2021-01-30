@@ -2,7 +2,6 @@ import React from 'react';
 import Chart from 'src/components/Chart';
 import imageExercise from '/public/img/deadlift.jpeg';
 import BeautyStars from 'beauty-stars';
-import { Star } from 'react-feather';
 
 import './detailexercise.scss';
 
@@ -13,9 +12,10 @@ const DetailExercise = ({
   addPerf,
   setNewWeight,
   newPerfWeight,
+  dataPerformances,
 }) => (
   <div className="DetailExercise-container">
-    {console.log(dataOneExercise)}
+    {console.log(dataPerformances)}
     <Chart ExerciceName={dataOneExercise.name} />
     { dataOneExercise
       && (
@@ -45,7 +45,18 @@ const DetailExercise = ({
         </div>
         <div className="performance-form-container">
           <h2 className="performance-title">Entrer votre nouvelle performance</h2>
-          <span className="performance-span">Votre objectif: XX KG</span>
+          {dataPerformances.map((goal) => (
+            Number(goal.ID_exercise) === dataOneExercise.id
+              ? (
+                <div key={goal.ID_exercise}>
+                  <span className="performance-span">Votre objectif répétiton: {goal.goal_repetition} KG</span>
+                  <span className="performance-span">Votre objectif poids: {goal.goal_weight} KG</span>
+                </div>
+              )
+              : ''
+
+          ))}
+
           <form className="performance-formulaire">
             <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="nouvelle perf pour la repetition" />
             <button type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>

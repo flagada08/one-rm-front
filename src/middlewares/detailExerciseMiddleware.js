@@ -4,7 +4,11 @@ import axios from 'axios';
 import { fetchUserDetailExercise, CLICK_OF_ONE_EXERCISE, POST_NEW_PERF } from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
-  // fonction qui permert la récupération d'un exercice via son id
+  /**
+   * get custom request api for one exercise
+   * @param {number} id
+   * @return {void}
+   */
   const fetchDataOneWorkout = (id) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}`;
     const TOKEN = localStorage.getItem('token');
@@ -19,7 +23,31 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       });
   };
 
-  // Envoie une nouvelle performance
+  /**
+   * get custom request api for all goal
+   * @param {number} id
+   * @return {void}
+   */
+  const fetchDataAllGoals = (id) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/recap`;
+    const TOKEN = localStorage.getItem('token');
+    axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+        store.dispatch(fetchAllGoals(response.data));
+        return data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  /**
+   * post custom request api for new perf
+   * @param {number} id
+   * @return {void}
+   */
   const newPerformance = (id) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/newPerf`;
     const TOKEN = localStorage.getItem('token');
@@ -49,6 +77,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     case CLICK_OF_ONE_EXERCISE: {
       console.log(action.exerciseId);
       fetchDataOneWorkout(action.exerciseId);
+      //fetchDataAllGoals(action.exerciseId); //! a tester quand on click sur un exercice pour recuperer tous les goals
       next(action);
       break;
     }

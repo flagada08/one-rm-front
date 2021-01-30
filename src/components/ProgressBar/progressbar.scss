@@ -2,18 +2,20 @@
   height: 100%;
   width: 100%;
   background-color: #e0e0de;
+  margin: 4px;
   border-radius: 20px;
   .progressbar{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    height: 1.5em;
-    background-color: red;
+    height: 100%;
+    background: #000046;  
+    background: -webkit-linear-gradient(to left, #1CB5E0, #000046);  
+    background: linear-gradient(to left, #1CB5E0, #000046); 
     border-radius: inherit;
     text-align: right;
     .span-progressbar{
       padding: 5px;
       color: white;
+      text-align: center;
       font-weight: 'bold';
     }
   }
