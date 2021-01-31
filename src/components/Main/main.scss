@@ -12,6 +12,7 @@
    display: flex;
    justify-content: center;
     .main-title{
+      text-transform: uppercase;
       color: white;
       position: absolute;
       align-self: center;
@@ -27,10 +28,13 @@
 
 
   .main-section-container{
+    display: flex;
+    flex-direction: wrap;
     top: 20%;
     margin: 0.5em;
     width: 100%;
-    .main-section{
+    .main-section-top {
+      width: 50%;
       border-radius: 5px;
       margin: 25px;
       font-size: 1.2em;
@@ -39,31 +43,54 @@
       background: vars.$optional-color;
       
       .main-section-title{
+        text-transform: uppercase;
         font-weight: bold;
         font-size: x-large;
         margin: 15px;
       }
-      .challenge-image{
-        width: 50%;
+    }
+    .main-mid-video {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .main-section-mid {
+        width: 100%;
+        border-radius: 5px;
+        margin: 25px;
+        font-size: 1.2em;
+        padding: 5px;
+        word-break: break-all;
+        
+        .main-section-title{
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: x-large;
+          margin: 15px;
+        }
+        .challenge-image{
+          width: 80%;
+        }
+      }
+      .main-video-section{
+        width: 80%;
+        height: 350px;
+        .main-section-title{
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: x-large;
+          margin: 15px;
+        }
+        margin: 25px;
+        font-size: 1.2em;
+        word-break: break-all;
+        iframe {
+          width: 100%;
+          height: 80%;
+        }
       }
     }
-    .main-video-section{
-      .main-section-title{
-        font-weight: bold;
-        margin: 15px;
-      }
-      border-radius: 5px;
-      margin: 25px;
-      font-size: 1.2em;
-      padding: 5px;
-      word-break: break-all;
-      background: vars.$optional-color;
-      iframe {
-        width: 50%;
-      }
-    }
-  }
-  
+  }  
 }
 
 
@@ -82,7 +109,7 @@ RESPONSIVE CONDITIONS
       width: 100%;
       position: relative;
       display: flex;
-      justify-content: center;
+      
      .main-title{
         color: white;
         position: absolute;
@@ -98,10 +125,19 @@ RESPONSIVE CONDITIONS
     }
   
     .main-section-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       background: white;
       top: 20%;
       margin: 0 20px 0 20px;
       width: 100%;
+      .main-section-top {
+        width: 80%;
+      }
+      .main-mid-video {
+        width: 100%;
+      }
     }
   }
 }
@@ -112,7 +148,7 @@ RESPONSIVE CONDITIONS
       width: 100%;
       position: relative;
       display: flex;
-      justify-content: center;
+      
      .main-title{
         color: white;
         position: absolute;
@@ -128,10 +164,19 @@ RESPONSIVE CONDITIONS
     }
   
     .main-section-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       background: white;
       top: 20%;
       margin: 0em;
       width: 100%;
+      .main-section-top {
+        width: 80%;
+      }
+      .main-mid-video {
+        width: 100%;
+      }
     }
   }
 }

@@ -4,8 +4,6 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  animation-duration: 2s;
-  animation-name: glissement;
   left: 0px;
   top: 126px;
   height: 50%;
@@ -69,18 +67,6 @@
       width: 100%;
     }
 }
-
-  @keyframes glissement {
-    from {
-      margin-left: 100%;
-      width: 100%;
-    }
-
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
   
   @media (max-width: vars.$breakpoint-tablet) {
     .login-form-element{
