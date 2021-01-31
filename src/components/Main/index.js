@@ -10,8 +10,8 @@ const Main = () => (
       <img className="main-image" src={image} alt="slider" />
     </div>
     <section className="main-section-container">
-      <div className="main-section">
-        <h2 className="main-section-title">Challenge</h2>
+      <div className="main-section-top">
+        <h2 className="main-section-title">Bref récap du site O'ne RM</h2>
         <p>
           Lorem Elsass ipsum hoplageiss ftomi! schneck gewurztraminer chambon
           purus yeuh. Wurschtsalad quam, sagittis sit turpis réchime vulputate
@@ -19,19 +19,21 @@ const Main = () => (
           los non barapli Verdammi lacus Coopé de Truchtersheim Christkindelsmärik
         </p>
       </div>
-      <div className="main-section">
-        <h2 className="main-section-title">Challenge</h2>
-        <img className="challenge-image" src={challengeImage} alt="challengeImage" />
-      </div>
-      <div className="main-video-section">
-        <h2 className="main-section-title">Challenge</h2>
-        <iframe
-          title="video"
-          src="https://www.youtube.com/embed/7PgQXWrPC6E"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+      <div className="main-mid-video">
+        <div className="main-section-mid">
+          <h2 className="main-section-title">Challenge ton coach !</h2>
+          <img className="challenge-image" src={challengeImage} alt="challengeImage" />
+        </div>
+        <div className="main-video-section">
+          <h2 className="main-section-title">MEDIA</h2>
+          <iframe
+            title="video"
+            src="https://www.youtube.com/embed/7PgQXWrPC6E"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       </div>
     </section>
   </main>
