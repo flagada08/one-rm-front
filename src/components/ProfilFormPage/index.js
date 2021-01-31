@@ -68,7 +68,7 @@ const ProfilFormPage = ({
         />
       </>
       )}
-      <button type="submit" >ENVOYER</button>
+    <button className="send-button" type="submit">ENVOYER</button>
   </div>
 );
 

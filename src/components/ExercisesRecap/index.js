@@ -23,7 +23,9 @@ const ExerciseRecap = ({ dataPerformances }) => (
           id={exercise.ID_exercise}
           name={exercise.name}
           weight={exercise.progress_weight === null ? 0 : Number(exercise.progress_weight)}
-          repetition={exercise.progress_repetition === null ? 0 : Number(exercise.progress_repetition)}
+          repetition={exercise.progress_repetition === null
+            ? 0
+            : Number(exercise.progress_repetition)}
           goalWeight={exercise.goal_weight === null ? 1 : Number(exercise.goal_weight)}
           goalRepetition={exercise.goal_repetition === null ? 1 : Number(exercise.goal_repetition)}
         />

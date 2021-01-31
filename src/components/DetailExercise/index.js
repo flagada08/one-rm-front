@@ -27,7 +27,7 @@ const DetailExercise = ({
             <img className="image-exercise" src={imageExercise} alt="logo" />
           </div>
           <div className="mouvement-difficulty">
-            <span className="difficulte-title">difficulté:</span>
+            <span className="difficulte-title">Difficulté:</span>
             <span className="star-container">
               <BeautyStars
                 size="10px"
@@ -48,8 +48,8 @@ const DetailExercise = ({
           {dataPerformances.map((goal) => (
             Number(goal.ID_exercise) === dataOneExercise.id
               ? (
-                <div key={goal.ID_exercise}>
-                  <span className="performance-span">Votre objectif répétiton: {goal.goal_repetition} KG</span>
+                <div className="performance-goals" key={goal.ID_exercise}>
+                  <span className="performance-span">Votre objectif répétitons: {goal.goal_repetition} REP</span>
                   <span className="performance-span">Votre objectif poids: {goal.goal_weight} KG</span>
                 </div>
               )
@@ -59,9 +59,9 @@ const DetailExercise = ({
 
           <form className="performance-formulaire">
             <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="nouvelle perf pour la repetition" />
-            <button type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
+            <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
             <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="nouvelle perf pour le poid" />
-            <button type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
+            <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
           </form>
         </div>
       </>

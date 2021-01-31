@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .Main {
+  background: vars.$primary-color;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -26,31 +27,37 @@
 
 
   .main-section-container{
-    background: white;
     top: 20%;
-    margin: 0 20px 0 20px;
-    width: 75%;
+    margin: 0.5em;
+    width: 100%;
     .main-section{
+      border-radius: 5px;
       margin: 25px;
       font-size: 1.2em;
       padding: 5px;
       word-break: break-all;
-      background: #f1f1f1;
+      background: vars.$optional-color;
       
       .main-section-title{
         font-weight: bold;
-        
+        font-size: x-large;
+        margin: 15px;
       }
       .challenge-image{
         width: 50%;
       }
     }
     .main-video-section{
+      .main-section-title{
+        font-weight: bold;
+        margin: 15px;
+      }
+      border-radius: 5px;
       margin: 25px;
       font-size: 1.2em;
       padding: 5px;
       word-break: break-all;
-      background: #f1f1f1;
+      background: vars.$optional-color;
       iframe {
         width: 50%;
       }
@@ -123,7 +130,7 @@ RESPONSIVE CONDITIONS
     .main-section-container{
       background: white;
       top: 20%;
-      margin: 0 20px 0 20px;
+      margin: 0em;
       width: 100%;
     }
   }
