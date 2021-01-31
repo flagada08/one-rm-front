@@ -1,7 +1,11 @@
-
 import axios from 'axios';
 
-import { fetchUserDetailExercise, CLICK_OF_ONE_EXERCISE, POST_NEW_PERF } from 'src/actions/detailExercise';
+import {
+  fetchUserDetailExercise,
+  CLICK_OF_ONE_EXERCISE,
+  POST_NEW_PERF,
+  fetchAllGoals,
+} from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
   /**
