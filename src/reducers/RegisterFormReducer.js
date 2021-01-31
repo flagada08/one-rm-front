@@ -8,6 +8,7 @@ import {
   FORM_INPUT_REGISTER_ROLE,
   FORM_INPUT_REGISTER_FITNESSROOM,
   SUBMIT_REGISTER,
+  FORM_INPUT_REGISTER_BOX_PASSWORD,
 } from 'src/actions/formRegister';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
   role: '',
   password: '',
   fitnessRoom: '',
+  boxPassword: '',
 
 };
 
@@ -66,6 +68,11 @@ function RegisterFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         age: action.newValue,
+      };
+    case FORM_INPUT_REGISTER_BOX_PASSWORD:
+      return {
+        ...state,
+        boxPassword: action.newValue,
       };
 
     case SUBMIT_REGISTER:

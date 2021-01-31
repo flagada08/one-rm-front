@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from 'src/components/Chart';
-import imageExercise from '/public/img/exercices/deadlift.jpeg';
+//import imageExercise from '/public/img/exercices/deadlift.jpeg';
 import BeautyStars from 'beauty-stars';
 
 import './detailexercise.scss';
@@ -24,7 +24,7 @@ const DetailExercise = ({
         <div className="mouvement-container">
           <h2 className="mouvement-title">{dataOneExercise.name}</h2>
           <div className="mouvement-image">
-            <img className="image-exercise" src={imageExercise} alt="logo" />
+            <img className="image-exercise" src={require(`/public/img/exercices/${dataOneExercise.illustration}`).default} alt="logo" />
           </div>
           <div className="mouvement-difficulty">
             <span className="difficulte-title">Difficulté:</span>

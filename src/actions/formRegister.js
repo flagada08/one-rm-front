@@ -9,6 +9,7 @@ export const FORM_INPUT_REGISTER_AGE = 'FORM_INPUT_REGISTER_AGE';
 export const FORM_INPUT_REGISTER_ROLE = 'FORM_INPUT_REGISTER_ROLE';
 export const FORM_INPUT_REGISTER_FITNESSROOM = 'FORM_INPUT_REGISTER_FITNESSROOM';
 export const SUBMIT_REGISTER = 'SUBMIT_REGISTER';
+export const FORM_INPUT_REGISTER_BOX_PASSWORD = 'FORM_INPUT_REGISTER_BOX_PASSWORD';
 
 export const formRegister = () => ({
   type: FORM_REGISTER,
@@ -60,4 +61,10 @@ export const closeFormRegister = () => ({
 
 export const submitRegister = () => ({
   type: SUBMIT_REGISTER,
+});
+
+
+export const formRegisterInputBoxPassword = (newValue) => ({
+  type: FORM_INPUT_REGISTER_BOX_PASSWORD,
+  newValue,
 });

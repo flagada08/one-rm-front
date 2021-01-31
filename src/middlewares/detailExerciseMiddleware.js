@@ -81,7 +81,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     case CLICK_OF_ONE_EXERCISE: {
       console.log(action.exerciseId);
       fetchDataOneWorkout(action.exerciseId);
-      //fetchDataAllGoals(action.exerciseId); //! a tester quand on click sur un exercice pour recuperer tous les goals
+      fetchDataAllGoals(action.exerciseId); //! a tester quand on click sur un exercice pour recuperer tous les goals
       next(action);
       break;
     }

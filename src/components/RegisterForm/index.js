@@ -19,6 +19,8 @@ const RegisterForm = ({
   setValueFirstname,
   setValueEmail,
   setValuePassword,
+  setValueBoxPassword,
+  boxPassword,
   CloseRegisterForm,
   // handleLogin,
   // handleLogout,
@@ -84,6 +86,16 @@ const RegisterForm = ({
                 setValueFitnessRoom(event.target.value);
               }}
               value={fitnessRoom}
+            />
+            <input
+              name="password"
+              type="password"
+              className="login-form-input"
+              placeholder="Mot de passe de votre salle"
+              onChange={(event) => {
+                setValueBoxPassword(event.target.value);
+              }}
+              value={boxPassword}
             />
             <input
               name="nom"
@@ -156,6 +168,8 @@ RegisterForm.propTypes = {
 
   fitnessRoom: PropTypes.string.isRequired,
 
+  boxPassword: PropTypes.string.isRequired,
+
   password: PropTypes.string.isRequired,
 
   lastname: PropTypes.string.isRequired,
@@ -165,6 +179,8 @@ RegisterForm.propTypes = {
   setValueLastname: PropTypes.func.isRequired,
 
   setValueRole: PropTypes.func.isRequired,
+
+  setValueBoxPassword: PropTypes.func.isRequired,
 
   setValueAge: PropTypes.func.isRequired,
 

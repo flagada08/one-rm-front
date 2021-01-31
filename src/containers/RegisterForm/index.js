@@ -10,6 +10,7 @@ import {
   formRegisterInputRole,
   formRegisterInputFitnessRoom,
   submitRegister,
+  formRegisterInputBoxPassword,
 } from 'src/actions/formRegister';
 
 // on importe le composant de présentation
@@ -28,6 +29,7 @@ const mapStateToProps = (state) => ({
   age: state.registerForm.age,
   role: state.registerForm.role,
   fitnessRoom: state.registerForm.fitnessRoom,
+  boxPassword: state.registerForm.boxPassword,
 });
 
 // === mapDispatchToProps
@@ -65,6 +67,11 @@ const mapDispatchToProps = (dispatch) => ({
   OnSubmitRegister: () => {
     dispatch(submitRegister());
   },
+
+  setValueBoxPassword: (newValue) => {
+    dispatch(formRegisterInputBoxPassword(newValue));
+  },
+
 });
 
 // === création de l'assistant
