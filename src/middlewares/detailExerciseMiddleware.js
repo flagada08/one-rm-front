@@ -28,7 +28,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   };
 
   /**
-   * get custom request api for all goal
+   * get custom request api for all perf
    * @param {number} id
    * @return {void}
    */

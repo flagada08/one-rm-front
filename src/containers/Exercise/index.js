@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clickOfOneExercise, fetchAllGoals } from 'src/actions/detailExercise';
+import { clickOfOneExercise } from 'src/actions/detailExercise';
 // on importe le composant de présentation
 import Exercise from 'src/components/Exercices';
 
@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   clickOfExercise: (exerciseId) => {
     dispatch(clickOfOneExercise(exerciseId));
-    dispatch(fetchAllGoals(exerciseId));
   },
 });
 

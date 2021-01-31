@@ -15,7 +15,6 @@ const DetailExercise = ({
   dataPerformances,
 }) => (
   <div className="DetailExercise-container">
-    {console.log(dataPerformances)}
     <Chart ExerciceName={dataOneExercise.name} />
     { dataOneExercise
       && (

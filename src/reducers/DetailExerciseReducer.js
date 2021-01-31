@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   detailExercise: '',
-  AllGoals: '',
+  AllGoals: {},
   newPerf: '',
   newPerfWeight: '',
 };
