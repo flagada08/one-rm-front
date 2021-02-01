@@ -57,9 +57,8 @@ const DetailExercise = ({
           ))}
 
           <form className="performance-formulaire">
-            <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="nouvelle perf pour la repetition" />
-            <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
-            <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="nouvelle perf pour le poid" />
+            <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="Répétitions" />
+            <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="Charges" />
             <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
           </form>
         </div>
