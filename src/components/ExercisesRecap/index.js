@@ -21,6 +21,7 @@ const ExerciseRecap = ({ dataPerformances }) => (
           key={exercise.ID_exercise}
           id={exercise.ID_exercise}
           name={exercise.name}
+          userId={exercise.user_id}
           weight={exercise.progress_weight === null ? 0 : Number(exercise.progress_weight)}
           repetition={exercise.progress_repetition === null
             ? 0

@@ -38,7 +38,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        store.dispatch(fetchAllGoals(response.data));
+        //store.dispatch(fetchAllGoals(response.data));
         return data;
       })
       .catch((error) => {
@@ -75,9 +75,29 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       });
   };
 
+  /**
+   *TODO requete test pour recuperer les datas pour un utilisateur pour le coach
+   * @param {number} id
+   *
+   */
+  const postUserId = (id, userId) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/workout/${id}/recap`;
+    const TOKEN = localStorage.getItem('token');
+    axios.post(API_URL, { user_id: userId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        const { data } = response;
+        store.dispatch(fetchAllGoals(data));
+        return data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   switch (action.type) {
     case CLICK_OF_ONE_EXERCISE: {
-      console.log(action.exerciseId);
+      console.log(action.userId);
+      postUserId(action.exerciseId, action.userId);
       fetchDataOneWorkout(action.exerciseId);
       fetchDataAllGoals(action.exerciseId);
       next(action);

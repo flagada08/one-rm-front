@@ -10,9 +10,10 @@ export const fetchUserDetailExercise = (detailExercise) => ({
   detailExercise,
 });
 
-export const clickOfOneExercise = (exerciseId) => ({
+export const clickOfOneExercise = (exerciseId, userId) => ({
   type: CLICK_OF_ONE_EXERCISE,
   exerciseId,
+  userId,
 });
 
 export const addNewPerf = (newPerf) => ({
