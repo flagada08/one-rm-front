@@ -7,13 +7,15 @@
   right: -10px;
   top: 165%;
   width: 100vw;
+  height: 100vw;
   font-weight: 1000;
   z-index: 999;
+  justify-content: center;
   .login-link {
     align-self: center;
     color: #FFFFFF;
     background-color: rgb(0, 68, 255);
-    border-radius: 5px;
+    border-radius: 3px;
   }
   .navbar-link {
     display: inline-block;

@@ -37,45 +37,48 @@ const LoginForm = ({
         </div>
       )}
       {!isLogged && (
-        <div className="form-container">
-          <form autoComplete="off" className="login-form-element" method="post" onSubmit={handleSubmit}>
-            <input
-              name="email"
-              placeholder="Adresse Email"
-              className="login-form-input"
-              onChange={(event) => {
-                setValueEmail(event.target.value);
-              }}
-              value={email}
-            />
-            <input
-              name="password"
-              type="password"
-              className="login-form-input"
-              placeholder="Mot de passe"
-              onChange={(event) => {
-                setValuePassword(event.target.value);
-              }}
-              value={password}
-            />
-            <div className="button-login-form-container">
-              <button
-                type="submit"
-                className="login-form-button"
-                onClick={submitLogIn}
-              >
-                OK
-              </button>
-              <button
-                type="button"
-                className="register-form-button"
-                onClick={OpenRegisterForm}
-              >
-                Créer un compte
-              </button>
-            </div>
-          </form>
-        </div>
+      <div className="form-container">
+        <form autoComplete="off" className="login-form-element" method="post" onSubmit={handleSubmit}>
+          <h2 className="login-title">
+            Créez un compte, Connectez vous et rejoignez la communauté O'ne RM dès maintenant !
+          </h2>
+          <input
+            name="email"
+            placeholder="Adresse Email"
+            className="login-form-input"
+            onChange={(event) => {
+              setValueEmail(event.target.value);
+            }}
+            value={email}
+          />
+          <input
+            name="password"
+            type="password"
+            className="login-form-input"
+            placeholder="Mot de passe"
+            onChange={(event) => {
+              setValuePassword(event.target.value);
+            }}
+            value={password}
+          />
+          <div className="button-login-form-container">
+            <button
+              type="submit"
+              className="login-form-button"
+              onClick={submitLogIn}
+            >
+              OK
+            </button>
+            <button
+              type="button"
+              className="register-form-button"
+              onClick={OpenRegisterForm}
+            >
+              Créer un compte
+            </button>
+          </div>
+        </form>
+      </div>
       )}
     </div>
   );
