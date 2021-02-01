@@ -38,7 +38,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data);
         store.dispatch(fetchAllGoals(response.data));
         return data;
       })
@@ -64,12 +63,11 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
         date: 'now',
         repetition: newPerfRepetition,
         weight: newPerfParse,
-        user: 1,
+        user: store.getState().profilPage.data.id,
       },
       { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data);
         return data;
       })
       .catch((error) => {

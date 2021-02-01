@@ -80,8 +80,10 @@ flex-wrap: wrap;
     }
     .performance-formulaire{
       width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       .send-button{
-        height: 50%;
         display: inline-block;
         text-align: center;
         font-size: 1em;
@@ -105,8 +107,8 @@ flex-wrap: wrap;
         border-radius: 3px;
         border: solid 1px black;
         margin: 5px;
-        width: 50%;
-        height: 50%;
+        width: 66%;
+        height: 30%;
         text-align: center;
           &:hover,
           &:focus {

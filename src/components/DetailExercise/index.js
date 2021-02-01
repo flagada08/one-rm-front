@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from 'src/containers/Chart';
-//import imageExercise from '/public/img/exercices/deadlift.jpeg';
+// import imageExercise from '/public/img/exercices/deadlift.jpeg';
 import BeautyStars from 'beauty-stars';
 
 import './detailexercise.scss';
@@ -57,9 +57,8 @@ const DetailExercise = ({
           ))}
 
           <form className="performance-formulaire">
-            <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="nouvelle perf pour la repetition" />
-            <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
-            <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="nouvelle perf pour le poid" />
+            <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="nouvelle perf pour le poid" required />
+            <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="nouvelle perf pour la repetition" required />
             <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
           </form>
         </div>
