@@ -3,6 +3,7 @@ import { openBugerMenu } from 'src/actions/burgerMenu';
 import { formConnection } from 'src/actions/formConnection';
 import { loggedOut } from 'src/actions/formInputLogin';
 import { clickOfRecapExercise } from 'src/actions/recapExercise';
+import { allMembers } from 'src/actions/pageProfil';
 
 // on importe le composant de présentation
 import BurgerListe from 'src/components/BurgerListe';
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
   toggleBurgerMenu: () => {
     dispatch(openBugerMenu());
     dispatch(clickOfRecapExercise());
+    dispatch(allMembers());
   },
 
   buttonConnect: () => {

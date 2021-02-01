@@ -1,14 +1,23 @@
 import React from 'react';
 import { Trash2, User } from 'react-feather';
+import { Link } from 'react-router-dom';
 
 import './memberliste.scss';
 
-const MemberListe = () => (
+const MemberListe = ({ id, lastname, firstname, clickOfMember }) => (
   <div className="member-liste-container">
     <div className="member-container">
-      <User className="member-user-icon" />
-      <span className="member-firstname">PRENOM:XXXX</span>
-      <span className="member-lastname">NOM:XXXX</span>
+      {console.log(id)
+      }
+      <Link
+        onClick={(e) => clickOfMember(e.target.dataset.id)}
+        className="member-link"
+        to="/recapexercices"
+      >
+        <User className="member-user-icon" data-id={id} />
+      </Link>
+      <span className="member-firstname">PRENOM:{firstname}</span>
+      <span className="member-lastname">NOM:{lastname}</span>
       <Trash2 className="member-trash-icon" />
     </div>
   </div>

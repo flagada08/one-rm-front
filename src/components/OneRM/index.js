@@ -11,6 +11,7 @@ import ExercisePage from 'src/components/ExercisePage';
 import ProfilPage from 'src/containers/PageProfil';
 import ExerciseRecap from 'src/containers/ExercisesRecap';
 import DetailExercise from 'src/containers/DetailExercise';
+import MemberListe from 'src/components/MemberListe';
 import Page404 from 'src/components/Page404';
 
 import './styles.scss';
@@ -44,6 +45,11 @@ const OneRM = ({ loggedIn, redirect }) => (
           <Route exact path="/detailexercice">
             <Header />
             <DetailExercise />
+            <Footer />
+          </Route>
+          <Route exact path="/listemembres">
+            <Header />
+            <MemberListe />
             <Footer />
           </Route>
         </>

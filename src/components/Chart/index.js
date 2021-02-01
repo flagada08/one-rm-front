@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Line, defaults } from 'react-chartjs-2';
 
 // == Import

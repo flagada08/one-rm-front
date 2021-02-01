@@ -1,21 +1,22 @@
 import { connect } from 'react-redux';
-
+import { clickOfMember } from 'src/actions/pageProfil';
 // on importe le composant de présentation
-import ProfilPage from 'src/components/ProfilPage';
+import MemberListe from 'src/components/MemberListe';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
-const mapStateToProps = (state) => ({
+const mapStateToProps = () => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  data: state.profilPage.data,
-  allUsersData: state.profilPage.allUsersData,
 });
 
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher des actions vers le store (mettre à jour le state)
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
+  clickOfMember: (id) => {
+    dispatch(clickOfMember(id));
+  },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MemberListe);
