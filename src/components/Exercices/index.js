@@ -14,11 +14,11 @@ const Exercise = ({
 }) => {
   const progressWeight = Math.floor((weight / goalWeight) * 100);
 
-  const test1 = progressWeight > 100 ? 100 : progressWeight;
+  const progressWeightCalculed = progressWeight > 100 ? 100 : progressWeight;
 
   const progressRepetition = Math.floor((repetition / goalRepetition) * 100);
 
-  const test2 = progressRepetition > 100 ? 100 : progressRepetition;
+  const progressRepetitionCalculed = progressRepetition > 100 ? 100 : progressRepetition;
 
   return (
     <div className="exercice-card">
@@ -33,8 +33,8 @@ const Exercise = ({
         {weight} KG / {repetition} REP
       </div>
       <div className="exercice-pregression">
-        <ProgressBar progress={test1} />
-        <ProgressBar progress={test2} />
+        <ProgressBar progress={progressWeightCalculed} />
+        <ProgressBar progress={progressRepetitionCalculed} />
       </div>
     </div>
   );

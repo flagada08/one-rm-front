@@ -5,6 +5,8 @@ import {
   SET_NEW_MESSAGE,
   FETCH_USER_MESSAGE,
   ADD_MESSAGE,
+  NEW_OBJECTIF_REPETITION,
+  NEW_OBJECTIF_WEIGHT,
 } from 'src/actions/detailExercise';
 
 const initialState = {
@@ -12,6 +14,8 @@ const initialState = {
   AllGoals: {},
   newPerf: '',
   newPerfWeight: '',
+  newObecjtifRepetition: '',
+  newObecjtifWeight: '',
   setMessage: '',
   allMessages: [],
 };
@@ -32,6 +36,16 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       return {
         ...state,
         newPerfWeight: action.newPerfWeight,
+      };
+    case NEW_OBJECTIF_REPETITION:
+      return {
+        ...state,
+        newObecjtifRepetition: action.newObecjtifRepetition,
+      };
+    case NEW_OBJECTIF_WEIGHT:
+      return {
+        ...state,
+        newObecjtifWeight: action.newObecjtifWeight,
       };
     case FETCH_USER_ALL_GOALS:
       return {

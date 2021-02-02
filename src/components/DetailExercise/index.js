@@ -19,6 +19,10 @@ const DetailExercise = ({
   allMessages,
   messageInput,
   dataUser,
+  setNewObjectifRepetition,
+  setNewObjectifWeight,
+  newObecjtifRepetition,
+  newObecjtifWeight,
 }) => {
   const inputCoach = useRef(null);
 
@@ -62,21 +66,14 @@ const DetailExercise = ({
             <p className="conseil-paragraph">{dataOneExercise.advice}</p>
           </div>
           <div className="performance-form-container">
-            <h2 className="performance-title">Entrer votre nouvelle performance</h2>
-            {dataPerformances.map((goal) => (
-              Number(goal.ID_exercise) === dataOneExercise.id
-                ? (
-                  <div className="performance-goals" key={goal.ID_exercise}>
-                    <span className="performance-span">Votre objectif répétitons: {goal.goal_repetition} REP</span>
-                    <span className="performance-span">Votre objectif poids: {goal.goal_weight} KG</span>
-                  </div>
-                )
-                : ''
-
-            ))}
-
             <form className="performance-formulaire">
-
+              <span>entrer vos nouvelles objectif</span>
+              <input onChange={(event) => setNewObjectifRepetition(event.target.value)} className="performance-input" value={newObecjtifRepetition} placeholder="Objectif Repetition" />
+              <input onChange={(event) => setNewObjectifWeight(event.target.value)} className="performance-input" value={newObecjtifWeight} placeholder=" objectif Charge" />
+              <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
+            </form>
+            <form className="performance-formulaire">
+              <span>entrer vos nouvelles performances</span>
               <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="Charges" />
               <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="Répétitions" />
               <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
