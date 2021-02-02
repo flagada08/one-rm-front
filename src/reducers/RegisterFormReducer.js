@@ -11,6 +11,7 @@ import {
   FORM_INPUT_REGISTER_BOX_PASSWORD,
   FORM_INPUT_REGISTER_CONFIRM_PASSWORD,
   ALL_FITNESS_ROOM_DATA,
+  CONFIRM_PASSWORD_MESSAGE,
 } from 'src/actions/formRegister';
 
 const initialState = {
@@ -25,6 +26,7 @@ const initialState = {
   fitnessRoom: '',
   boxPassword: '',
   allFitnessRoom: '',
+  confirmPasswordMessage: '',
 };
 
 function RegisterFormReducer(state = initialState, action = {}) {
@@ -62,6 +64,7 @@ function RegisterFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         confirmPassword: action.newValue,
+        confirmPasswordMessage: '',
       };
 
     case FORM_INPUT_REGISTER_GENDER:
@@ -92,6 +95,12 @@ function RegisterFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         boxPassword: action.newValue,
+      };
+
+    case CONFIRM_PASSWORD_MESSAGE:
+      return {
+        ...state,
+        confirmPasswordMessage: 'Confirmation du mot de passe incorrect',
       };
 
     case SUBMIT_REGISTER:

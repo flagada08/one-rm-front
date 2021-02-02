@@ -27,6 +27,7 @@ const RegisterForm = ({
   // handleLogout,
   isLogged,
   loggedMessage,
+  confirmPasswordMessage,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -159,6 +160,7 @@ const RegisterForm = ({
               }}
               value={confirmPassword}
             />
+            <span className="confirm-password-message">{confirmPasswordMessage}</span>
             <div className="button-login-form-container">
               <button
                 type="submit"
