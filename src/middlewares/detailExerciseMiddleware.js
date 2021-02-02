@@ -5,6 +5,7 @@ import {
   CLICK_OF_ONE_EXERCISE,
   POST_NEW_PERF,
   fetchAllGoals,
+  ADD_MESSAGE,
 } from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
@@ -38,7 +39,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        //store.dispatch(fetchAllGoals(response.data));
+        // store.dispatch(fetchAllGoals(response.data)); //! a voir !
         return data;
       })
       .catch((error) => {
@@ -94,6 +95,30 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       });
   };
 
+  /**
+   *TODO requete test pour recuperer les datas pour un utilisateur pour le coach
+   * @param {number} id
+   *
+   */
+  const postNewMessage = (userId, exerciceId) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${userId}/exercise/postComment`;
+    const TOKEN = localStorage.getItem('token');
+    axios.post(API_URL, {
+      user: userId,
+      exercise: exerciceId,
+      content: store.getState().detailExercise.setMessage,
+    }, { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+
+        return data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   switch (action.type) {
     case CLICK_OF_ONE_EXERCISE: {
       console.log(action.userId);
@@ -106,6 +131,13 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     case POST_NEW_PERF: {
       console.log('j\'ai posté une new perf');
       newPerformance(action.exerciseId);
+      next(action);
+      break;
+    }
+    case ADD_MESSAGE: {
+      console.log();
+      
+      postNewMessage(action.userId, action.exerciseId);
       next(action);
       break;
     }
