@@ -32,6 +32,7 @@ const mapStateToProps = (state) => ({
   role: state.registerForm.role,
   fitnessRoom: state.registerForm.fitnessRoom,
   boxPassword: state.registerForm.boxPassword,
+  allFitnessRoom: state.registerForm.allFitnessRoom,
 });
 
 // === mapDispatchToProps

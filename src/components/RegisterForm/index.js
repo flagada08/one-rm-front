@@ -8,7 +8,6 @@ const RegisterForm = ({
   lastname,
   firstname,
   gender,
-  fitnessRoom,
   age,
   OnSubmitRegister,
   setValueLastname,
@@ -22,6 +21,7 @@ const RegisterForm = ({
   setValueBoxPassword,
   boxPassword,
   CloseRegisterForm,
+  allFitnessRoom,
   // handleLogin,
   // handleLogout,
   isLogged,
@@ -29,14 +29,8 @@ const RegisterForm = ({
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    // handleLogin();
-    if (password !== confirmPassword) {
-      alert('pas match');
-    }
-    else {
-      alert('match');
-    }
   };
+  console.log(allFitnessRoom);
 
   return (
     <div className="login-form">
@@ -58,7 +52,7 @@ const RegisterForm = ({
         <div className="form-container">
           <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
             <select
-              name="genre"
+              name="gender"
               className="login-form-input"
               placeholder="GENRE"
               onChange={(event) => {
@@ -68,10 +62,10 @@ const RegisterForm = ({
               <option value={gender}>
                 --GENRE--
               </option>
-              <option value={gender}>
+              <option value="femme">
                 --JE SUIS UNE MADAME--
               </option>
-              <option value={gender}>
+              <option value="homme">
                 --JE SUIS UN MONSIEUR--
               </option>
             </select>
@@ -92,18 +86,16 @@ const RegisterForm = ({
                 setValueFitnessRoom(event.target.value);
               }}
             >
-              <option value={fitnessRoom}>
+              <option value="">
                 --SALLE DE SPORT--
               </option>
-              <option value={fitnessRoom}>
-                ----
-              </option>
-              <option value={fitnessRoom}>
-                ----
-              </option>
-              <option value={fitnessRoom}>
-                ----
-              </option>
+              {
+                allFitnessRoom.map((fitnessRoom) => (
+                  <option key={fitnessRoom.id} value={fitnessRoom.id}>
+                    {fitnessRoom.name}
+                  </option>
+                ))
+              }
             </select>
             <input
               name="password"
