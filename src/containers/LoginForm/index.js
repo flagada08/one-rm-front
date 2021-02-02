@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { formRegister } from 'src/actions/formRegister';
+import { formRegister, fetchRegisterData } from 'src/actions/formRegister';
 import { formLoginInputEmail, formLoginInputPassword, submitLogin } from 'src/actions/formInputLogin';
+
 // on importe le composant de présentation
 import LoginForm from 'src/components/LoginForm';
 
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   OpenRegisterForm: () => {
     dispatch(formRegister());
+    dispatch(fetchRegisterData());
   },
 
   setValueEmail: (newValue) => {
