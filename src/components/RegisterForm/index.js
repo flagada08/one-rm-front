@@ -30,11 +30,18 @@ const RegisterForm = ({
   const handleSubmit = (evt) => {
     evt.preventDefault();
     // handleLogin();
-    if (password !== confirmPassword) {
-      alert('pas match');
+  };
+
+  console.log(password);
+  console.log(confirmPassword);
+
+  const validate = () => {
+    if (password === confirmPassword) {
+      handleSubmit();
+      alert('match');
     }
     else {
-      alert('match');
+      alert('pas match');
     }
   };
 

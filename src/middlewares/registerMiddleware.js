@@ -19,8 +19,6 @@ const registerMiddleware = (store) => (next) => (action) => {
         lastname,
         firstname,
         email,
-        password,
-        confirmPassword,
       );
 
       axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register',
