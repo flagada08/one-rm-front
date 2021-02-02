@@ -7,6 +7,8 @@ export const FETCH_USER_ALL_GOALS = 'FETCH_USER_ALL_GOALS';
 export const SET_NEW_MESSAGE = 'SET_NEW_MESSAGE';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const FETCH_USER_MESSAGE = 'FETCH_USER_MESSAGE';
+export const NEW_OBJECTIF_REPETITION = 'NEW_OBJECTIF_REPETITION';
+export const NEW_OBJECTIF_WEIGHT = 'NEW_OBJECTIF_WEIGHT';
 
 export const fetchUserDetailExercise = (detailExercise) => ({
   type: FETCH_USER_DETAIL_EXERCISE,
@@ -53,4 +55,14 @@ export const addMessage = (userId, exerciseId) => ({
 export const fetchUserMessage = (allMessages) => ({
   type: FETCH_USER_MESSAGE,
   allMessages,
+});
+
+export const addNewObjectifRepetition = (NewObjectifRepetition) => ({
+  type: NEW_OBJECTIF_REPETITION,
+  NewObjectifRepetition,
+});
+
+export const addNewObjectifWeight = (NewObjectifWeight) => ({
+  type: NEW_OBJECTIF_WEIGHT,
+  NewObjectifWeight,
 });
