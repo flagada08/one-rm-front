@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
 import Chart from 'src/containers/Chart';
 // import imageExercise from '/public/img/exercices/deadlift.jpeg';
 import BeautyStars from 'beauty-stars';
@@ -20,12 +20,15 @@ const DetailExercise = ({
   messageInput,
   dataUser,
 }) => {
+  const inputCoach = useRef(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     manageSubmit(
       dataPerformances[0].user_id,
       dataOneExercise.id,
     );
+    inputCoach.current.value = '';
     console.log('je passe par handlesubmit pour les messages ');
   };
 
@@ -89,7 +92,7 @@ const DetailExercise = ({
         {dataUser.roles[0] === 'ROLE_COACH'
           && (
           <div className="conseil-coach-input-container">
-            <input className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />
+            <input ref={inputCoach} className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />
             <button type="submit" className="conseil-coach-button-submit">
               <Send size={20} />
             </button>
