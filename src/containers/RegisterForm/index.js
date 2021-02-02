@@ -5,6 +5,7 @@ import {
   formRegisterInputFirstname,
   formRegisterInputEmail,
   formRegisterInputPassword,
+  formRegisterInputConfirmPassword,
   formRegisterInputGender,
   formRegisterInputAge,
   formRegisterInputRole,
@@ -25,6 +26,7 @@ const mapStateToProps = (state) => ({
   lastname: state.registerForm.lastname,
   email: state.registerForm.email,
   password: state.registerForm.password,
+  confirmPassword: state.registerForm.confirmPassword,
   gender: state.registerForm.gender,
   age: state.registerForm.age,
   role: state.registerForm.role,
@@ -51,6 +53,9 @@ const mapDispatchToProps = (dispatch) => ({
   setValuePassword: (newValue) => {
     dispatch(formRegisterInputPassword(newValue));
   },
+  setValueConfirmPassword: (newValue) => {
+    dispatch(formRegisterInputConfirmPassword(newValue));
+  },
   setValueGender: (newValue) => {
     dispatch(formRegisterInputGender(newValue));
   },
@@ -63,11 +68,9 @@ const mapDispatchToProps = (dispatch) => ({
   setValueFitnessRoom: (newValue) => {
     dispatch(formRegisterInputFitnessRoom(newValue));
   },
-
   OnSubmitRegister: () => {
     dispatch(submitRegister());
   },
-
   setValueBoxPassword: (newValue) => {
     dispatch(formRegisterInputBoxPassword(newValue));
   },

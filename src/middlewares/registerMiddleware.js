@@ -12,21 +12,25 @@ const registerMiddleware = (store) => (next) => (action) => {
         firstname,
         email,
         password,
+        confirmPassword,
       } = store.getState().registerForm;
-      console.log(email, password, lastname, firstname);
 
-      axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register', {
+      console.log(
+        lastname,
+        firstname,
+        email,
+        password,
+        confirmPassword,
+      );
 
-        gender: 'homme',
-        firstname: 'test',
-        lastname: 'test',
-        age: 25,
-        email: 'testpassword@oclock.io',
-        roles: ['ROLE_ADMIN'],
-        password: 'raph',
-        fitnessRoom: 3,
-        fitnessRoom_Password: 'salle2',
-      }).then((response) => {
+      axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register',
+        {
+          lastname,
+          firstname,
+          email,
+          password,
+          confirmPassword,
+        }).then((response) => {
         console.log(response);
       }).catch((error) => {
         console.log(error);

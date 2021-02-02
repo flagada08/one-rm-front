@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { fetchUserData, fetchAllUsersData, CLICK_OF_MEMBER, ALL_MEMBER } from 'src/actions/pageProfil';
+import {
+  fetchUserData,
+  fetchAllUsersData,
+  CLICK_OF_MEMBER,
+  ALL_MEMBER,
+} from 'src/actions/pageProfil';
 import { fetchUserDataPerformances } from 'src/actions/recapExercise';
 import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
 import { formInputProfilUserData } from 'src/actions/formInputProfil';

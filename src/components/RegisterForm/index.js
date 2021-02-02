@@ -4,21 +4,21 @@ import PropTypes from 'prop-types';
 const RegisterForm = ({
   email,
   password,
+  confirmPassword,
   lastname,
   firstname,
-  role,
   gender,
   fitnessRoom,
   age,
   OnSubmitRegister,
   setValueLastname,
   setValueGender,
-  setValueRole,
   setValueAge,
   setValueFitnessRoom,
   setValueFirstname,
   setValueEmail,
   setValuePassword,
+  setValueConfirmPassword,
   setValueBoxPassword,
   boxPassword,
   CloseRegisterForm,
@@ -30,6 +30,12 @@ const RegisterForm = ({
   const handleSubmit = (evt) => {
     evt.preventDefault();
     // handleLogin();
+    if (password !== confirmPassword) {
+      alert('pas match');
+    }
+    else {
+      alert('match');
+    }
   };
 
   return (
@@ -51,24 +57,24 @@ const RegisterForm = ({
       {!isLogged && (
         <div className="form-container">
           <form autoComplete="off" className="login-form-element" onSubmit={handleSubmit}>
-            <input
+            <select
               name="genre"
               className="login-form-input"
               placeholder="GENRE"
               onChange={(event) => {
                 setValueGender(event.target.value);
               }}
-              value={gender}
-            />
-            <input
-              name="role"
-              placeholder="ROLE"
-              className="login-form-input"
-              onChange={(event) => {
-                setValueRole(event.target.value);
-              }}
-              value={role}
-            />
+            >
+              <option value={gender}>
+                --GENRE--
+              </option>
+              <option value={gender}>
+                --JE SUIS UNE MADAME--
+              </option>
+              <option value={gender}>
+                --JE SUIS UN MONSIEUR--
+              </option>
+            </select>
             <input
               name="age"
               placeholder="AGE"
@@ -78,15 +84,27 @@ const RegisterForm = ({
               }}
               value={age}
             />
-            <input
+            <select
               name="fitnessroom"
               placeholder="FITNESSROOM"
               className="login-form-input"
               onChange={(event) => {
                 setValueFitnessRoom(event.target.value);
               }}
-              value={fitnessRoom}
-            />
+            >
+              <option value={fitnessRoom}>
+                --SALLE DE SPORT--
+              </option>
+              <option value={fitnessRoom}>
+                ----
+              </option>
+              <option value={fitnessRoom}>
+                ----
+              </option>
+              <option value={fitnessRoom}>
+                ----
+              </option>
+            </select>
             <input
               name="password"
               type="password"
@@ -133,6 +151,16 @@ const RegisterForm = ({
                 setValuePassword(event.target.value);
               }}
               value={password}
+            />
+            <input
+              name="confirm-password"
+              type="password"
+              className="login-form-input"
+              placeholder="Confirmation du mot de passe"
+              onChange={(event) => {
+                setValueConfirmPassword(event.target.value);
+              }}
+              value={confirmPassword}
             />
             <div className="button-login-form-container">
               <button
