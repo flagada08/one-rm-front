@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Chart from 'src/containers/Chart';
 // import imageExercise from '/public/img/exercices/deadlift.jpeg';
 import BeautyStars from 'beauty-stars';
@@ -18,6 +18,7 @@ const DetailExercise = ({
   manageSubmit,
   allMessages,
   messageInput,
+  dataUser,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ const DetailExercise = ({
     );
     console.log('je passe par handlesubmit pour les messages ');
   };
+
   return (
     <div className="DetailExercise-container">
       <Chart ExerciceName={dataOneExercise.name} />
@@ -84,12 +86,15 @@ const DetailExercise = ({
         {allMessages.map((message) => (
           <div key={message.id} className="conseil-coach-message">{message.content}</div>
         ))}
-        <div className="conseil-coach-input-container">
-          <input className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />
-          <button type="submit" className="conseil-coach-button-submit">
-            <Send size={20} />
-          </button>
-        </div>
+        {dataUser.roles[0] === 'ROLE_COACH'
+          && (
+          <div className="conseil-coach-input-container">
+            <input className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />
+            <button type="submit" className="conseil-coach-button-submit">
+              <Send size={20} />
+            </button>
+          </div>
+          )}
       </form>
     </div>
 

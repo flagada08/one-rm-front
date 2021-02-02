@@ -11,6 +11,8 @@ export const FORM_INPUT_REGISTER_ROLE = 'FORM_INPUT_REGISTER_ROLE';
 export const FORM_INPUT_REGISTER_FITNESSROOM = 'FORM_INPUT_REGISTER_FITNESSROOM';
 export const SUBMIT_REGISTER = 'SUBMIT_REGISTER';
 export const FORM_INPUT_REGISTER_BOX_PASSWORD = 'FORM_INPUT_REGISTER_BOX_PASSWORD';
+export const FETCH_REGISTER_DATA = 'FETCH_REGISTER_DATA';
+export const ALL_FITNESS_ROOM_DATA = 'ALL_FITNESS_ROOM_DATA';
 
 export const formRegister = () => ({
   type: FORM_REGISTER,
@@ -72,4 +74,13 @@ export const submitRegister = () => ({
 export const formRegisterInputBoxPassword = (newValue) => ({
   type: FORM_INPUT_REGISTER_BOX_PASSWORD,
   newValue,
+});
+
+export const fetchRegisterData = () => ({
+  type: FETCH_REGISTER_DATA,
+});
+
+export const allFitnessRoom = (fitnessRoomData) => ({
+  type: ALL_FITNESS_ROOM_DATA,
+  fitnessRoomData,
 });

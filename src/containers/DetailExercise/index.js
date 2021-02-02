@@ -20,6 +20,7 @@ const mapStateToProps = (state) => ({
   dataPerformances: state.profilPage.dataPerformances,
   allMessages: state.detailExercise.allMessages,
   messageInput: state.detailExercise.setMessageValue,
+  dataUser: state.profilPage.data,
 });
 
 // === mapDispatchToProps

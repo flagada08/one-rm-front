@@ -10,6 +10,7 @@ import {
   SUBMIT_REGISTER,
   FORM_INPUT_REGISTER_BOX_PASSWORD,
   FORM_INPUT_REGISTER_CONFIRM_PASSWORD,
+  ALL_FITNESS_ROOM_DATA,
 } from 'src/actions/formRegister';
 
 const initialState = {
@@ -23,10 +24,16 @@ const initialState = {
   confirmPassword: '',
   fitnessRoom: '',
   boxPassword: '',
+  allFitnessRoom: '',
 };
 
 function RegisterFormReducer(state = initialState, action = {}) {
   switch (action.type) {
+    case ALL_FITNESS_ROOM_DATA:
+      return {
+        ...state,
+        allFitnessRoom: action.fitnessRoomData,
+      };
     case FORM_INPUT_REGISTER_FIRSTNAME:
       return {
         ...state,
@@ -90,7 +97,7 @@ function RegisterFormReducer(state = initialState, action = {}) {
     case SUBMIT_REGISTER:
       return {
         ...state,
-        genre: '',
+        gender: '',
         age: '',
         role: '',
         fitnessRoom: '',

@@ -42,12 +42,18 @@ function DetailExerciseReducer(state = initialState, action = {}) {
         ...state,
         setMessage: action.newMessage,
       };
-    case FETCH_USER_MESSAGE:
+    case FETCH_USER_MESSAGE: {
+      const message = {
+        id: 1,
+        content: state.setMessage,
+        user: 3,
+        exercise: 0,
+      };
       return {
         ...state,
-        allMessages: action.allMessages,
-        setMessage: '',
+        allMessages: [...action.allMessages, message],
       };
+    }
     default:
       return state;
   }
