@@ -91,7 +91,7 @@ const RegisterForm = ({
                 --SALLE DE SPORT--
               </option>
               {
-                allFitnessRoom.map((fitnessRoom) => (
+                allFitnessRoom && allFitnessRoom.map((fitnessRoom) => (
                   <option key={fitnessRoom.id} value={fitnessRoom.id}>
                     {fitnessRoom.name}
                   </option>
