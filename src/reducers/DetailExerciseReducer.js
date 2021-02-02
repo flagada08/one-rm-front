@@ -44,14 +44,12 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       };
     case FETCH_USER_MESSAGE: {
       const message = {
-        id: 1,
         content: state.setMessage,
-        user: 3,
-        exercise: 0,
       };
       return {
         ...state,
         allMessages: [...action.allMessages, message],
+        setMessage: '',
       };
     }
     default:
