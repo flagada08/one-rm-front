@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
-import { addNewPerf, postNewPerf, addNewPerfWeight } from 'src/actions/detailExercise';
-
+import {
+  addNewPerf,
+  postNewPerf,
+  addNewPerfWeight,
+  setMessageValue,
+  addMessage,
+} from 'src/actions/detailExercise';
 
 // on importe le composant de présentation
 import detailExercise from 'src/components/DetailExercise';
@@ -13,6 +18,8 @@ const mapStateToProps = (state) => ({
   newPerf: state.detailExercise.newPerf,
   newPerfWeight: state.detailExercise.newPerfWeight,
   dataPerformances: state.profilPage.dataPerformances,
+  allMessages: state.detailExercise.allMessages,
+  messageInput: state.detailExercise.setMessageValue,
 });
 
 // === mapDispatchToProps
@@ -29,6 +36,14 @@ const mapDispatchToProps = (dispatch) => ({
 
   setNewWeight: (newPerfWeight) => {
     dispatch(addNewPerfWeight(newPerfWeight));
+  },
+
+  setMessageValue: (newMessage) => {
+    dispatch(setMessageValue(newMessage));
+  },
+
+  manageSubmit: (userId, exerciseId) => {
+    dispatch(addMessage(userId, exerciseId));
   },
 
 });

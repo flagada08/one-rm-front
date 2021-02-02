@@ -10,11 +10,10 @@ const MemberListe = ({ id, lastname, firstname, clickOfMember }) => (
       {console.log(id)
       }
       <Link
-        onClick={(e) => clickOfMember(e.target.dataset.id)}
         className="member-link"
         to="/recapexercices"
       >
-        <User className="member-user-icon" data-id={id} />
+        <User className="member-user-icon" onClick={() => clickOfMember(id)} />
       </Link>
       <span className="member-firstname">PRENOM:{firstname}</span>
       <span className="member-lastname">NOM:{lastname}</span>

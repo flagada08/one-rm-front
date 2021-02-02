@@ -10,6 +10,7 @@ const Exercise = ({
   clickOfExercise,
   goalWeight,
   goalRepetition,
+  userId,
 }) => {
   const progressWeight = Math.floor((weight / goalWeight) * 100);
 
@@ -22,7 +23,7 @@ const Exercise = ({
   return (
     <div className="exercice-card">
       <Link
-        onClick={(e) => clickOfExercise(e.target.dataset.id)}
+        onClick={(e) => clickOfExercise(e.target.dataset.id, userId)}
         className="ecercice-link"
         to="/detailexercice"
         data-id={id}

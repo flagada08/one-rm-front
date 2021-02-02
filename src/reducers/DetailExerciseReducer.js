@@ -2,6 +2,8 @@ import {
   FETCH_USER_DETAIL_EXERCISE,
   ADD_NEW_PERF, ADD_NEW_PERF_WEIGHT,
   FETCH_USER_ALL_GOALS,
+  SET_NEW_MESSAGE,
+  FETCH_USER_MESSAGE,
 } from 'src/actions/detailExercise';
 
 const initialState = {
@@ -9,6 +11,8 @@ const initialState = {
   AllGoals: {},
   newPerf: '',
   newPerfWeight: '',
+  setMessage: '',
+  allMessages: [],
 };
 
 function DetailExerciseReducer(state = initialState, action = {}) {
@@ -32,6 +36,17 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       return {
         ...state,
         AllGoals: action.AllGoals,
+      };
+    case SET_NEW_MESSAGE:
+      return {
+        ...state,
+        setMessage: action.newMessage,
+      };
+    case FETCH_USER_MESSAGE:
+      return {
+        ...state,
+        allMessages: action.allMessages,
+        setMessage: '',
       };
     default:
       return state;

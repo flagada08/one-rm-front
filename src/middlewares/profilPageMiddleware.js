@@ -74,13 +74,11 @@ const profilPageMiddelware = (store) => (next) => (action) => {
       break;
     }
     case CLICK_OF_MEMBER: {
-      console.log(action.id);
       fetchMemberData(action.id);
       next(action);
       break;
     }
     case ALL_MEMBER: {
-      console.log(action.id);
       fetchAllUsers();
       next(action);
       break;
