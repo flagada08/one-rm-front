@@ -104,7 +104,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   const postNewMessage = (userId, exerciseId) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${userId}/exercise/postComment`;
     const TOKEN = localStorage.getItem('token');
-    let message = store.getState().detailExercise.setMessage;
+    const message = store.getState().detailExercise.setMessage;
     axios.post(API_URL, {
       user: userId,
       exercise: exerciseId,
@@ -113,7 +113,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       .then((response) => {
         const { data } = response;
         console.log(data);
-        message = ''; //! a voir si ça fonctionne
         return data;
       })
       .catch((error) => {

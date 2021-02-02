@@ -46,6 +46,7 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       return {
         ...state,
         allMessages: action.allMessages,
+        setMessage: '',
       };
     default:
       return state;

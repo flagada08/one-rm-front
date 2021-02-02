@@ -17,6 +17,7 @@ const DetailExercise = ({
   setMessageValue,
   manageSubmit,
   allMessages,
+  messageInput,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +25,7 @@ const DetailExercise = ({
       dataPerformances[0].user_id,
       dataOneExercise.id,
     );
-    console.log('je passe par handlesubmit');
+    console.log('je passe par handlesubmit pour les messages ');
   };
   return (
     <div className="DetailExercise-container">
@@ -84,7 +85,7 @@ const DetailExercise = ({
           <div key={message.id} className="conseil-coach-message">{message.content}</div>
         ))}
         <div className="conseil-coach-input-container">
-          <input className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} />
+          <input className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />
           <button type="submit" className="conseil-coach-button-submit">
             <Send size={20} />
           </button>
