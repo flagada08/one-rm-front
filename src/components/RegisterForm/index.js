@@ -22,6 +22,7 @@ const RegisterForm = ({
   boxPassword,
   CloseRegisterForm,
   allFitnessRoom,
+  fitnessRoomSelected,
   // handleLogin,
   // handleLogout,
   isLogged,
@@ -97,6 +98,8 @@ const RegisterForm = ({
                 ))
               }
             </select>
+            {fitnessRoomSelected.length !== 0
+            && (
             <input
               name="password"
               type="password"
@@ -107,6 +110,8 @@ const RegisterForm = ({
               }}
               value={boxPassword}
             />
+            )}
+
             <input
               name="nom"
               placeholder="Nom"
@@ -186,7 +191,7 @@ RegisterForm.propTypes = {
 
   age: PropTypes.string.isRequired,
 
-  fitnessRoom: PropTypes.string.isRequired,
+  fitnessRoomSelected: PropTypes.string.isRequired,
 
   boxPassword: PropTypes.string.isRequired,
 

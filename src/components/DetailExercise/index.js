@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Chart from 'src/containers/Chart';
 // import imageExercise from '/public/img/exercices/deadlift.jpeg';
 import BeautyStars from 'beauty-stars';

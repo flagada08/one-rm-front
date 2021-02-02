@@ -30,7 +30,7 @@ const mapStateToProps = (state) => ({
   gender: state.registerForm.gender,
   age: state.registerForm.age,
   role: state.registerForm.role,
-  fitnessRoom: state.registerForm.fitnessRoom,
+  fitnessRoomSelected: state.registerForm.fitnessRoom,
   boxPassword: state.registerForm.boxPassword,
   allFitnessRoom: state.registerForm.allFitnessRoom,
 });

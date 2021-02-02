@@ -38,8 +38,7 @@ const registerMiddleware = (store) => (next) => (action) => {
       const ageConvertToNumber = Number(age);
       const fitnessRoomConvertToNumber = Number(fitnessRoom);
       console.log(fitnessRoomConvertToNumber);
-      
-      if (password === confirmPassword) {
+      if (password === confirmPassword && password.length > 6) {
         axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register',
           {
             gender,
