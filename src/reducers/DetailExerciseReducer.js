@@ -4,6 +4,7 @@ import {
   FETCH_USER_ALL_GOALS,
   SET_NEW_MESSAGE,
   FETCH_USER_MESSAGE,
+  ADD_MESSAGE,
 } from 'src/actions/detailExercise';
 
 const initialState = {
@@ -43,12 +44,19 @@ function DetailExerciseReducer(state = initialState, action = {}) {
         setMessage: action.newMessage,
       };
     case FETCH_USER_MESSAGE: {
+      return {
+        ...state,
+        allMessages: [...action.allMessages],
+
+      };
+    }
+    case ADD_MESSAGE: {
       const message = {
         content: state.setMessage,
       };
       return {
         ...state,
-        allMessages: [...action.allMessages, message],
+        allMessages: [...state.allMessages, message],
         setMessage: '',
       };
     }

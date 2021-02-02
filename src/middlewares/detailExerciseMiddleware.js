@@ -153,7 +153,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     }
     case ADD_MESSAGE: {
       postNewMessage(action.userId, action.exerciseId);
-      fetchMessage(action.userId, action.exerciseId);
       next(action);
       break;
     }

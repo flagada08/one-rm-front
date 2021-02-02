@@ -86,7 +86,7 @@ const DetailExercise = ({
         )}
       <form className="conseil-coach-container" onSubmit={handleSubmit}>
         <h2 className="conseil-coach-title">Conseils du Coach</h2>
-        {allMessages.map((message) => (
+        {allMessages && allMessages.map((message) => (
           <div key={message.id} className="conseil-coach-message">{message.content}</div>
         ))}
         {dataUser.roles[0] === 'ROLE_COACH'
