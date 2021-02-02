@@ -18,6 +18,7 @@ const mapStateToProps = (state) => ({
   newPerf: state.detailExercise.newPerf,
   newPerfWeight: state.detailExercise.newPerfWeight,
   dataPerformances: state.profilPage.dataPerformances,
+  allMessages: state.detailExercise.allMessages,
 });
 
 // === mapDispatchToProps

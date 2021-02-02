@@ -16,6 +16,7 @@ const DetailExercise = ({
   dataPerformances,
   setMessageValue,
   manageSubmit,
+  allMessages,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -79,9 +80,9 @@ const DetailExercise = ({
         )}
       <form className="conseil-coach-container" onSubmit={handleSubmit}>
         <h2 className="conseil-coach-title">Conseils du Coach</h2>
-        <div className="conseil-coach-message">salut je suis le message</div>
-        <div className="conseil-coach-message">salut je suis le message</div>
-        <div className="conseil-coach-message">salut je suis le message</div>
+        {allMessages.map((message) => (
+          <div key={message.id} className="conseil-coach-message">{message.content}</div>
+        ))}
         <div className="conseil-coach-input-container">
           <input className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} />
           <button type="submit" className="conseil-coach-button-submit">

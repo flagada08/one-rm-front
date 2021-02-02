@@ -6,6 +6,7 @@ import {
   POST_NEW_PERF,
   fetchAllGoals,
   ADD_MESSAGE,
+  fetchUserMessage,
 } from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
@@ -100,18 +101,34 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    * @param {number} id
    *
    */
-  const postNewMessage = (userId, exerciceId) => {
+  const postNewMessage = (userId, exerciseId) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${userId}/exercise/postComment`;
     const TOKEN = localStorage.getItem('token');
+    let message = store.getState().detailExercise.setMessage;
     axios.post(API_URL, {
       user: userId,
-      exercise: exerciceId,
-      content: store.getState().detailExercise.setMessage,
+      exercise: exerciseId,
+      content: message,
     }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
         console.log(data);
+        message = ''; //! a voir si ça fonctionne
+        return data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
+  const fetchMessage = (userId, exerciseId) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${userId}/workout/getComment`;
+    const TOKEN = localStorage.getItem('token');
+    axios.post(API_URL, { exercise: exerciseId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+        store.dispatch(fetchUserMessage(data));
         return data;
       })
       .catch((error) => {
@@ -125,6 +142,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       postUserId(action.exerciseId, action.userId);
       fetchDataOneWorkout(action.exerciseId);
       fetchDataAllGoals(action.exerciseId);
+      fetchMessage(action.userId, action.exerciseId);
       next(action);
       break;
     }
@@ -135,9 +153,8 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       break;
     }
     case ADD_MESSAGE: {
-      console.log();
-      
       postNewMessage(action.userId, action.exerciseId);
+      fetchMessage(action.userId, action.exerciseId);
       next(action);
       break;
     }
