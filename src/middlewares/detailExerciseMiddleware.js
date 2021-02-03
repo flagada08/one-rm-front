@@ -92,8 +92,10 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       .then((response) => {
         const { data } = response;
         console.log(data);
-        store.dispatch(addNewPerf(data[data.length - 1].repetition));
-        store.dispatch(addNewPerfWeight(data[data.length - 1].weight));
+        if (data.repetition !== null) {
+          store.dispatch(addNewPerf(data[data.length - 1].repetition));
+          store.dispatch(addNewPerfWeight(data[data.length - 1].weight));
+        }
         store.dispatch(fetchAllGoals(data));
         return data;
       })

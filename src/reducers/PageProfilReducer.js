@@ -1,4 +1,4 @@
-import { FETCH_USER_DATA, FETCH_ALL_USERS_DATA } from 'src/actions/pageProfil';
+import { FETCH_USER_DATA, FETCH_ALL_USERS_DATA, CLICK_DELETE_MEMBER } from 'src/actions/pageProfil';
 import { FETCH_USER_DATA_PERFORMANCES } from 'src/actions/recapExercise';
 import { LOGGED_OUT } from 'src/actions/formInputLogin';
 
@@ -30,6 +30,11 @@ function PageProfilReducer(state = initialState, action = {}) {
         ...state,
         data: '',
         dataExercises: '',
+      };
+    case CLICK_DELETE_MEMBER:
+      return {
+        ...state,
+        allUsersData: state.allUsersData.filter((user) => user.id !== action.id),
       };
 
     default:
