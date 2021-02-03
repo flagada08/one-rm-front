@@ -16,9 +16,7 @@ defaults.global.animation.onComplete = () => {
 defaults.global.hover.animationDuration = 600;
 
 const Chart = ({ AllPerfs }) => {
-  const checkPerf = AllPerfs.length === undefined;
-
-console.log(AllPerfs);
+  const checkPerf = AllPerfs.length === undefined
 
   return (
     <div className="chart-container">

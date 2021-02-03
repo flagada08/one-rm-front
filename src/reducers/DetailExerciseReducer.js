@@ -75,17 +75,18 @@ function DetailExerciseReducer(state = initialState, action = {}) {
         setMessage: '',
       };
     }
-    // case POST_NEW_PERF: {
-    //   // const date = new Date();
-    //   // const newGoals = {
-    //   //   repetition: state.newPerf,
-    //   //   weight: state.newPerfWeight,
-    //   //   date: date.toLocaleDateString('fr-FR'),
-    //   // };
-    //   return {
-    //     AllGoals: [...state.AllGoals],
-    //   };
-    // }
+    case POST_NEW_PERF: {
+      const date = new Date();
+      const newGoals = {
+        repetition: state.newPerf,
+        weight: state.newPerfWeight,
+        date: date.toLocaleDateString('fr-FR'),
+      };
+      return {
+        ...state,
+        AllGoals: [...state.AllGoals, newGoals],
+      };
+    }
     default:
       return state;
   }
