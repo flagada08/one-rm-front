@@ -38,7 +38,7 @@ const DetailExercise = ({
 
   return (
     <div className="DetailExercise-container">
-      <Chart ExerciceName={dataOneExercise.name} />
+      <Chart />
       { dataOneExercise
         && (
         <>

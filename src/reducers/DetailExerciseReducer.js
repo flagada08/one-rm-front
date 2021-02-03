@@ -7,11 +7,12 @@ import {
   ADD_MESSAGE,
   NEW_OBJECTIF_REPETITION,
   NEW_OBJECTIF_WEIGHT,
+  POST_NEW_PERF,
 } from 'src/actions/detailExercise';
 
 const initialState = {
   detailExercise: '',
-  AllGoals: {},
+  AllGoals: [],
   newPerf: '',
   newPerfWeight: '',
   newObecjtifRepetition: '',
@@ -74,6 +75,17 @@ function DetailExerciseReducer(state = initialState, action = {}) {
         setMessage: '',
       };
     }
+    // case POST_NEW_PERF: {
+    //   // const date = new Date();
+    //   // const newGoals = {
+    //   //   repetition: state.newPerf,
+    //   //   weight: state.newPerfWeight,
+    //   //   date: date.toLocaleDateString('fr-FR'),
+    //   // };
+    //   return {
+    //     AllGoals: [...state.AllGoals],
+    //   };
+    // }
     default:
       return state;
   }

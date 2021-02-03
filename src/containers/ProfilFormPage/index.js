@@ -5,6 +5,7 @@ import {
   formInputProfilEmail,
   formInputProfilAge,
   formInputProfilFitnessroom,
+  editRegisterProfilUser,
 } from 'src/actions/formInputProfil';
 
 // on importe le composant de présentation
@@ -40,6 +41,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setValueFitnessRoom: (newValue) => {
     dispatch(formInputProfilFitnessroom(newValue));
+  },
+
+  editProfil: (userId) => {
+    dispatch(editRegisterProfilUser(userId));
   },
 });
 

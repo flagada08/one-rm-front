@@ -15,6 +15,7 @@ const ProfilFormPage = ({
   email,
   age,
   fitnessroom,
+  editProfil,
 }) => (
 
   <div className="profil-form-page-container">
@@ -57,18 +58,9 @@ const ProfilFormPage = ({
             setValueAge(event.target.value);
           }}
         />
-        <input
-          className="user-input"
-          type="text"
-          placeholder="Nom de la salle"
-          value={fitnessroom || ''}
-          onChange={(event) => {
-            setValueFitnessRoom(event.target.value);
-          }}
-        />
       </>
       )}
-    <button className="send-button" type="submit">ENVOYER</button>
+    <button className="send-button" onClick={() => editProfil(data.id)} type="submit">ENVOYER</button>
   </div>
 );
 

@@ -70,6 +70,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        console.log(response);
         return data;
       })
       .catch((error) => {

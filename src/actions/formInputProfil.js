@@ -4,6 +4,7 @@ export const FORM_INPUT_PROFIL_EMAIL = 'FORM_INPUT_PROFIL_EMAIL';
 export const FORM_INPUT_PROFIL_AGE = 'FORM_INPUT_PROFIL_AGE';
 export const FORM_INPUT_PROFIL_FITNESSROMM = 'FORM_INPUT_PROFIL_FITNESSROMM';
 export const FORM_INPUT_PROFIL_USER_DATA = 'FORM_INPUT_PROFIL_USER_DATA';
+export const EDIT_REGISTER_PROFIL_USER = 'EDIT_REGISTER_PROFIL_USER';
 
 export const formInputProfilLastname = (newValue) => ({
   type: FORM_INPUT_PROFIL_LASTNAME,
@@ -37,4 +38,9 @@ export const formInputProfilUserData = (lastname, firstname, email, age, name) =
   email,
   age,
   name,
+});
+
+export const editRegisterProfilUser = (userId) => ({
+  type: EDIT_REGISTER_PROFIL_USER,
+  userId,
 });

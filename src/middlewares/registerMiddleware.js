@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { SUBMIT_REGISTER, FETCH_REGISTER_DATA, allFitnessRoom, confirmPasswordMessage } from 'src/actions/formRegister';
+import {
+  SUBMIT_REGISTER,
+  FETCH_REGISTER_DATA,
+  allFitnessRoom,
+  confirmPasswordMessage,
+} from 'src/actions/formRegister';
 
 const registerMiddleware = (store) => (next) => (action) => {
   const fetchRegisterData = () => {

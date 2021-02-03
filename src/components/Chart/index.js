@@ -15,7 +15,7 @@ defaults.global.animation.onComplete = () => {
 // pour regler la animation du hover
 defaults.global.hover.animationDuration = 600;
 
-const Chart = ({ ExerciceName, AllPerfs }) => {
+const Chart = ({ AllPerfs }) => {
   const checkPerf = AllPerfs.length === undefined;
 
 console.log(AllPerfs);
@@ -34,7 +34,7 @@ console.log(AllPerfs);
                 }) : AllPerfs[0].date.split(' ')[0]),
             datasets: [
               {
-                label: 'KG',
+                label: 'Repetition',
                 // enleve le background de la ligne du graphique
                 fill: false,
                 data: !checkPerf && AllPerfs.map((perf) => (Number(perf.weight))),
@@ -48,7 +48,7 @@ console.log(AllPerfs);
                 ],
               },
               {
-                label: 'repetition',
+                label: 'charge',
                 // enleve le background de la ligne du graphique
                 fill: false,
                 data: !checkPerf && AllPerfs.map((perf) => (Number(perf.repetition))),

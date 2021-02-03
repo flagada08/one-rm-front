@@ -8,7 +8,7 @@ import {
 } from 'src/actions/pageProfil';
 import { fetchUserDataPerformances } from 'src/actions/recapExercise';
 import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
-import { formInputProfilUserData } from 'src/actions/formInputProfil';
+import { formInputProfilUserData, EDIT_REGISTER_PROFIL_USER } from 'src/actions/formInputProfil';
 
 const profilPageMiddelware = (store) => (next) => (action) => {
   // fonction qui permert la récupération des données de l'utilisateur
@@ -49,11 +49,42 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   const fetchMemberData = (id) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${id}/getLastPerformances`;
     const TOKEN = localStorage.getItem('token');
+    const objectifRepetition = store.getState().detailExercise.newObecjtifRepetition;
+    const objectifWeight = store.getState().detailExercise.newObecjtifWeight;
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
+        console.log(objectifRepetition, objectifWeight);
         const { data } = response;
         console.log(data);
         store.dispatch(fetchUserDataPerformances(data));
+        // store.dispatch();
+        // store.dispatch();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // fonction qui permet de changer les infos de l'user dans la page profil
+  const editRegisterProfilUser = (id) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
+    const {
+      lastname,
+      firstname,
+      email,
+      age,
+    } = store.getState().profilForm;
+    const ageConvertToNumber = Number(age);
+    const TOKEN = localStorage.getItem('token');
+    axios.post(API_URL, {
+      lastname,
+      firstname,
+      email,
+      age: ageConvertToNumber,
+    },
+    { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -80,6 +111,11 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     }
     case ALL_MEMBER: {
       fetchAllUsers();
+      next(action);
+      break;
+    }
+    case EDIT_REGISTER_PROFIL_USER: {
+      editRegisterProfilUser(action.userId);
       next(action);
       break;
     }
