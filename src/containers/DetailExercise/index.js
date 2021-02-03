@@ -23,6 +23,8 @@ const mapStateToProps = (state) => ({
   allMessages: state.detailExercise.allMessages,
   messageInput: state.detailExercise.setMessageValue,
   dataUser: state.profilPage.data,
+  newObjectifRepetition: state.detailExercise.newObjectifRepetition,
+  newObjectifWeight: state.detailExercise.newObjectifWeight,
 });
 
 // === mapDispatchToProps
@@ -49,12 +51,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addMessage(userId, exerciseId));
   },
 
-  setNewObjectifRepetition: (newObecjtifRepetition) => {
-    dispatch(addNewObjectifRepetition(newObecjtifRepetition));
+  setNewObjectifRepetition: (newObjectifRepetition) => {
+    dispatch(addNewObjectifRepetition(newObjectifRepetition));
   },
 
-  setNewObjectifWeight: (newObecjtifWeight) => {
-    dispatch(addNewObjectifWeight(newObecjtifWeight));
+  setNewObjectifWeight: (newObjectifWeight) => {
+    dispatch(addNewObjectifWeight(newObjectifWeight));
   },
 
 });

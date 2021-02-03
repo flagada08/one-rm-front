@@ -49,8 +49,8 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   const fetchMemberData = (id) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${id}/getLastPerformances`;
     const TOKEN = localStorage.getItem('token');
-    const objectifRepetition = store.getState().detailExercise.newObecjtifRepetition;
-    const objectifWeight = store.getState().detailExercise.newObecjtifWeight;
+    const objectifRepetition = store.getState().detailExercise.newObjectifRepetition;
+    const objectifWeight = store.getState().detailExercise.newObjectifWeight;
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         console.log(objectifRepetition, objectifWeight);

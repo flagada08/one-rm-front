@@ -88,7 +88,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   const postUserId = (id, userId) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/workout/${id}/recap`;
     const TOKEN = localStorage.getItem('token');
-    let { newPerf, newPerfWeight } = store.getState().detailExercise;
     axios.post(API_URL, { user_id: userId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
@@ -104,8 +103,8 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   };
 
   /**
-   *TODO requete test pour recuperer les datas pour un utilisateur pour le coach
-   * @param {number} id
+   *requete pour poster un nouveaux commentaire
+   *
    *
    */
   const postNewMessage = (userId, exerciseId) => {

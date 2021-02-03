@@ -15,8 +15,8 @@ const initialState = {
   AllGoals: [],
   newPerf: '',
   newPerfWeight: '',
-  newObecjtifRepetition: '',
-  newObecjtifWeight: '',
+  newObjectifRepetition: '',
+  newObjectifWeight: '',
   setMessage: '',
   allMessages: [],
 };
@@ -41,12 +41,12 @@ function DetailExerciseReducer(state = initialState, action = {}) {
     case NEW_OBJECTIF_REPETITION:
       return {
         ...state,
-        newObecjtifRepetition: action.newObecjtifRepetition,
+        newObjectifRepetition: action.newObjectifRepetition,
       };
     case NEW_OBJECTIF_WEIGHT:
       return {
         ...state,
-        newObecjtifWeight: action.newObecjtifWeight,
+        newObjectifWeight: action.newObjectifWeight,
       };
     case FETCH_USER_ALL_GOALS:
       return {

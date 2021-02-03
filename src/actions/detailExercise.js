@@ -57,12 +57,12 @@ export const fetchUserMessage = (allMessages) => ({
   allMessages,
 });
 
-export const addNewObjectifRepetition = (NewObjectifRepetition) => ({
+export const addNewObjectifRepetition = (newObjectifRepetition) => ({
   type: NEW_OBJECTIF_REPETITION,
-  NewObjectifRepetition,
+  newObjectifRepetition,
 });
 
-export const addNewObjectifWeight = (NewObjectifWeight) => ({
+export const addNewObjectifWeight = (newObjectifWeight) => ({
   type: NEW_OBJECTIF_WEIGHT,
-  NewObjectifWeight,
+  newObjectifWeight,
 });
