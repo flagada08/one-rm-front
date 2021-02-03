@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   isOpen: state.header.OpenREgister,
   email: state.loginForm.email,
   password: state.loginForm.password,
+  LengthPasswordMessage: state.loginForm.LengthPasswordMessage,
 });
 
 // === mapDispatchToProps

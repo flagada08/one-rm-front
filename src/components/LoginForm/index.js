@@ -14,6 +14,7 @@ const LoginForm = ({
   // handleLogout,
   isLogged,
   loggedMessage,
+  LengthPasswordMessage,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -61,6 +62,7 @@ const LoginForm = ({
             }}
             value={password}
           />
+          <span className="confirm-password-message">{LengthPasswordMessage}</span>
           <div className="button-login-form-container">
             <button
               type="submit"

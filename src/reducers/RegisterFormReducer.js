@@ -12,6 +12,7 @@ import {
   FORM_INPUT_REGISTER_CONFIRM_PASSWORD,
   ALL_FITNESS_ROOM_DATA,
   CONFIRM_PASSWORD_MESSAGE,
+  CONFIRM_LENGTH_PASSWORD_MESSAGE,
 } from 'src/actions/formRegister';
 
 const initialState = {
@@ -27,6 +28,7 @@ const initialState = {
   boxPassword: '',
   allFitnessRoom: '',
   confirmPasswordMessage: '',
+  confirmLengthPasswordMessage: '',
 };
 
 function RegisterFormReducer(state = initialState, action = {}) {
@@ -58,6 +60,7 @@ function RegisterFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         password: action.newValue,
+        confirmLengthPasswordMessage: '',
       };
 
     case FORM_INPUT_REGISTER_CONFIRM_PASSWORD:
@@ -101,6 +104,12 @@ function RegisterFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         confirmPasswordMessage: 'Confirmation du mot de passe incorrect',
+      };
+
+    case CONFIRM_LENGTH_PASSWORD_MESSAGE:
+      return {
+        ...state,
+        confirmLengthPasswordMessage: 'Le mot de passe doit être composé de 6 caractères minimum',
       };
 
     case SUBMIT_REGISTER:

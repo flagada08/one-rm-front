@@ -5,6 +5,7 @@ import {
   FETCH_REGISTER_DATA,
   allFitnessRoom,
   confirmPasswordMessage,
+  confirmLengthPasswordMessage,
 } from 'src/actions/formRegister';
 
 const registerMiddleware = (store) => (next) => (action) => {
@@ -43,7 +44,7 @@ const registerMiddleware = (store) => (next) => (action) => {
       const ageConvertToNumber = Number(age);
       const fitnessRoomConvertToNumber = Number(fitnessRoom);
       console.log(fitnessRoomConvertToNumber);
-      if (password === confirmPassword && password.length > 6) {
+      if (password === confirmPassword && password.length > 5) {
         axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register',
           {
             gender,
@@ -59,6 +60,9 @@ const registerMiddleware = (store) => (next) => (action) => {
         }).catch((error) => {
           console.log(error);
         });
+      }
+      else if (password.length < 6) {
+        store.dispatch(confirmLengthPasswordMessage());
       }
       else {
         store.dispatch(confirmPasswordMessage());

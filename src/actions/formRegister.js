@@ -14,6 +14,7 @@ export const FORM_INPUT_REGISTER_BOX_PASSWORD = 'FORM_INPUT_REGISTER_BOX_PASSWOR
 export const FETCH_REGISTER_DATA = 'FETCH_REGISTER_DATA';
 export const ALL_FITNESS_ROOM_DATA = 'ALL_FITNESS_ROOM_DATA';
 export const CONFIRM_PASSWORD_MESSAGE = 'CONFIRM_PASSWORD_MESSAGE';
+export const CONFIRM_LENGTH_PASSWORD_MESSAGE = 'CONFIRM_LENGTH_PASSWORD_MESSAGE';
 
 export const formRegister = () => ({
   type: FORM_REGISTER,
@@ -88,4 +89,8 @@ export const allFitnessRoom = (fitnessRoomData) => ({
 
 export const confirmPasswordMessage = () => ({
   type: CONFIRM_PASSWORD_MESSAGE,
+});
+
+export const confirmLengthPasswordMessage = () => ({
+  type: CONFIRM_LENGTH_PASSWORD_MESSAGE,
 });
