@@ -85,6 +85,8 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       return {
         ...state,
         AllGoals: [...state.AllGoals, newGoals],
+        newPerf: '',
+        newPerfWeight: '',
       };
     }
     default:

@@ -33,8 +33,8 @@ const DetailExercise = ({
       dataOneExercise.id,
     );
     inputCoach.current.value = '';
-    console.log('je passe par handlesubmit pour les messages ');
   };
+
 
   return (
     <div className="DetailExercise-container">
@@ -70,13 +70,13 @@ const DetailExercise = ({
               <span>entrer vos nouvelles objectif</span>
               <input onChange={(event) => setNewObjectifRepetition(event.target.value)} className="performance-input" value={newObecjtifRepetition} placeholder="Objectif Repetition" />
               <input onChange={(event) => setNewObjectifWeight(event.target.value)} className="performance-input" value={newObecjtifWeight} placeholder=" objectif Charge" />
-              <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
+              <button className="send-button" type="button">ENVOYER</button>
             </form>
             <form className="performance-formulaire">
               <span>entrer vos nouvelles performances</span>
               <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="Charges" />
               <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="Répétitions" />
-              <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
+              <button className="send-button" type="submit" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
             </form>
           </div>
         </>
