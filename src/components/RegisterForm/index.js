@@ -27,6 +27,7 @@ const RegisterForm = ({
   // handleLogout,
   isLogged,
   loggedMessage,
+  confirmLengthPasswordMessage,
   confirmPasswordMessage,
 }) => {
   const handleSubmit = (evt) => {
@@ -150,6 +151,7 @@ const RegisterForm = ({
               }}
               value={password}
             />
+            <span className="confirm-password-message">{confirmLengthPasswordMessage}</span>
             <input
               name="confirm-password"
               type="password"

@@ -5,11 +5,13 @@ import {
   LOGGED_IN,
   LOGGED_OUT,
   REDIRECT,
+  LENGTH_PASSWORD_MESSAGE,
 } from 'src/actions/formInputLogin';
 
 const initialState = {
   email: '',
   password: '',
+  LengthPasswordMessage: '',
   loggedIn: false, // ! remettre a false
   redirect: false,
   TOKEN: localStorage.getItem('token') != null,
@@ -27,6 +29,7 @@ function LoginFormReducer(state = initialState, action = {}) {
       return {
         ...state,
         password: action.newValue,
+        LengthPasswordMessage: '',
       };
 
     case SUBMIT_LOGIN:
@@ -51,6 +54,11 @@ function LoginFormReducer(state = initialState, action = {}) {
         ...state,
         loggedIn: false,
         TOKEN: false,
+      };
+    case LENGTH_PASSWORD_MESSAGE:
+      return {
+        ...state,
+        LengthPasswordMessage: 'Le mot de passe doit être composé de 6 caractères minimum',
       };
 
     default:
