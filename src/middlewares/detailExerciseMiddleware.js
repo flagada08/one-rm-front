@@ -7,6 +7,8 @@ import {
   fetchAllGoals,
   ADD_MESSAGE,
   fetchUserMessage,
+  addNewPerf,
+  addNewPerfWeight,
 } from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
@@ -86,9 +88,13 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   const postUserId = (id, userId) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/workout/${id}/recap`;
     const TOKEN = localStorage.getItem('token');
+    let { newPerf, newPerfWeight } = store.getState().detailExercise;
     axios.post(API_URL, { user_id: userId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        console.log(data);
+        store.dispatch(addNewPerf(data[data.length - 1].repetition));
+        store.dispatch(addNewPerfWeight(data[data.length - 1].weight));
         store.dispatch(fetchAllGoals(data));
         return data;
       })
