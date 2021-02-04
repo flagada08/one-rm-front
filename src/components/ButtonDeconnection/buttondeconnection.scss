@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .ButtonDeconnection {
   display: inline-block;
   text-align: center;
@@ -9,7 +11,7 @@
   border-radius: 3px;
   padding: 0.5em;
   color: #FFFFFF;
-  background-color: rgb(0, 68, 255);
+  background-color: vars.$primary-color;
   transition: 0.5s;
   position: absolute;
   right: 15px;
@@ -17,7 +19,7 @@
   z-index: 999;
     &:hover,
     &:focus {
-      color: rgb(0, 68, 255);
+      color: vars.$primary-color;
       background-color: white;
     }
 }

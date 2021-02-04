@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .profil-form-page-container{
   margin: 10px;
   display: flex;
@@ -14,8 +16,7 @@
     text-align: center;
       &:hover,
         &:focus {
-        border: solid 1px rgb(0, 68, 255);
-        background: rgba(0, 68, 255, 0.158);
+        background: vars.$light-color;
       }
   }
 
@@ -27,15 +28,15 @@
       margin: 2px 0;
       border: solid 1px transparent;
       padding: 0.5em;
-      color: rgb(0, 68, 255);
-      background-color: #FFFFFF;
-      border: solid 1px rgb(0, 68, 255);
+      color: white;
+      background-color: vars.$primary-color;
       border-radius: 3px;
       transition: 0.5s;
         &:hover,
           &:focus {
-          color: #FFFFFF;
-          background-color: rgb(0, 68, 255);
+          color: vars.$primary-color;
+          background-color: white;
+          border: solid 1px vars.$primary-color;
         }
     }
 }

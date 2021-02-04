@@ -1,7 +1,6 @@
 @use 'src/styles/vars';
 
 .Main {
-  background: vars.$primary-color;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +39,7 @@
       font-size: 1.2em;
       padding: 5px;
       word-break: break-all;
-      background: vars.$optional-color;
+      background: vars.$lightest-color;
       
       .main-section-title{
         text-transform: uppercase;
@@ -128,7 +127,6 @@ RESPONSIVE CONDITIONS
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: white;
       top: 20%;
       margin: 0 20px 0 20px;
       width: 100%;
@@ -167,7 +165,6 @@ RESPONSIVE CONDITIONS
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: white;
       top: 20%;
       margin: 0em;
       width: 100%;
