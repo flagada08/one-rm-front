@@ -5,7 +5,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
   .chart-container{
-    width: 80%;
+    width: 100%;
   }
   .mouvement-container{
     padding: 1em;
@@ -63,7 +63,7 @@ justify-content: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 1em;
-    width: 100%;
+    width: 50%;
     margin: 0.5em;
     padding: 25px;
     background: vars.$lightest-color;
@@ -86,7 +86,8 @@ justify-content: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 50%;
+      width: 100%;
+      margin: 10px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -114,6 +115,7 @@ justify-content: center;
         border-radius: 3px;
         border: solid 1px black;
         margin: 3px;
+        width: 100%;
         padding: 15px;
         text-align: center;
         font-size: medium;
@@ -141,11 +143,11 @@ justify-content: center;
       color: white;
     }
     .conseil-coach-message{
-      width: 75%;
-      padding: 10%;
+      width: 40%;
+      padding: 1em;
       margin: 1em;
       background: white;
-      border-radius: 3px;
+      border-radius: 10px;
     }
     .conseil-coach-input-container{
       width: 100%;
@@ -156,4 +158,73 @@ justify-content: center;
       }
     }
   }
+}
+
+@media (max-width: 700px) {
+  .DetailExercise-container{
+  .performance-form-container{
+    width: 100%;
+ 
+    .performance-title{
+      text-transform: uppercase;
+      font-weight: bold;
+      width: 100%;
+      margin: 10px;
+      text-decoration: underline;
+    }
+    .performance-goals{
+      display: contents;
+      .performance-span{
+        width: 100%;
+        margin: 5px;
+      }
+    }
+    .performance-formulaire{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .send-button{
+        display: inline-block;
+        text-align: center;
+        font-size: 1em;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 2px 0;
+        border: solid 1px transparent;
+        padding: 0.5em;
+        color: #FFFFFF;
+        background-color: rgb(0, 68, 255);
+        border: solid 1px rgb(0, 68, 255);
+        border-radius: 3px;
+        transition: 0.5s;
+          &:hover,
+          &:focus {
+            color: rgb(0, 68, 255);
+            background-color: #FFFFFF;
+          }
+      }
+      .performance-input{
+        border-radius: 3px;
+        border: solid 1px black;
+        margin: 3px;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        font-size: medium;
+        text-transform: uppercase;
+        &:hover,
+          &:focus {
+            border: solid 1px rgb(0, 68, 255);
+            background: rgba(0, 68, 255, 0.158);
+          }
+      }
+    }
+    
+  }
+}
 }

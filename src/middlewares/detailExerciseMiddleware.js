@@ -55,7 +55,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    * @param {number} id
    * @return {void}
    */
-  const newPerformance = (id) => {
+  const newPerformance = (id, userId) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/newPerf`;
     const TOKEN = localStorage.getItem('token');
     const { newPerf } = store.getState().detailExercise;
@@ -67,7 +67,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
         date: 'now',
         repetition: newPerfRepetition,
         weight: newPerfParse,
-        user: store.getState().profilPage.data.id,
+        user_id: userId,
       },
       { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -155,7 +155,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     }
     case POST_NEW_PERF: {
       console.log('j\'ai posté une new perf');
-      newPerformance(action.exerciseId);
+      newPerformance(action.exerciseId, action.userId);
       next(action);
       break;
     }

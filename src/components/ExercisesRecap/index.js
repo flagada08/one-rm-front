@@ -12,7 +12,6 @@ const ExerciseRecap = ({ dataPerformances }) => (
     <div className="exercices-container">
       <div className="exercice-title-container">
         <div className="exercice-title">exercices</div>
-        <div className="exercice-title">objectif</div>
         <div className="exercice-title">progression vers objectif</div>
       </div>
       {dataPerformances && dataPerformances.map((exercise) => (

@@ -84,7 +84,7 @@ function DetailExerciseReducer(state = initialState, action = {}) {
       };
       return {
         ...state,
-        AllGoals: [...state.AllGoals, newGoals],
+        AllGoals: state.AllGoals.length > 0 ? [...state.AllGoals, newGoals] : newGoals,
         newPerf: '',
         newPerfWeight: '',
       };

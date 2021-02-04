@@ -35,8 +35,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(addNewPerf(newPerf));
   },
 
-  addPerf: (exerciseId) => {
-    dispatch(postNewPerf(exerciseId));
+  addPerf: (exerciseId, userId) => {
+    dispatch(postNewPerf(exerciseId, userId));
   },
 
   setNewWeight: (newPerfWeight) => {

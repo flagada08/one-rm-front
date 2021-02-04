@@ -26,9 +26,10 @@ export const addNewPerf = (newPerf) => ({
   newPerf,
 });
 
-export const postNewPerf = (exerciseId) => ({
+export const postNewPerf = (exerciseId, userId) => ({
   type: POST_NEW_PERF,
   exerciseId,
+  userId,
 });
 
 export const addNewPerfWeight = (newPerfWeight) => ({
