@@ -24,17 +24,20 @@ const Exercise = ({
     <div className="exercice-card">
       <Link
         onClick={(e) => clickOfExercise(e.target.dataset.id, userId)}
-        className="ecercice-link"
+        className="exercice-link"
         to="/detailexercice"
         data-id={id}
       >{name}
       </Link>
-      <div className="exercice-objectif">
-        {weight} KG / {repetition} REP
-      </div>
-      <div className="exercice-pregression">
-        <ProgressBar progress={progressWeightCalculed} />
-        <ProgressBar progress={progressRepetitionCalculed} />
+      <div className="exercice-pregression-container">
+        <div className="exercice-progress-weight">
+          <span className="exercice-objectif-weight">{weight} KG </span>
+          <ProgressBar progress={progressWeightCalculed} />
+        </div>
+        <div className="exercice-progress-repetition">
+          <span className="exercice-objectif-repetition">{repetition} REP</span>
+          <ProgressBar progress={progressRepetitionCalculed} />
+        </div>
       </div>
     </div>
   );
