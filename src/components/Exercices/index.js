@@ -31,11 +31,11 @@ const Exercise = ({
       </Link>
       <div className="exercice-pregression-container">
         <div className="exercice-progress-weight">
-          <span className="exercice-objectif-weight">{weight} KG </span>
+          <span className="exercice-objectif-weight">votre obecjtif est de {goalWeight} :KG</span>
           <ProgressBar progress={progressWeightCalculed} />
         </div>
         <div className="exercice-progress-repetition">
-          <span className="exercice-objectif-repetition">{repetition} REP</span>
+          <span className="exercice-objectif-repetition">votre obecjtif est de {goalRepetition} :REP</span>
           <ProgressBar progress={progressRepetitionCalculed} />
         </div>
       </div>

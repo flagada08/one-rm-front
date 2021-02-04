@@ -9,6 +9,7 @@ export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const FETCH_USER_MESSAGE = 'FETCH_USER_MESSAGE';
 export const NEW_OBJECTIF_REPETITION = 'NEW_OBJECTIF_REPETITION';
 export const NEW_OBJECTIF_WEIGHT = 'NEW_OBJECTIF_WEIGHT';
+export const ADD_OBJECTIF = 'ADD_OBJECTIF';
 
 export const fetchUserDetailExercise = (detailExercise) => ({
   type: FETCH_USER_DETAIL_EXERCISE,
@@ -66,4 +67,10 @@ export const addNewObjectifRepetition = (newObjectifRepetition) => ({
 export const addNewObjectifWeight = (newObjectifWeight) => ({
   type: NEW_OBJECTIF_WEIGHT,
   newObjectifWeight,
+});
+
+export const addObjectif = (exerciseId, userId) => ({
+  type: ADD_OBJECTIF,
+  exerciseId,
+  userId,
 });
