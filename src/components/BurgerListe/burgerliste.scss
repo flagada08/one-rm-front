@@ -3,8 +3,8 @@
 .burgerliste {
   display: flex;
   flex-direction: column;
-  background: vars.$secondary-color;
-  color: white;
+  background: vars.$darkest-color;
+  color: vars.$light-color;
   position: absolute;
   right: -10px;
   top: 165%;

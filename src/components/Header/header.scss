@@ -7,7 +7,7 @@
   padding: 0.5rem;
   font-weight: bolder;
   width: 100%;
-  background: vars.$secondary-color;
+  background: vars.$darkest-color;
 
   .logo {
     width: 100%;
@@ -15,8 +15,8 @@
   }
   
   .pic { 
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     border: 2px solid vars.$light-color;
     border-radius: 50%;
     padding: 8px;

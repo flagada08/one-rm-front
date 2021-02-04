@@ -5,9 +5,11 @@
   justify-content: space-between;
   align-items: center;
   height: auto;
-  color: white;
+  color: vars.$light-color;
+  font-weight: bold;
+  font-size: large;
   width: 100%;
-  background: vars.$secondary-color;
+  background: vars.$darkest-color;
 
   .reseaux-container{
     display: flex;

@@ -21,7 +21,7 @@ const MemberListe = ({
     {data && data.roles.includes('ROLE_MANAGER') && <Trash2 className="member-trash-icon" onClick={() => clickDeleteMember(id)} />}
     <div className="circle">
       <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" />
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <svg>
         <circle className="stroke" cx="60" cy="60" r="50" />
       </svg>
     </div>

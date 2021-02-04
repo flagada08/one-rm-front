@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .BurgerMenu {
   display: inline-block;
   position: absolute;
@@ -7,22 +9,20 @@
   .bar {
     width: 35px;
     height: 5px;
-    background-color: white;
+    background-color: vars.$primary-color;
     margin: 6px 0;
     transition: 0.4s;
   }
 
 
   .bar--change1 {
-    color: white;
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
   }
   
-  .bar--change2 {opacity: 0;color: white;}
+  .bar--change2 {opacity: 0;}
   
   .bar--change3 {
-    color: white;
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
