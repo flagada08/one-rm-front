@@ -9,6 +9,9 @@ import {
   fetchUserMessage,
   addNewPerf,
   addNewPerfWeight,
+  ADD_OBJECTIF,
+  addNewObjectifRepetition,
+  addNewObjectifWeight,
 } from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
@@ -23,6 +26,8 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        console.log(data);
+        
         store.dispatch(fetchUserDetailExercise(response.data));
         return data;
       })
@@ -143,6 +148,31 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       });
   };
 
+  const addObjectif = (exerciseId, userId) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${exerciseId}/newGoal`;
+    const TOKEN = localStorage.getItem('token');
+    const { newObjectifWeight } = store.getState().detailExercise;
+    const { newObjectifRepetition } = store.getState().detailExercise;
+    const convertToNumberRepetition = Number(newObjectifRepetition);
+    const convertToNumberWeight = Number(newObjectifWeight);
+    axios.post(API_URL, {
+      weight: convertToNumberWeight,
+      repetition: convertToNumberRepetition,
+      user_id: userId,
+    },
+    { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        const { data } = response;
+        store.dispatch(addNewObjectifRepetition(''));
+        store.dispatch(addNewObjectifWeight(''));
+        console.log(response);
+        return data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   switch (action.type) {
     case CLICK_OF_ONE_EXERCISE: {
       console.log(action.userId);
@@ -156,6 +186,11 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     case POST_NEW_PERF: {
       console.log('j\'ai posté une new perf');
       newPerformance(action.exerciseId, action.userId);
+      next(action);
+      break;
+    }
+    case ADD_OBJECTIF: {
+      addObjectif(action.exerciseId, action.userId);
       next(action);
       break;
     }

@@ -7,6 +7,7 @@ import {
   addMessage,
   addNewObjectifRepetition,
   addNewObjectifWeight,
+  addObjectif,
 } from 'src/actions/detailExercise';
 
 // on importe le composant de présentation
@@ -58,6 +59,11 @@ const mapDispatchToProps = (dispatch) => ({
   setNewObjectifWeight: (newObjectifWeight) => {
     dispatch(addNewObjectifWeight(newObjectifWeight));
   },
+
+  addObjectif: (exerciseId, userId) => {
+    dispatch(addObjectif(exerciseId, userId));
+  },
+
 
 });
 

@@ -9,6 +9,7 @@ const recapExerciseMiddleware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        console.log(data);
         store.dispatch(fetchUserDataPerformances(response.data));
         return data;
       })

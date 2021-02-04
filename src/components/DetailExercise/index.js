@@ -23,6 +23,7 @@ const DetailExercise = ({
   setNewObjectifWeight,
   newObjectifRepetition,
   newObjectifWeight,
+  addObjectif,
 }) => {
   const inputCoach = useRef(null);
 
@@ -69,7 +70,7 @@ const DetailExercise = ({
               <span>entrer vos nouvelles objectif</span>
               <input onChange={(event) => setNewObjectifRepetition(event.target.value)} className="performance-input" value={newObjectifRepetition} placeholder="Objectif Repetition" />
               <input onChange={(event) => setNewObjectifWeight(event.target.value)} className="performance-input" value={newObjectifWeight} placeholder=" objectif Charge" />
-              <button className="send-button" type="button">ENVOYER</button>
+              <button className="send-button" type="button" onClick={() => addObjectif(dataOneExercise.id, dataPerformances[0].user_id) }>ENVOYER</button>
             </form>
             <form className="performance-formulaire">
               <span>entrer vos nouvelles performances</span>
