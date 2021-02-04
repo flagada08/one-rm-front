@@ -122,6 +122,8 @@ function RegisterFormReducer(state = initialState, action = {}) {
         firstname: '',
         lastname: '',
         email: '',
+        confirmPassword: '',
+        password: '',
       };
 
     default:

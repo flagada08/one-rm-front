@@ -35,7 +35,6 @@ const DetailExercise = ({
     inputCoach.current.value = '';
   };
 
-
   return (
     <div className="DetailExercise-container">
       <Chart />
@@ -76,7 +75,7 @@ const DetailExercise = ({
               <span>entrer vos nouvelles performances</span>
               <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="Charges" />
               <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="Répétitions" />
-              <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id)}>ENVOYER</button>
+              <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id, dataPerformances[0].user_id)}>ENVOYER</button>
             </form>
           </div>
         </>
