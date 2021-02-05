@@ -133,7 +133,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
       break;
     }
     case ALL_MEMBER: {
-      if (store.getState().profilPage.role !== 'ROLE_USER') {
+      if (store.getState().profilPage.role !== 'ROLE_USER' && store.getState().loginForm.loggedIn === true) {
         fetchAllUsers();
       }
       next(action);

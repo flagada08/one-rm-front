@@ -37,7 +37,9 @@ const recapExerciseMiddleware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case CLICK_OF_RECAP_EXERCISE: {
-      fetchDataPerformances();
+      if (store.getState().loginForm.loggedIn === true) {
+        fetchDataPerformances();
+      }
       next(action);
       break;
     }
