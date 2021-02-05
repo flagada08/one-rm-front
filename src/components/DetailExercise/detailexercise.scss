@@ -5,7 +5,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
   .chart-container{
-    width: 100%;
+    width: 80%;
   }
   .mouvement-container{
     padding: 1em;
@@ -43,7 +43,6 @@ justify-content: center;
   }
   .conseil-container{
     width: 50%;
-    border-left: solid 2px;
     display: flex;
     flex-wrap: wrap;
     margin-top: 1em;
@@ -53,17 +52,23 @@ justify-content: center;
       font-size: large;
       font-weight: bold;
       width: 100%;
+      height: 10%;
     }
     .conseil-paragraph{
       font-size: medium;
     }
   }
   .performance-form-container{
+    span {
+      margin: 10px;
+      font-weight: bold;
+    }
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    box-shadow: 0 54px 55px rgba(0,0,0,.25), 0 -12px 30px rgba(0,0,0,.12), 0 4px 6px rgba(0,0,0,.12), 0 12px 13px rgba(0,0,0,.17), 0 -3px 5px rgba(0,0,0,.09);
     padding: 1em;
-    width: 50%;
+    width: 100%;
     margin: 0.5em;
     padding: 25px;
     background: vars.$lightest-color;
@@ -98,32 +103,30 @@ justify-content: center;
         text-decoration: none;
         font-weight: bold;
         margin: 2px 0;
-        border: solid 1px transparent;
         padding: 0.5em;
         color: #FFFFFF;
-        background-color: rgb(0, 68, 255);
-        border: solid 1px rgb(0, 68, 255);
+        background-color: vars.$primary-color;
+        border: solid 1px vars.$primary-color;
         border-radius: 3px;
         transition: 0.5s;
           &:hover,
           &:focus {
-            color: rgb(0, 68, 255);
+            color: vars.$primary-color;
             background-color: #FFFFFF;
           }
       }
       .performance-input{
         border-radius: 3px;
-        border: solid 1px black;
         margin: 3px;
-        width: 100%;
+        width: 30%;
         padding: 15px;
         text-align: center;
         font-size: medium;
         text-transform: uppercase;
+        border: none;
         &:hover,
           &:focus {
-            border: solid 1px rgb(0, 68, 255);
-            background: rgba(0, 68, 255, 0.158);
+            background: vars.$input-color;
           }
       }
     }
@@ -132,7 +135,7 @@ justify-content: center;
   .conseil-coach-container{
     width: 100%;
     margin-top: 10px;
-    background: black;
+    background: vars.$darkest-color;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,6 +158,7 @@ justify-content: center;
       justify-content: center;
       .conseil-coach-input{
         width: 70%;
+        border: none;
       }
     }
   }
@@ -162,6 +166,9 @@ justify-content: center;
 
 @media (max-width: 700px) {
   .DetailExercise-container{
+    .chart-container{
+      width: 100%;
+    }
   .performance-form-container{
     width: 100%;
  
@@ -179,7 +186,12 @@ justify-content: center;
         margin: 5px;
       }
     }
+    
     .performance-formulaire{
+      span {
+        margin: 10px;
+        font-weight: bold;
+      }
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -195,22 +207,17 @@ justify-content: center;
         text-decoration: none;
         font-weight: bold;
         margin: 2px 0;
-        border: solid 1px transparent;
         padding: 0.5em;
         color: #FFFFFF;
-        background-color: rgb(0, 68, 255);
-        border: solid 1px rgb(0, 68, 255);
         border-radius: 3px;
         transition: 0.5s;
           &:hover,
           &:focus {
-            color: rgb(0, 68, 255);
             background-color: #FFFFFF;
           }
       }
       .performance-input{
         border-radius: 3px;
-        border: solid 1px black;
         margin: 3px;
         width: 100%;
         padding: 15px;
@@ -219,8 +226,7 @@ justify-content: center;
         text-transform: uppercase;
         &:hover,
           &:focus {
-            border: solid 1px rgb(0, 68, 255);
-            background: rgba(0, 68, 255, 0.158);
+            background: vars.$input-color;
           }
       }
     }

@@ -2,6 +2,8 @@ import React from 'react';
 import ProgressBar from 'src/components/ProgressBar';
 import { Link } from 'react-router-dom';
 
+import './exercises.scss';
+
 const Exercise = ({
   name,
   weight,
@@ -41,7 +43,7 @@ const Exercise = ({
       </div>
     </div>
   );
-}
+};
 
 Exercise.propTypes = {
 

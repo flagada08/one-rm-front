@@ -62,14 +62,14 @@ const RegisterForm = ({
                 setValueGender(event.target.value);
               }}
             >
-              <option value={gender}>
-                --GENRE--
+              <option value="">
+                GENRE
               </option>
               <option value="femme">
-                --JE SUIS UNE MADAME--
+                JE SUIS UNE MADAME
               </option>
               <option value="homme">
-                --JE SUIS UN MONSIEUR--
+                JE SUIS UN MONSIEUR
               </option>
             </select>
             <input
@@ -90,7 +90,7 @@ const RegisterForm = ({
               }}
             >
               <option value="">
-                --SALLE DE SPORT--
+                SALLE DE SPORT
               </option>
               {
                 allFitnessRoom && allFitnessRoom.map((fitnessRoom) => (

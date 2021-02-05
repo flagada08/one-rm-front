@@ -7,7 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from 'src/containers/Header';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
-import ExercisesPage from 'src/components/ExercisesPage';
+import ExercisesPage from 'src/containers/ExercisesPage';
 import ProfilPage from 'src/containers/PageProfil';
 import ExerciseRecap from 'src/containers/ExercisesRecap';
 import DetailExercise from 'src/containers/DetailExercise';
