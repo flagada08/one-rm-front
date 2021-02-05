@@ -6,6 +6,7 @@ import {
   CLICK_OF_MEMBER,
   ALL_MEMBER,
   CHANGE_MEMBER_RANK,
+  fechtUserRole,
 } from 'src/actions/pageProfil';
 import { fetchUserDataPerformances } from 'src/actions/recapExercise';
 import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
@@ -28,6 +29,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
         const { name } = data.fitnessRoom;
         store.dispatch(fetchUserData(response.data));
         store.dispatch(formInputProfilUserData(lastname, firstname, email, age, name));
+        store.dispatch(fechtUserRole(data.roles[0]));
       })
       .catch((error) => {
         console.log(error);
@@ -96,8 +98,8 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
     const TOKEN = localStorage.getItem('token');
     console.log(id, newRole);
-    axios.patch(API_URL, {
-      roles: newRole,
+    axios.post(API_URL, {
+      roles: [newRole],
     },
 
     { headers: { Authorization: `Bearer ${TOKEN}` } })
@@ -114,7 +116,9 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     case LOGGED_IN: {
       console.log('je passe par le login');
       fetchData();
-      fetchAllUsers();
+      if (store.getState().profilPage.role !== 'ROLE_USER') {
+        fetchAllUsers();
+      }
       next(action);
       break;
     }
@@ -129,7 +133,9 @@ const profilPageMiddelware = (store) => (next) => (action) => {
       break;
     }
     case ALL_MEMBER: {
-      fetchAllUsers();
+      if (store.getState().profilPage.role !== 'ROLE_USER') {
+        fetchAllUsers();
+      }
       next(action);
       break;
     }

@@ -5,7 +5,7 @@ import './progressbar.scss';
 const ProgressBar = ({ progress }) => (
   <div className="progressbar-container">
     <div className="progressbar" style={{ width: `${progress}%` }}>
-      <span className="span-progressbar">{progress}%</span>
+      <span className="span-progressbar">{Number(progress)}%</span>
     </div>
   </div>
 

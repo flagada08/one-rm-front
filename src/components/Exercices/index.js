@@ -34,11 +34,11 @@ const Exercise = ({
       <div className="exercice-pregression-container">
         <div className="exercice-progress-weight">
           <span className="exercice-objectif-weight">votre obecjtif est de {goalWeight} :KG</span>
-          <ProgressBar progress={progressWeightCalculed} />
+          <ProgressBar progress={isNaN(progressWeightCalculed) ? 0 : progressWeightCalculed} />
         </div>
         <div className="exercice-progress-repetition">
           <span className="exercice-objectif-repetition">votre obecjtif est de {goalRepetition} :REP</span>
-          <ProgressBar progress={progressRepetitionCalculed} />
+          <ProgressBar progress={isNaN(progressRepetitionCalculed) ? 0 : progressRepetitionCalculed} />
         </div>
       </div>
     </div>
