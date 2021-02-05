@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { openBugerMenu } from 'src/actions/burgerMenu';
 import { formConnection } from 'src/actions/formConnection';
 import { loggedOut } from 'src/actions/formInputLogin';
-import { clickOfRecapExercise } from 'src/actions/recapExercise';
+import { clickOfRecapExercise, clickOfExercisesPage } from 'src/actions/recapExercise';
 import { allMembers } from 'src/actions/pageProfil';
 
 // on importe le composant de présentation
@@ -33,6 +33,11 @@ const mapDispatchToProps = (dispatch) => ({
 
   buttonDisconnect: () => {
     dispatch(loggedOut());
+  },
+
+  clickOfExercisesPage: () => {
+    dispatch(clickOfExercisesPage());
+    dispatch(openBugerMenu());
   },
 });
 

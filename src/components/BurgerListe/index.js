@@ -8,6 +8,7 @@ const BurgerListe = ({
   toggleBurgerMenu,
   buttonConnect,
   buttonDisconnect,
+  clickOfExercisesPage,
 }) => (
   <div className="burgerliste">
     <div className="login-link">
@@ -43,6 +44,7 @@ const BurgerListe = ({
       onClick={toggleBurgerMenu}
       to="/exercices"
       className="navbar-link"
+      onClick={clickOfExercisesPage}
     >
       EXERCICES
     </NavLink>

@@ -19,6 +19,47 @@
       text-shadow: black 0.1em 0.1em 0.2em;
       font-size: 3rem;
       font-weight: 1000;
+      text-shadow: 0 0 0 vars.$lightest-color,
+      .0025em .0025em 0 vars.$lightest-color,
+      .005em .005em 0 vars.$lightest-color,
+      .0075em .0075em 0 vars.$lightest-color,
+      .01em .01em 0 vars.$lightest-color,
+      .0125em .0125em 0 vars.$lightest-color,
+      .015em .015em 0 vars.$lightest-color,
+      .0175em .0175em 0 vars.$lightest-color,
+      .02em .02em 0 vars.$lightest-color,
+      .0225em .0225em 0 vars.$lightest-color,
+      .025em .025em 0 vars.$lightest-color,
+      .0275em .0275em 0 vars.$lightest-color,
+      .03em .03em 0 vars.$lightest-color,
+      .0325em .0325em 0 vars.$lightest-color,
+      .035em .035em 0 vars.$lightest-color,
+      .0375em .0375em 0 vars.$lightest-color,
+      .04em .04em 0 vars.$lightest-color,
+      .0425em .0425em 0 vars.$lightest-color, 
+      .045em .045em 0 vars.$lightest-color,
+      .0475em .0475em 0 vars.$lightest-color,
+      .05em .05em 0 vars.$lightest-color,
+      .0525em .0525em 0 vars.$lightest-color,
+      .055em .055em 0 vars.$lightest-color,
+      .0575em .0575em 0 vars.$lightest-color,
+      .06em .06em 0 vars.$lightest-color,
+      .0625em .0625em 0 vars.$lightest-color,
+      .065em .065em 0 vars.$lightest-color,
+      .0675em .0675em 0 vars.$lightest-color, 
+      .07em .07em 0 vars.$lightest-color,
+      .0725em .0725em 0 vars.$lightest-color,
+      .075em .075em 0 vars.$lightest-color,
+      .0775em .0775em 0 vars.$lightest-color,
+      .08em .08em 0 vars.$lightest-color,
+      .0825em .0825em 0 vars.$lightest-color,
+      .085em .085em 0 vars.$lightest-color,
+      .0875em .0875em 0 vars.$lightest-color,
+      .09em .09em 0 vars.$lightest-color,
+      .0925em .0925em 0 vars.$lightest-color,
+      .095em .095em 0 vars.$lightest-color,
+      .0975em .0975em 0 vars.$lightest-color,
+      .1em .1em 0 vars.$lightest-color
     }
     .main-image{
         width: 100%;
@@ -55,6 +96,7 @@
       flex-direction: column;
       align-items: center;
       .main-section-mid {
+        background: #f9f8f2;
         width: 100%;
         border-radius: 5px;
         margin: 25px;
@@ -71,6 +113,7 @@
         }
         .challenge-image{
           width: 80%;
+          border-radius: 5px;
         }
       }
       .main-video-section{
@@ -91,6 +134,7 @@
         iframe {
           width: 100%;
           height: 80%;
+          border-radius: 5px;
         }
       }
     }
