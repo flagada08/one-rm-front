@@ -8,11 +8,13 @@ import {
   NEW_OBJECTIF_REPETITION,
   NEW_OBJECTIF_WEIGHT,
   POST_NEW_PERF,
+  ADD_NEW_PERF_MESSAGE,
 } from 'src/actions/detailExercise';
 
 const initialState = {
   detailExercise: '',
   AllGoals: [],
+  addNewPerfMessage: '',
   newPerf: '',
   newPerfWeight: '',
   newObjectifRepetition: '',
@@ -87,6 +89,12 @@ function DetailExerciseReducer(state = initialState, action = {}) {
         AllGoals: state.AllGoals.length > 0 ? [...state.AllGoals, newGoals] : newGoals,
         newPerf: '',
         newPerfWeight: '',
+      };
+    }
+    case ADD_NEW_PERF_MESSAGE: {
+      return {
+        ...state,
+        addNewPerfMessage: action.message,
       };
     }
     default:

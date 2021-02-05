@@ -12,6 +12,7 @@ import {
   ADD_OBJECTIF,
   addNewObjectifRepetition,
   addNewObjectifWeight,
+  addNewPerfMessage,
 } from 'src/actions/detailExercise';
 
 const detailExerciseMiddelware = (store) => (next) => (action) => {
@@ -75,6 +76,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
+        store.dispatch(addNewPerfMessage('performance Ajouté'));
         return data;
       })
       .catch((error) => {
@@ -174,6 +176,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       fetchDataOneWorkout(action.exerciseId);
       fetchDataAllGoals(action.exerciseId);
       fetchMessage(action.userId, action.exerciseId);
+      store.dispatch(addNewPerfMessage(''));
       next(action);
       break;
     }
