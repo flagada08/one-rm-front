@@ -13,7 +13,6 @@ import BurgerListe from 'src/components/BurgerListe';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   TOKEN: state.loginForm.TOKEN,
-
 });
 
 // === mapDispatchToProps
@@ -22,8 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   toggleBurgerMenu: () => {
     dispatch(openBugerMenu());
-    dispatch(clickOfRecapExercise());
-    dispatch(allMembers());
+    // dispatch(clickOfRecapExercise());
+    // dispatch(allMembers());
   },
 
   buttonConnect: () => {

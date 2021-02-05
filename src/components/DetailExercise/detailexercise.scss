@@ -164,6 +164,9 @@ justify-content: center;
         background-color: vars.$primary-color;
         border: solid 1px vars.$primary-color;
         transition: 0.5s;
+        &:hover {
+          
+        }
           &:active {
             color: vars.$primary-color;
             background-color: #FFFFFF;
