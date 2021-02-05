@@ -5,6 +5,7 @@ import {
   fetchAllUsersData,
   CLICK_OF_MEMBER,
   ALL_MEMBER,
+  CHANGE_MEMBER_RANK,
 } from 'src/actions/pageProfil';
 import { fetchUserDataPerformances } from 'src/actions/recapExercise';
 import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
@@ -91,6 +92,24 @@ const profilPageMiddelware = (store) => (next) => (action) => {
       });
   };
 
+  const ChangeMemberRank = (id, newRole) => {
+    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
+    const TOKEN = localStorage.getItem('token');
+    console.log(id, newRole);
+    axios.patch(API_URL, {
+      roles: newRole,
+    },
+
+    { headers: { Authorization: `Bearer ${TOKEN}` } })
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   switch (action.type) {
     case LOGGED_IN: {
       console.log('je passe par le login');
@@ -116,6 +135,11 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     }
     case EDIT_REGISTER_PROFIL_USER: {
       editRegisterProfilUser(action.userId);
+      next(action);
+      break;
+    }
+    case CHANGE_MEMBER_RANK: {
+      ChangeMemberRank(action.id, action.newRole);
       next(action);
       break;
     }

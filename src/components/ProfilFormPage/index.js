@@ -22,6 +22,7 @@ const ProfilFormPage = ({
     {data
       && (
       <>
+      <label>Nom:</label>
         <input
           className="user-input"
           type="text"
@@ -31,6 +32,7 @@ const ProfilFormPage = ({
             setValueLastname(event.target.value);
           }}
         />
+        <label>prénom:</label>
         <input
           className="user-input"
           type="text"
@@ -40,6 +42,7 @@ const ProfilFormPage = ({
             setValueFirstname(event.target.value);
           }}
         />
+        <label>email:</label>
         <input
           className="user-input"
           type="email"
@@ -49,6 +52,7 @@ const ProfilFormPage = ({
             setValueEmail(event.target.value);
           }}
         />
+        <label>age:</label>
         <input
           className="user-input"
           type="number"
