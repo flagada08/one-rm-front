@@ -13,6 +13,12 @@
     background: vars.$lightest-color;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    .exercise-text {
+      padding: 5px;
+      background: white;
+      border-radius: 5px;
+    }
 
     .left-section {
       display: flex;
@@ -21,15 +27,14 @@
       align-items: center;
 
       .exercise-title {
+        text-transform: uppercase;
         font-size: x-large;
         font-weight: bold;
         margin: 10px;
       }
       
-      .exercise-media {
-        width: 250px;
-        height: 200px;
-        background: black;
+      img {
+        border-radius: 5px;
       }
     }
     .exercise-border {
@@ -46,7 +51,7 @@
     }
     
     .exercise-difficulty {
-
+      font-weight: bold;
     }
   }
   
@@ -65,7 +70,7 @@
       .exercise-text {
         width: 85%;
         text-align: left;
-        padding: 0;
+        padding: 5px;
         margin: 0;
       }
 

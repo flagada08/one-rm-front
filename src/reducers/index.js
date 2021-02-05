@@ -10,11 +10,13 @@ import BurgerMenuReducer from './BurgerMenuReducer';
 import PageProfilReducer from './PageProfilReducer';
 import DetailExerciseReducer from './DetailExerciseReducer';
 import ProfilFormReducer from './ProfilFormReducer';
+import ExercisesPageReducer from './ExercisesPageReducer';
 
 const persistConfig = {
   key: 'root',
   storage,
   whitelist: [
+    'exercisesPage',
     'loginForm',
     'registerForm',
     'header',
@@ -29,6 +31,7 @@ const persistConfig = {
 // combineReducers prend en argument un objet qui indique un nom pour
 // chaque reducer
 const rootReducer = combineReducers({
+  exercisesPage: ExercisesPageReducer,
   loginForm: LoginFormReducer,
   registerForm: RegisterFormReducer,
   header: HeaderReducer,

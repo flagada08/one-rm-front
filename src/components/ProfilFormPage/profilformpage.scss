@@ -2,19 +2,20 @@
 
 .profil-form-page-container{
   margin: 10px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 5px;
   font-weight: bold;
+  background: vars.$lightest-color;
   label{
     margin: 5px;
     padding: 5px;
     background: vars.$primary-color;
     border-radius: 3px;
-    width: 50%;
+    width: 100px;
     color: white;
   }
 
@@ -25,14 +26,15 @@
     border: solid 1px black;
     margin: 5px;
     text-align: center;
+    border: none;
       &:hover,
         &:focus {
-        background: vars.$light-color;
+        background: vars.$input-color;
       }
   }
 
     .send-button{
-      width: 50%;
+      width: 150px;
       font-size: 1em;
       text-decoration: none;
       font-weight: bold;
@@ -40,6 +42,7 @@
       border: solid 1px transparent;
       padding: 0.5em;
       color: white;
+      font-family: 'Architects Daughter', cursive;
       background-color: vars.$primary-color;
       border-radius: 3px;
       transition: 0.5s;
@@ -50,4 +53,11 @@
           border: solid 1px vars.$primary-color;
         }
     }
+}
+
+@media (max-width: 700px) {
+  .profil-form-page-container{
+    margin: 10px;
+    width: 95%;
+  }
 }

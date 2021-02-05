@@ -67,13 +67,13 @@ const DetailExercise = ({
           </div>
           <div className="performance-form-container">
             <form className="performance-formulaire">
-              <span>entrer vos nouvelles objectif</span>
+              <span>Entrer vos nouveaux objectifs</span>
               <input onChange={(event) => setNewObjectifRepetition(event.target.value)} className="performance-input" value={newObjectifRepetition} placeholder="Objectif Repetition" />
               <input onChange={(event) => setNewObjectifWeight(event.target.value)} className="performance-input" value={newObjectifWeight} placeholder=" objectif Charge" />
               <button className="send-button" type="button" onClick={() => addObjectif(dataOneExercise.id, dataPerformances[0].user_id) }>ENVOYER</button>
             </form>
             <form className="performance-formulaire">
-              <span>entrer vos nouvelles performances</span>
+              <span>Entrer vos nouvelles performances</span>
               <input onChange={(event) => setNewRepetition(event.target.value)} className="performance-input" value={newPerf} placeholder="Charges" />
               <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="Répétitions" />
               <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id, dataPerformances[0].user_id)}>ENVOYER</button>

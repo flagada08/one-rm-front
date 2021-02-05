@@ -43,7 +43,7 @@ const Exercise = ({
       </div>
     </div>
   );
-}
+};
 
 Exercise.propTypes = {
 
