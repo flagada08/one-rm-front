@@ -96,8 +96,8 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
     const TOKEN = localStorage.getItem('token');
     console.log(id, newRole);
-    axios.patch(API_URL, {
-      roles: newRole,
+    axios.post(API_URL, {
+      roles: [newRole],
     },
 
     { headers: { Authorization: `Bearer ${TOKEN}` } })

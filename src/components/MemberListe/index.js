@@ -12,6 +12,7 @@ const MemberListe = ({
   clickOfMember,
   clickDeleteMember,
   changeMemberRank,
+  role,
 }) => (
 
   <div className="member-container">
@@ -23,15 +24,15 @@ const MemberListe = ({
     </Link>
     <select onChange={(event) => changeMemberRank(id, event.target.value)} className="member-select">
       <option value="">
-        --SALLE DE SPORT--
+        {role}
       </option>
-      <option vlaue="ROLE_USER">
+      <option value="ROLE_USER">
         MEMBRE
       </option>
-      <option vlaue="ROLE_COACH">
+      <option value="ROLE_COACH">
         COACH
       </option>
-      <option vlaue="ROLE_MANAGER">
+      <option value="ROLE_MANAGER">
         MANAGER
       </option>
     </select>

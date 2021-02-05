@@ -19,6 +19,7 @@ const ProfilPage = ({ data, allUsersData }) => (
         key={user.id}
         lastname={user.lastname}
         firstname={user.firstname}
+        role={user.roles[0]}
         id={user.id}
       />
     )))}
