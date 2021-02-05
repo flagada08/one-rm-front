@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clickOfMember, clickDeleteMember } from 'src/actions/pageProfil';
+import { clickOfMember, clickDeleteMember, changeMemberRank } from 'src/actions/pageProfil';
 // on importe le composant de présentation
 import MemberListe from 'src/components/MemberListe';
 
@@ -19,6 +19,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   clickDeleteMember: (id) => {
     dispatch(clickDeleteMember(id));
+  },
+
+  changeMemberRank: (id, newRole) => {
+    dispatch(changeMemberRank(id, newRole));
   },
 });
 

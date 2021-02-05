@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '/public/img/img-test.jpg';
 import challengeImage from '/public/img/challenge-image.png';
 import './main.scss';
 
@@ -7,7 +6,7 @@ const Main = () => (
   <main className="Main">
     <div className="main-image-container">
       <h1 className="main-title">Bienvenue sur O'ne RM</h1>
-      <img className="main-image" src={image} alt="slider" />
+      <img className="main-image" src="https://cutewallpaper.org/21/wallpapers-of-sport/Download-wallpaper-3840x2400-weightlifter,-sport,-barbell-.jpg" alt="slider" />
     </div>
     <section className="main-section-container">
       <div className="main-section-top">

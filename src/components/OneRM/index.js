@@ -7,7 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from 'src/containers/Header';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
-import ExercisePage from 'src/components/ExercisePage';
+import ExercisesPage from 'src/components/ExercisesPage';
 import ProfilPage from 'src/containers/PageProfil';
 import ExerciseRecap from 'src/containers/ExercisesRecap';
 import DetailExercise from 'src/containers/DetailExercise';
@@ -29,7 +29,7 @@ const OneRM = ({ loggedIn, redirect }) => (
         </Route>
         <Route exact path="/exercices">
           <Header />
-          <ExercisePage />
+          <ExercisesPage />
         </Route>
         {loggedIn
         && (

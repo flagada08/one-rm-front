@@ -10,7 +10,8 @@ import './profilpage.scss';
 const ProfilPage = ({ data, allUsersData }) => (
   <div className="main-section">
     <HeaderProfil />
-    <h1 className="profil-page-title">Liste des Athlètes</h1>
+    {data && data.roles.includes('ROLE_COACH')
+    && <h1 className="profil-page-title">Liste des Athlètes</h1>}
     <div className="member-liste-container">
       {data && data.roles.includes('ROLE_COACH')
     && (allUsersData.map((user) => (

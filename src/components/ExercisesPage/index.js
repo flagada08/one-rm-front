@@ -1,9 +1,9 @@
 import React from 'react';
 import Footer from 'src/components/Footer';
 
-import './exercisepage.scss';
+import './exercisespage.scss';
 
-const ExercisePage = () => (
+const ExercisesPage = () => (
   <div className="main">
     <div className="exercise-container">
       <div className="left-section">
@@ -89,8 +89,8 @@ const ExercisePage = () => (
   </div>
 );
 
-ExercisePage.propTypes = {
+ExercisesPage.propTypes = {
 
 };
 
-export default ExercisePage;
+export default ExercisesPage;

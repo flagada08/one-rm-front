@@ -5,19 +5,38 @@ import { Link } from 'react-router-dom';
 import './memberliste.scss';
 
 const MemberListe = ({
-  data, id, lastname, firstname, clickOfMember, clickDeleteMember,
+  data,
+  id,
+  lastname,
+  firstname,
+  clickOfMember,
+  clickDeleteMember,
+  changeMemberRank,
 }) => (
 
   <div className="member-container">
-    {console.log(data)}
     <Link
       className="member-link"
       to="/recapexercices"
     >
       <User className="member-user-icon" onClick={() => clickOfMember(id)} />
     </Link>
-    <span className="member-firstname">{firstname}</span>
-    <span className="member-lastname">{lastname}</span>
+    <select onChange={(event) => changeMemberRank(id, event.target.value)} className="member-select">
+      <option value="">
+        --SALLE DE SPORT--
+      </option>
+      <option vlaue="ROLE_USER">
+        MEMBRE
+      </option>
+      <option vlaue="ROLE_COACH">
+        COACH
+      </option>
+      <option vlaue="ROLE_MANAGER">
+        MANAGER
+      </option>
+    </select>
+    <span className="member-firstname">Prénom : {firstname}</span>
+    <span className="member-lastname">Nom : {lastname}</span>
     {data && data.roles.includes('ROLE_MANAGER') && <Trash2 className="member-trash-icon" onClick={() => clickDeleteMember(id)} />}
     <div className="circle">
       <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" />
@@ -28,5 +47,4 @@ const MemberListe = ({
   </div>
 
 );
-// [2] ROLE_MANAGER
 export default MemberListe;
