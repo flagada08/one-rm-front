@@ -133,7 +133,9 @@ const profilPageMiddelware = (store) => (next) => (action) => {
       break;
     }
     case ALL_MEMBER: {
-      fetchAllUsers();
+      if (store.getState().profilPage.role !== 'ROLE_USER') {
+        fetchAllUsers();
+      }
       next(action);
       break;
     }

@@ -26,8 +26,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data);
-        
         store.dispatch(fetchUserDetailExercise(response.data));
         return data;
       })
@@ -47,7 +45,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        // store.dispatch(fetchAllGoals(response.data)); //! a voir !
+        store.dispatch(fetchAllGoals(response.data)); //! a voir !
         return data;
       })
       .catch((error) => {
@@ -77,7 +75,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(response);
         return data;
       })
       .catch((error) => {
@@ -96,7 +93,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.post(API_URL, { user_id: userId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data);
         if (data.repetition !== null) {
           store.dispatch(addNewPerf(data[data.length - 1].repetition));
           store.dispatch(addNewPerfWeight(data[data.length - 1].weight));
@@ -125,7 +121,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data);
         return data;
       })
       .catch((error) => {
@@ -139,7 +134,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     axios.post(API_URL, { exercise: exerciseId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
         const { data } = response;
-        console.log(data);
         store.dispatch(fetchUserMessage(data));
         return data;
       })
@@ -165,7 +159,6 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
         const { data } = response;
         store.dispatch(addNewObjectifRepetition(''));
         store.dispatch(addNewObjectifWeight(''));
-        console.log(response);
         return data;
       })
       .catch((error) => {
@@ -175,8 +168,9 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
 
   switch (action.type) {
     case CLICK_OF_ONE_EXERCISE: {
-      console.log(action.userId);
-      postUserId(action.exerciseId, action.userId);
+      if (store.getState().profilPage.role !== 'ROLE_USER') {
+        postUserId(action.exerciseId, action.userId);
+      }
       fetchDataOneWorkout(action.exerciseId);
       fetchDataAllGoals(action.exerciseId);
       fetchMessage(action.userId, action.exerciseId);
