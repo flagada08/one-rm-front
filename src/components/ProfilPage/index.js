@@ -7,29 +7,38 @@ import ProfilFormPage from 'src/containers/ProfilFormPage';
 
 import './profilpage.scss';
 
-const ProfilPage = ({ data, allUsersData }) => (
-  <div className="main-section">
-    <HeaderProfil />
-    {data && data.roles.includes('ROLE_COACH')
-    && <h1 className="profil-page-title">Liste des Athlètes</h1>}
-    <div className="member-liste-container">
+const ProfilPage = ({ data, allUsersData }) => {
+  const permission = () => {
+    if (data) {
+      return data.roles.includes('ROLE_COACH') || data.roles.includes('ROLE_MANAGER');
+    }
+  };
+  console.log(permission());
+  
+  return (
+    <div className="main-section">
+      <HeaderProfil />
       {data && data.roles.includes('ROLE_COACH')
-    && (allUsersData.map((user) => (
-      <MemberListe
-        key={user.id}
-        lastname={user.lastname}
-        firstname={user.firstname}
-        role={user.roles[0]}
-        id={user.id}
-      />
-    )))}
+      && <h1 className="profil-page-title">Liste des Athlètes</h1>}
+      <div className="member-liste-container">
+        {data && data.roles.includes('ROLE_COACH')
+      && (allUsersData.map((user) => (
+        <MemberListe
+          key={user.id}
+          lastname={user.lastname}
+          firstname={user.firstname}
+          role={user.roles[0]}
+          id={user.id}
+        />
+      )))}
+      </div>
+      <h1 className="profil-page-title">Information de l'Athlète</h1>
+      <div className="bottom-section">
+        <ProfilFormPage />
+      </div>
+      <Footer />
     </div>
-    <h1 className="profil-page-title">Information de l'Athlète</h1>
-    <div className="bottom-section">
-      <ProfilFormPage />
-    </div>
-    <Footer />
-  </div>
-);
+  );
+};
 
 export default ProfilPage;

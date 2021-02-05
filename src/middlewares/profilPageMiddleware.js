@@ -6,6 +6,7 @@ import {
   CLICK_OF_MEMBER,
   ALL_MEMBER,
   CHANGE_MEMBER_RANK,
+  fechtUserRole,
 } from 'src/actions/pageProfil';
 import { fetchUserDataPerformances } from 'src/actions/recapExercise';
 import { LOGGED_IN, LOGGED_OUT } from 'src/actions/formInputLogin';
@@ -28,6 +29,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
         const { name } = data.fitnessRoom;
         store.dispatch(fetchUserData(response.data));
         store.dispatch(formInputProfilUserData(lastname, firstname, email, age, name));
+        store.dispatch(fechtUserRole(data.roles[0]));
       })
       .catch((error) => {
         console.log(error);
@@ -114,7 +116,9 @@ const profilPageMiddelware = (store) => (next) => (action) => {
     case LOGGED_IN: {
       console.log('je passe par le login');
       fetchData();
-      fetchAllUsers();
+      if (store.getState().profilPage.role !== 'ROLE_USER') {
+        fetchAllUsers();
+      }
       next(action);
       break;
     }
