@@ -20,27 +20,12 @@ const NavBar = ({ TOKEN, clickOfRecapExercise, clickOfExercisesPage }) => (
       EXERCICES
     </NavLink>
 
-    <NavLink
-      to="#"
-      className="navbar-link"
-    >
-      CHALLENGES
-    </NavLink>
     {TOKEN && (
     <NavLink
       to="/profil"
       className="navbar-link"
     >
       PROFIL
-    </NavLink>
-    )}
-
-    {TOKEN && (
-    <NavLink
-      to="/detailexercice"
-      className="navbar-link"
-    >
-      DETAIL
     </NavLink>
     )}
 

@@ -175,8 +175,10 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
       if (store.getState().profilPage.role !== 'ROLE_USER') {
         postUserId(action.exerciseId, action.userId);
       }
+      if (store.getState().profilPage.role === 'ROLE_USER') {
+        fetchDataAllGoals(action.exerciseId);
+      }
       fetchDataOneWorkout(action.exerciseId);
-      fetchDataAllGoals(action.exerciseId);
       fetchMessage(action.userId, action.exerciseId);
       store.dispatch(addNewPerfMessage(''));
       store.dispatch(addNewObjectifMessage(''));

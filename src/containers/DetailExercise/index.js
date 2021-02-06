@@ -28,6 +28,7 @@ const mapStateToProps = (state) => ({
   dataUser: state.profilPage.data,
   newObjectifRepetition: state.detailExercise.newObjectifRepetition,
   newObjectifWeight: state.detailExercise.newObjectifWeight,
+  connectedRole: state.profilPage.role,
 });
 
 // === mapDispatchToProps

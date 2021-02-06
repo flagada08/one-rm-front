@@ -26,6 +26,7 @@ const DetailExercise = ({
   addObjectif,
   comfirmMessage,
   comfirmMessageObjectif,
+  connectedRole
 }) => {
   const inputCoach = useRef(null);
 
@@ -90,7 +91,7 @@ const DetailExercise = ({
         {allMessages && allMessages.map((message) => (
           <div key={message.id} className="conseil-coach-message">{message.content}</div>
         ))}
-        {dataUser.roles[0] === 'ROLE_COACH'
+        {connectedRole === 'ROLE_COACH'
           && (
           <div className="conseil-coach-input-container">
             <input ref={inputCoach} className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />

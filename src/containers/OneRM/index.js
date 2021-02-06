@@ -8,6 +8,7 @@ import OneRM from 'src/components/OneRM';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   loggedIn: state.loginForm.loggedIn,
+  loggedOut: state.loginForm.loggedOut,
   redirect: state.loginForm.redirect,
 });
 
