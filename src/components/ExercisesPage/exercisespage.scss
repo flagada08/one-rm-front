@@ -1,19 +1,25 @@
 @use 'src/styles/vars';
 
-.main {
+.main-exercises-page {
 
   .exercise-container {
-    margin: 20px;
+    margin: 2em;
+    margin-left: 100px;
+    margin-right: 100px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     padding: 10px;
     font-size: large;
-    background: vars.$lightest-color;
+    background: white;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
+    transition: all 0.5s ease-out;
+      &:hover{
+        transform: scale(1.1);
+      }
+
     .left-section {
       display: flex;
       flex-direction: column;
@@ -21,9 +27,13 @@
       align-items: center;
 
       .exercise-title {
+        color: white;
+        background: vars.$primary-color;
+        border-radius: 3px;
+        padding: 10px;
+        font-family: 'Archivo Black', sans-serif;
         text-transform: uppercase;
         font-size: x-large;
-        font-weight: bold;
         margin: 10px;
       }
       
@@ -39,9 +49,10 @@
     }
     
     .exercise-text {
+      line-height: 1.5em;
       width: 50%;
       padding: 25px;
-      background: white;
+      background: vars.$lightest-color;
       border-radius: 5px;
       text-align: left;
     }
@@ -57,6 +68,7 @@
   
   @media (max-width: vars.$breakpoint-tablet) {
     .exercise-container {
+      margin: 1.5rem;
       display: flex;
       flex-direction: column;
       .exercise-border {
@@ -71,7 +83,7 @@
         width: 85%;
         text-align: left;
         padding: 5px;
-        margin: 0;
+        margin-bottom: 15px;
       }
 
       .exercise-difficulty {

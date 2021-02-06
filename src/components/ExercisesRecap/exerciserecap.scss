@@ -1,17 +1,16 @@
 @use 'src/styles/vars';
 
 
-.exercicerecap-container{
-
-
+.exercices-container{
+  
   .exercice-title-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 2px;
     padding: 1em;
     font-size: 20px;
-    font-weight: bold;
     .exercice-title{
+      font-family: 'Archivo Black', sans-serif;
       margin: 5px;
       padding: 10px;
       border-radius: 3px;
@@ -22,65 +21,64 @@
       align-items: center;
     }
   }
-  .exercice-card{
+  .exercices-cards{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1em;
-    padding: 1em;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    font-size: x-small;
-    border-radius: 5px;
-    transition: all 0.5s ease-out;
-    &:hover{
-      transform: scale(1.1);
-    }
-    .exercice-link{
-      font-size: medium;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    .exercice-pregression{
-      width: 100%;
-      display: flex;
-    }
-
-    .exercice-pregression-container{
-      width: 70%;
-        .exercice-progress-weight{
-        width: 100%;
-        .progressbar-container{
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-       
-      }
-      .exercice-progress-repetition{
-        width: 100%;
-        .progressbar-container{
-          width: 100%;
-        }
-      }
-    }
-    
-  }
-
-  
-}
-@media (min-width: vars.$breakpoint-tablet) {
-  .exercices-container{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
     justify-content: center;
+    height: 250px;
     .exercice-card{
-      width: 50%;
-      margin: 10px;
-    }
-    .exercice-title-container{
-      width: 50%;
+      width: 85%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 1em;
+      padding: 1em;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      font-size: x-small;
+      border-radius: 5px;
+      transition: all 0.5s ease-out;
+      &:hover{
+        transform: scale(1.1);
+      }
+      .exercice-link{
+        background-color: vars.$primary-color;
+        transition: 0.5s;
+        border-radius: 3px;
+        color: white;
+        padding: 10px;
+        font-size: medium;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: 'Archivo Black', sans-serif;
+        &:hover,
+        &:focus {
+          color: vars.$primary-color;
+          background-color: white;
+          border: solid 1px vars.$primary-color;
+        }
+      }
+
+      .exercice-pregression{
+        width: 100%;
+        display: flex;
+      }
+
+      .exercice-pregression-container{
+        width: 75%;
+        height: 50%;
+          .exercice-progress-weight{
+          width: 100%;
+          .progressbar-container{
+            width: 100%;
+          }       
+        }
+        .exercice-progress-repetition{
+          width: 100%;
+          .progressbar-container{
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

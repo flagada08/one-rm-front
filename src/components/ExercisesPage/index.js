@@ -4,7 +4,7 @@ import Footer from 'src/components/Footer';
 import './exercisespage.scss';
 
 const ExercisesPage = ({ exercisesData }) => (
-  <div className="main">
+  <div className="main-exercises-page">
     {exercisesData && exercisesData.map((exercise) => (
 
       <div key={exercise.id} className="exercise-container">

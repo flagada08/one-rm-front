@@ -8,17 +8,27 @@ justify-content: center;
     width: 80%;
   }
   .mouvement-container{
-    padding: 1em;
-    margin-top: 1em;
+    margin-top: 1.5em;
+    padding: 2.5em;
     width: 50%;
     .mouvement-title{
-      font-size: large;
+      color: white;
+      background: vars.$primary-color;
+      border-radius: 3px;
+      padding: 10px;
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
       font-weight: bold;
+      font-size: large;
+      margin-bottom: 5px;
+      margin-left: 300px;
+      margin-right: 300px;
     }
     .mouvement-image{
       width: 100%;
       .image-exercise{
         width: 100%;
+        border-radius: 5px;
       }
     }
     .mouvement-difficulty{
@@ -44,24 +54,32 @@ justify-content: center;
   .conseil-container{
     width: 50%;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 1em;
-    padding: 1em;
-    word-break: break-all;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 1.5em;
+    padding: 2.5em;
     .conseil-title{
-      font-size: large;
+      color: white;
+      background: vars.$primary-color;
+      border-radius: 3px;
+      padding: 10px;
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
       font-weight: bold;
-      width: 100%;
-      height: 10%;
+      font-size: large;
+      margin-bottom: 5px;
+      margin-left: 300px;
+      margin-right: 300px;
     }
     .conseil-paragraph{
       font-size: medium;
     }
   }
   .performance-form-container{
+    font-family: 'Archivo Black', sans-serif;
     span {
+      text-transform: uppercase;
       margin: 10px;
-      font-weight: bold;
     }
     display: flex;
     justify-content: center;
@@ -73,13 +91,6 @@ justify-content: center;
     padding: 25px;
     background: vars.$lightest-color;
     border-radius: 5px;
-    .performance-title{
-      text-transform: uppercase;
-      font-weight: bold;
-      width: 100%;
-      margin: 10px;
-      text-decoration: underline;
-    }
     .performance-goals{
       display: contents;
       .performance-span{
@@ -140,9 +151,9 @@ justify-content: center;
     flex-direction: column;
     align-items: center;
     .conseil-coach-title{
+      font-family: 'Archivo Black', sans-serif;
       margin-top: 15px;
       font-size: large;
-      font-weight: bold;
       color: white;
     }
     .conseil-coach-message{
@@ -186,6 +197,25 @@ justify-content: center;
     .chart-container{
       width: 100%;
     }
+    .mouvement-container{
+      margin-top: 1em;
+      padding: 1em;
+      width: 100%;
+      .mouvement-title{
+        margin: 1.5em;
+      }
+    }
+    .conseil-container{
+      margin-top: 1em;
+      padding: 1em;
+      width: 100%;
+      .conseil-title{
+        margin: 1.5em;
+      }
+      .conseil-paragraph{
+        margin: 1.5em;
+      }
+    }
   .performance-form-container{
     width: 100%;
  
@@ -207,7 +237,6 @@ justify-content: center;
     .performance-formulaire{
       span {
         margin: 10px;
-        font-weight: bold;
       }
       display: flex;
       flex-direction: column;

@@ -1,12 +1,17 @@
 import React from 'react';
 import challengeImage from '/public/img/challenge-image.png';
+import mainImage from '/public/img/main-image.jpg';
+import { PlayCircle } from 'react-feather';
 import './main.scss';
 
 const Main = () => (
   <main className="Main">
     <div className="main-image-container">
       <h1 className="main-title">Bienvenue sur O'ne RM</h1>
-      <img className="main-image" src="https://cutewallpaper.org/21/wallpapers-of-sport/Download-wallpaper-3840x2400-weightlifter,-sport,-barbell-.jpg" alt="slider" />
+      <p className="main-phrase">
+        Encadrés par vos Coachs préférés, rejoignez la communauté O'ne RM et obtenez un suivi personnalisé de vos performances et votre progression !
+      </p>
+      <img className="main-image" src={mainImage} alt="slider" />
     </div>
     <section className="main-section-container">
       <div className="main-section-top">

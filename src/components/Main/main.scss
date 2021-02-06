@@ -10,55 +10,28 @@
    position: relative;
    display: flex;
    justify-content: center;
+   .main-phrase{
+     position: absolute;
+     left: 30px;
+     top: 200px;
+     color: white;
+     text-align: left;
+     width: 450px;
+     line-height: 1.5em;
+     font-size: 2em;
+     border: 1px solid;
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+     border-radius: 5px;
+     padding: 10px;
+   }
     .main-title{
-      text-transform: uppercase;
+      font-family: 'Archivo Black', sans-serif;
       color: white;
       position: absolute;
-      top: 75%;
+      left: 25px;
+      top: 50px;
       text-shadow: black 0.1em 0.1em 0.2em;
-      font-size: 4rem;
-      font-weight: 1000;
-      text-shadow: 0 0 0 vars.$lightest-color,
-      .0025em .0025em 0 vars.$lightest-color,
-      .005em .005em 0 vars.$lightest-color,
-      .0075em .0075em 0 vars.$lightest-color,
-      .01em .01em 0 vars.$lightest-color,
-      .0125em .0125em 0 vars.$lightest-color,
-      .015em .015em 0 vars.$lightest-color,
-      .0175em .0175em 0 vars.$lightest-color,
-      .02em .02em 0 vars.$lightest-color,
-      .0225em .0225em 0 vars.$lightest-color,
-      .025em .025em 0 vars.$lightest-color,
-      .0275em .0275em 0 vars.$lightest-color,
-      .03em .03em 0 vars.$lightest-color,
-      .0325em .0325em 0 vars.$lightest-color,
-      .035em .035em 0 vars.$lightest-color,
-      .0375em .0375em 0 vars.$lightest-color,
-      .04em .04em 0 vars.$lightest-color,
-      .0425em .0425em 0 vars.$lightest-color, 
-      .045em .045em 0 vars.$lightest-color,
-      .0475em .0475em 0 vars.$lightest-color,
-      .05em .05em 0 vars.$lightest-color,
-      .0525em .0525em 0 vars.$lightest-color,
-      .055em .055em 0 vars.$lightest-color,
-      .0575em .0575em 0 vars.$lightest-color,
-      .06em .06em 0 vars.$lightest-color,
-      .0625em .0625em 0 vars.$lightest-color,
-      .065em .065em 0 vars.$lightest-color,
-      .0675em .0675em 0 vars.$lightest-color, 
-      .07em .07em 0 vars.$lightest-color,
-      .0725em .0725em 0 vars.$lightest-color,
-      .075em .075em 0 vars.$lightest-color,
-      .0775em .0775em 0 vars.$lightest-color,
-      .08em .08em 0 vars.$lightest-color,
-      .0825em .0825em 0 vars.$lightest-color,
-      .085em .085em 0 vars.$lightest-color,
-      .0875em .0875em 0 vars.$lightest-color,
-      .09em .09em 0 vars.$lightest-color,
-      .0925em .0925em 0 vars.$lightest-color,
-      .095em .095em 0 vars.$lightest-color,
-      .0975em .0975em 0 vars.$lightest-color,
-      .1em .1em 0 vars.$lightest-color
+      font-size: 5rem;
     }
     .main-image{
         width: 100%;
@@ -69,24 +42,29 @@
   .main-section-container{
     display: flex;
     flex-direction: wrap;
-    top: 20%;
     margin: 0.5em;
-    width: 100%;
+    width: 85%;
     .main-section-top {
-      width: 50%;
       border-radius: 5px;
       margin: 25px;
       font-size: 1.2em;
       padding: 5px;
-      word-break: break-all;
       background: vars.$lightest-color;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       
       .main-section-title{
+        display: inline-block;
+        color: white;
+        background: vars.$primary-color;
+        border-radius: 3px;
+        padding: 10px;
+        font-family: 'Archivo Black', sans-serif;
         text-transform: uppercase;
-        font-weight: bold;
         font-size: x-large;
         margin: 15px;
+      }
+      p {
+        line-height: 1.5em;
       }
     }
     .main-mid-video {
@@ -101,12 +79,16 @@
         margin: 25px;
         font-size: 1.2em;
         padding: 5px;
-        word-break: break-all;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         
         .main-section-title{
+          display: inline-block;
+          color: white;
+          background: vars.$primary-color;
+          border-radius: 3px;
+          padding: 10px;
+          font-family: 'Archivo Black', sans-serif;
           text-transform: uppercase;
-          font-weight: bold;
           font-size: x-large;
           margin: 15px;
         }
@@ -117,22 +99,24 @@
       }
       .main-video-section{
         width: 80%;
-        height: 350px;
+        height: 500px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         border-radius: 5px;
-        padding: 10px;
-        .main-section-title{
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: x-large;
-          margin: 15px;
-        }
         margin: 25px;
-        font-size: 1.2em;
-        word-break: break-all;
+        .main-section-title{
+          display: inline-block;
+          color: white;
+          background: vars.$primary-color;
+          border-radius: 3px;
+          padding: 10px;
+          font-family: 'Archivo Black', sans-serif;
+          text-transform: uppercase;
+          font-size: x-large;
+          margin: 15px 0;
+        }
         iframe {
-          width: 100%;
-          height: 80%;
+          width: 75%;
+          height: 75%;
           border-radius: 5px;
         }
       }
@@ -154,14 +138,17 @@ RESPONSIVE CONDITIONS
   .Main{
     .main-image-container{
       width: 100%;
-      position: relative;
-      display: flex;
+
+      .main-phrase{
+        display: none;
+      }
       
      .main-title{
         position: absolute;
-        align-self: center;
+        top: 5px;
+        left: -30px;
         width: 100%;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         font-weight: 1000;
       }
       .main-image{

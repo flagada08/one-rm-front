@@ -34,15 +34,14 @@
   }
 
     .send-button{
+      font-family: 'Archivo Black', sans-serif;
       width: 150px;
       font-size: 1em;
       text-decoration: none;
-      font-weight: bold;
       margin: 2px;
       border: solid 1px transparent;
       padding: 0.5em;
       color: white;
-      font-family: 'Architects Daughter', cursive;
       background-color: vars.$primary-color;
       border-radius: 3px;
       transition: 0.5s;
