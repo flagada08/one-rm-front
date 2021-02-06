@@ -7,21 +7,21 @@ import ProfilFormPage from 'src/containers/ProfilFormPage';
 
 import './profilpage.scss';
 
-const ProfilPage = ({ data, allUsersData }) => {
+const ProfilPage = ({ data, allUsersData, role }) => {
   const permission = () => {
     if (data) {
-      return data.roles.includes('ROLE_COACH') || data.roles.includes('ROLE_MANAGER');
+      return role === 'ROLE_MANAGER' || role === 'ROLE_COACH';
     }
   };
-  console.log(permission());
-  
+console.log(permission());
+
   return (
     <div className="main-section">
       <HeaderProfil />
-      {data && data.roles.includes('ROLE_COACH')
+      {data && permission()
       && <h1 className="profil-page-title">Liste des Athlètes</h1>}
       <div className="member-liste-container">
-        {data && data.roles.includes('ROLE_COACH')
+        {data && permission()
       && (allUsersData.map((user) => (
         <MemberListe
           key={user.id}

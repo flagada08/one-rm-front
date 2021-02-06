@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   data: state.profilPage.data,
   allUsersData: state.profilPage.allUsersData,
+  role: state.profilPage.role,
 });
 
 // === mapDispatchToProps
