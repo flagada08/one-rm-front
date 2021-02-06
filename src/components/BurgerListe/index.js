@@ -49,13 +49,6 @@ const BurgerListe = ({
       EXERCICES
     </NavLink>
 
-    <NavLink
-      onClick={toggleBurgerMenu}
-      to="#"
-      className="navbar-link"
-    >
-      CHALLENGES
-    </NavLink>
     {TOKEN && (
     <NavLink
       onClick={toggleBurgerMenu}

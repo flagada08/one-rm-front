@@ -7,19 +7,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 10px;
     font-size: large;
     background: vars.$lightest-color;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
-    .exercise-text {
-      padding: 5px;
-      background: white;
-      border-radius: 5px;
-    }
-
     .left-section {
       display: flex;
       flex-direction: column;
@@ -46,12 +40,18 @@
     
     .exercise-text {
       width: 50%;
-      margin: 50px;
+      padding: 25px;
+      background: white;
+      border-radius: 5px;
       text-align: left;
     }
-    
-    .exercise-difficulty {
-      font-weight: bold;
+    .exercise-media {
+      display: flex;
+      flex-direction: column;
+      .exercise-difficulty {
+        margin-top: 25px;
+        font-weight: bold;
+      }
     }
   }
   

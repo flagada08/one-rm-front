@@ -15,9 +15,8 @@
       color: white;
       position: absolute;
       top: 75%;
-      width: 100%;
       text-shadow: black 0.1em 0.1em 0.2em;
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 1000;
       text-shadow: 0 0 0 vars.$lightest-color,
       .0025em .0025em 0 vars.$lightest-color,
@@ -97,7 +96,7 @@
       align-items: center;
       .main-section-mid {
         background: #f9f8f2;
-        width: 100%;
+        width: 80%;
         border-radius: 5px;
         margin: 25px;
         font-size: 1.2em;
@@ -159,12 +158,10 @@ RESPONSIVE CONDITIONS
       display: flex;
       
      .main-title{
-        color: white;
         position: absolute;
         align-self: center;
         width: 100%;
-        text-shadow: black 0.1em 0.1em 0.2em;
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 1000;
       }
       .main-image{
@@ -197,12 +194,10 @@ RESPONSIVE CONDITIONS
       display: flex;
       
      .main-title{
-        color: white;
         position: absolute;
         align-self: center;
         width: 100%;
-        text-shadow: black 0.1em 0.1em 0.2em;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 1000;
       }
       .main-image{

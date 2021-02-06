@@ -14,15 +14,15 @@ const ExercisesPage = ({ exercisesData }) => (
           </h2>
           <div className="exercise-media">
             <img src={require(`/public/img/smallExercises/${exercise.illustration}`).default} alt="logo" />
+            <span className="exercise-difficulty">
+              Niveau de difficulté: {exercise.difficulty}/5
+            </span>
           </div>
         </div>
         <div className="exercise-border" />
         <p className="exercise-text">
           {exercise.advice}
         </p>
-        <span className="exercise-difficulty">
-          Niveau de difficulté: {exercise.difficulty}/5
-        </span>
       </div>
 
     ))}

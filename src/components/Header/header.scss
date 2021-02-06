@@ -11,31 +11,18 @@
 
   .logo {
     width: 100%;
+    position: absolute;
+    top: 5px;
+    left: 0;
     animation: 1s linear 1s  running slidein;
   }
   
   .pic { 
     width: 80px;
     height: 80px;
-    border: 2px solid vars.$light-color;
     border-radius: 50%;
     padding: 8px;
     position: relative;
-  }
-  
-  .pic {
-    &::after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border: 1px solid vars.$light-color;
-      left: 0;
-      top: 0;
-      box-sizing: border-box;
-      border-radius: 50%;
-      animation: wave 1.5s infinite linear;
-    }
   }
 
   @keyframes wave {

@@ -21,8 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   toggleBurgerMenu: () => {
     dispatch(openBugerMenu());
-    // dispatch(clickOfRecapExercise());
-    // dispatch(allMembers());
+    dispatch(clickOfRecapExercise());
+    dispatch(allMembers());
   },
 
   buttonConnect: () => {
