@@ -36,12 +36,6 @@ const Footer = () => (
       >
         conditions générales
       </NavLink>
-      <NavLink
-        to="/"
-        className="navbar-link"
-      >
-        conditions générales
-      </NavLink>
     </div>
   </div>
 );

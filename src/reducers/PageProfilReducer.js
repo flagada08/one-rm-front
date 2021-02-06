@@ -31,6 +31,7 @@ function PageProfilReducer(state = initialState, action = {}) {
         ...state,
         data: '',
         dataExercises: '',
+        role: '',
       };
     case CLICK_DELETE_MEMBER:
       return {

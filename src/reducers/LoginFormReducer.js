@@ -13,6 +13,7 @@ const initialState = {
   password: '',
   LengthPasswordMessage: '',
   loggedIn: false, // ! remettre a false
+  loggedOut: false,
   redirect: false,
   TOKEN: localStorage.getItem('token') != null,
 };
@@ -48,12 +49,14 @@ function LoginFormReducer(state = initialState, action = {}) {
         ...state,
         loggedIn: true,
         TOKEN: true,
+        loggedOut: false,
       };
     case LOGGED_OUT:
       return {
         ...state,
         loggedIn: false,
         TOKEN: false,
+        loggedOut: true,
       };
     case LENGTH_PASSWORD_MESSAGE:
       return {

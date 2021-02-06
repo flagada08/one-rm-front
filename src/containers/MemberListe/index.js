@@ -8,6 +8,7 @@ import MemberListe from 'src/components/MemberListe';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
   data: state.profilPage.data,
+  connectedRole: state.profilPage.role,
 });
 
 // === mapDispatchToProps

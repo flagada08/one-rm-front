@@ -23,9 +23,12 @@ const mapStateToProps = (state) => ({
   dataPerformances: state.profilPage.dataPerformances,
   allMessages: state.detailExercise.allMessages,
   messageInput: state.detailExercise.setMessageValue,
+  comfirmMessage: state.detailExercise.addNewPerfMessage,
+  comfirmMessageObjectif: state.detailExercise.comfirmMessageObjectif,
   dataUser: state.profilPage.data,
   newObjectifRepetition: state.detailExercise.newObjectifRepetition,
   newObjectifWeight: state.detailExercise.newObjectifWeight,
+  connectedRole: state.profilPage.role,
 });
 
 // === mapDispatchToProps

@@ -13,6 +13,7 @@ const MemberListe = ({
   clickDeleteMember,
   changeMemberRank,
   role,
+  connectedRole,
 }) => (
 
   <div className="member-container">
@@ -22,6 +23,8 @@ const MemberListe = ({
     >
       <User className="member-user-icon" onClick={() => clickOfMember(id)} />
     </Link>
+    {connectedRole === 'ROLE_MANAGER'
+    && (
     <select onChange={(event) => changeMemberRank(id, event.target.value)} className="member-select">
       <option value="">
         {role}
@@ -36,9 +39,10 @@ const MemberListe = ({
         MANAGER
       </option>
     </select>
+    )}
     <span className="member-firstname">Prénom : {firstname}</span>
     <span className="member-lastname">Nom : {lastname}</span>
-    {data && data.roles.includes('ROLE_MANAGER') && <Trash2 className="member-trash-icon" onClick={() => clickDeleteMember(id)} />}
+    {data && connectedRole === 'ROLE_MANAGER' && <Trash2 className="member-trash-icon" onClick={() => clickDeleteMember(id)} />}
     <div className="circle">
       <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" />
       <svg>

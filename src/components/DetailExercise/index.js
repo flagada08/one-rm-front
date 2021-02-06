@@ -24,6 +24,9 @@ const DetailExercise = ({
   newObjectifRepetition,
   newObjectifWeight,
   addObjectif,
+  comfirmMessage,
+  comfirmMessageObjectif,
+  connectedRole
 }) => {
   const inputCoach = useRef(null);
 
@@ -71,6 +74,7 @@ const DetailExercise = ({
               <input onChange={(event) => setNewObjectifRepetition(event.target.value)} className="performance-input" value={newObjectifRepetition} placeholder="Objectif Repetition" />
               <input onChange={(event) => setNewObjectifWeight(event.target.value)} className="performance-input" value={newObjectifWeight} placeholder=" objectif Charge" />
               <button className="send-button" type="button" onClick={() => addObjectif(dataOneExercise.id, dataPerformances[0].user_id) }>ENVOYER</button>
+              {comfirmMessageObjectif && <span>{comfirmMessageObjectif}</span>}
             </form>
             <form className="performance-formulaire">
               <span>Entrer vos nouvelles performances</span>
@@ -78,6 +82,7 @@ const DetailExercise = ({
               <input onChange={(event) => setNewWeight(event.target.value)} className="performance-input" value={newPerfWeight} placeholder="Répétitions" />
               <button className="send-button" type="button" onClick={() => addPerf(dataOneExercise.id, dataPerformances[0].user_id)}>ENVOYER</button>
             </form>
+            {comfirmMessage && <span>{comfirmMessage}</span>}
           </div>
         </>
         )}
@@ -86,7 +91,7 @@ const DetailExercise = ({
         {allMessages && allMessages.map((message) => (
           <div key={message.id} className="conseil-coach-message">{message.content}</div>
         ))}
-        {dataUser.roles[0] === 'ROLE_COACH'
+        {connectedRole === 'ROLE_COACH'
           && (
           <div className="conseil-coach-input-container">
             <input ref={inputCoach} className="conseil-coach-input" onChange={(event) => setMessageValue(event.target.value)} value={messageInput} />
