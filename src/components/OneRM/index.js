@@ -54,13 +54,8 @@ const OneRM = ({ loggedIn, redirect, loggedOut }) => (
           </Route>
         </>
         )}
-        <Route path="/">
-          {loggedOut && <Redirect to="/" />}
-          <Header />
-          <Main />
-          <Footer />
-        </Route>
         <Route>
+          {loggedOut && <Redirect exact to="/" />}
           <Page404 />
         </Route>
       </Switch>
