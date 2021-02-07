@@ -12,17 +12,15 @@ justify-content: center;
     padding: 2.5em;
     width: 50%;
     .mouvement-title{
+      display: inline-block;
       color: white;
       background: vars.$primary-color;
       border-radius: 3px;
       padding: 10px;
       font-family: 'Archivo Black', sans-serif;
       text-transform: uppercase;
-      font-weight: bold;
       font-size: large;
       margin-bottom: 5px;
-      margin-left: 300px;
-      margin-right: 300px;
     }
     .mouvement-image{
       width: 100%;
@@ -52,27 +50,27 @@ justify-content: center;
     }
   }
   .conseil-container{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     margin-top: 1.5em;
     padding: 2.5em;
+    width: 50%;
     .conseil-title{
+      display: inline-block;
       color: white;
       background: vars.$primary-color;
       border-radius: 3px;
       padding: 10px;
       font-family: 'Archivo Black', sans-serif;
       text-transform: uppercase;
-      font-weight: bold;
       font-size: large;
       margin-bottom: 5px;
-      margin-left: 300px;
-      margin-right: 300px;
     }
     .conseil-paragraph{
-      font-size: medium;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 200px;
+      font-size: large;
+      line-height: 1.5em;
     }
   }
   .performance-form-container{
@@ -210,10 +208,10 @@ justify-content: center;
       padding: 1em;
       width: 100%;
       .conseil-title{
-        margin: 1.5em;
+        display: inline-block;
       }
       .conseil-paragraph{
-        margin: 1.5em;
+        line-height: 1.5em;
       }
     }
   .performance-form-container{
