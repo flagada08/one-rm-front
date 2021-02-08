@@ -5,6 +5,36 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+.main-title {
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.main-title:first-of-type {
+  animation: showup 10s infinite;
+}
+
+.main-title:last-of-type {
+  width:0px;
+  animation: reveal 10s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:100%;}
+    80% {opacity:1;}
+    100% {opacity:0;width:100%;}
+}
+
   .main-image-container{
    position: relative;
    display: flex;
@@ -27,7 +57,6 @@
       font-family: 'Archivo Black', sans-serif;
       color: white;
       position: absolute;
-      left: 25px;
       top: 50px;
       text-shadow: black 0.1em 0.1em 0.2em;
       font-size: 5rem;
@@ -60,9 +89,6 @@
         text-transform: uppercase;
         font-size: x-large;
         margin: 15px;
-      }
-      p {
-        line-height: 1.5em;
       }
     }
     .main-mid-video {
@@ -136,13 +162,37 @@ RESPONSIVE CONDITIONS
         display: none;
       }
       
-     .main-title{
-        position: absolute;
-        top: 5px;
-        left: -30px;
+      .main-title{
+        top: 10px;
         width: 100%;
         font-size: 2.5rem;
         font-weight: 1000;
+          overflow:hidden;
+          white-space:nowrap;
+        
+        .main-title:first-of-type {
+          animation: showup 10s infinite;
+        }
+        
+        .main-title:last-of-type {
+          width:0px;
+          animation: reveal 10s infinite;
+        }
+        
+        @keyframes showup {
+            0% {opacity:0;}
+            20% {opacity:1;}
+            80% {opacity:1;}
+            100% {opacity:0;}
+        }
+        
+        @keyframes reveal {
+            0% {opacity:0;width:0px;}
+            20% {opacity:1;width:0px;}
+            30% {width:100%;}
+            80% {opacity:1;}
+            100% {opacity:0;width:100%;}
+        }
       }
       .main-image{
         width: 100%;
