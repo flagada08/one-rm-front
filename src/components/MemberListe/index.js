@@ -27,7 +27,7 @@ const MemberListe = ({
     && (
     <select onChange={(event) => changeMemberRank(id, event.target.value)} className="member-select">
       <option value="">
-        {role}
+        {role === 'ROLE_USER' ? 'MEMBRE' : role === 'ROLE_COACH' ? 'COACH' : role === 'ROLE_MANAGER' ? 'MANAGER' : ''}
       </option>
       <option value="ROLE_USER">
         MEMBRE

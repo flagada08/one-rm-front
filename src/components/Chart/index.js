@@ -32,7 +32,7 @@ const Chart = ({ AllPerfs }) => {
                 }) : AllPerfs[0].date.split(' ')[0]),
             datasets: [
               {
-                label: 'Repetition',
+                label: 'Charge',
                 // enleve le background de la ligne du graphique
                 fill: false,
                 data: !checkPerf && AllPerfs.map((perf) => (Number(perf.weight))),
@@ -46,7 +46,7 @@ const Chart = ({ AllPerfs }) => {
                 ],
               },
               {
-                label: 'charge',
+                label: 'Repetition',
                 // enleve le background de la ligne du graphique
                 fill: false,
                 data: !checkPerf && AllPerfs.map((perf) => (Number(perf.repetition))),
