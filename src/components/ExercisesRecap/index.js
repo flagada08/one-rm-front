@@ -25,8 +25,8 @@ const ExerciseRecap = ({ dataPerformances }) => (
           repetition={exercise.progress_repetition === null
             ? 0
             : Number(exercise.progress_repetition)}
-          goalWeight={exercise.goal_weight === null ? 1 : Number(exercise.goal_weight)}
-          goalRepetition={exercise.goal_repetition === null ? 1 : Number(exercise.goal_repetition)}
+          goalWeight={exercise.goal_weight === null ? 0 : Number(exercise.goal_weight)}
+          goalRepetition={exercise.goal_repetition === null ? 0 : Number(exercise.goal_repetition)}
         />
 
       ))}

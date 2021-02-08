@@ -65,8 +65,8 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
     const TOKEN = localStorage.getItem('token');
     const { newPerf } = store.getState().detailExercise;
     const { newPerfWeight } = store.getState().detailExercise;
-    const newPerfRepetition = Number(newPerfWeight);
-    const newPerfParse = Number(newPerf);
+    const newPerfRepetition = Number(newPerf);
+    const newPerfParse = Number(newPerfWeight);
     axios.post(API_URL,
       {
         date: 'now',
