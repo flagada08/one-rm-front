@@ -23,7 +23,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    * @return {void}
    */
   const fetchDataOneWorkout = (id) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/workout/${id}`;
     const TOKEN = localStorage.getItem('token');
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -42,7 +42,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    * @return {void}
    */
   const fetchDataAllGoals = (id) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/recap`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/recap`;
     const TOKEN = localStorage.getItem('token');
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -61,7 +61,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    * @return {void}
    */
   const newPerformance = (id, userId) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/newPerf`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/workout/${id}/newPerf`;
     const TOKEN = localStorage.getItem('token');
     const { newPerf } = store.getState().detailExercise;
     const { newPerfWeight } = store.getState().detailExercise;
@@ -91,7 +91,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    *
    */
   const postUserId = (id, userId) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/workout/${id}/recap`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/coach/user/workout/${id}/recap`;
     const TOKEN = localStorage.getItem('token');
     axios.post(API_URL, { user_id: userId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -114,7 +114,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
    *
    */
   const postNewMessage = (userId, exerciseId) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${userId}/exercise/postComment`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/coach/user/${userId}/exercise/postComment`;
     const TOKEN = localStorage.getItem('token');
     const message = store.getState().detailExercise.setMessage;
     axios.post(API_URL, {
@@ -132,7 +132,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   };
 
   const fetchMessage = (userId, exerciseId) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${userId}/workout/getComment`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/${userId}/workout/getComment`;
     const TOKEN = localStorage.getItem('token');
     axios.post(API_URL, { exercise: exerciseId }, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -146,7 +146,7 @@ const detailExerciseMiddelware = (store) => (next) => (action) => {
   };
 
   const addObjectif = (exerciseId, userId) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/workout/${exerciseId}/newGoal`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/workout/${exerciseId}/newGoal`;
     const TOKEN = localStorage.getItem('token');
     const { newObjectifWeight } = store.getState().detailExercise;
     const { newObjectifRepetition } = store.getState().detailExercise;
