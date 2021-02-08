@@ -13,6 +13,7 @@ import ExerciseRecap from 'src/containers/ExercisesRecap';
 import DetailExercise from 'src/containers/DetailExercise';
 import MemberListe from 'src/components/MemberListe';
 import Page404 from 'src/components/Page404';
+import ContactPage from 'src/components/ContactPage';
 
 import './styles.scss';
 
@@ -30,6 +31,11 @@ const OneRM = ({ loggedIn, redirect, loggedOut }) => (
         <Route exact path="/exercices">
           <Header />
           <ExercisesPage />
+        </Route>
+        <Route exact path="/contact">
+          <Header />
+          <ContactPage />
+          <Footer />
         </Route>
         {loggedIn
         && (

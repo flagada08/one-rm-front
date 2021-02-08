@@ -61,7 +61,7 @@ function LoginFormReducer(state = initialState, action = {}) {
     case LENGTH_PASSWORD_MESSAGE:
       return {
         ...state,
-        LengthPasswordMessage: 'Le mot de passe doit être composé de 6 caractères minimum',
+        LengthPasswordMessage: 'Mot de passe ou identifiant incorrect',
       };
 
     default:

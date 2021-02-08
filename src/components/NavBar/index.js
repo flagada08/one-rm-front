@@ -40,10 +40,10 @@ const NavBar = ({ TOKEN, clickOfRecapExercise, clickOfExercisesPage }) => (
     )}
 
     <NavLink
-      to="/"
+      to="/contact"
       className="navbar-link"
     >
-      A PROPOS
+      CONTACTEZ NOUS
     </NavLink>
   </div>
 

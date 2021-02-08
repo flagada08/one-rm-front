@@ -67,10 +67,10 @@ const BurgerListe = ({
     )}
     <NavLink
       onClick={toggleBurgerMenu}
-      to="/"
+      to="/contact"
       className="navbar-link"
     >
-      A PROPOS
+      CONTACTEZ NOUS
     </NavLink>
   </div>
 );
