@@ -14,6 +14,7 @@ const MemberListe = ({
   changeMemberRank,
   role,
   connectedRole,
+  gender,
 }) => (
 
   <div className="member-container">
@@ -44,7 +45,10 @@ const MemberListe = ({
     <span className="member-lastname">Nom : {lastname}</span>
     {data && connectedRole === 'ROLE_MANAGER' && <Trash2 className="member-trash-icon" onClick={() => clickDeleteMember(id)} />}
     <div className="circle">
-      <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" />
+      {gender === 'homme'
+        ? <img src="https://www.w3schools.com/w3images/avatar2.png" alt="" />
+        : gender === 'femme' ? <img src="https://www.w3schools.com/w3images/avatar4.png" alt="" />
+          : ''}
       <svg>
         <circle className="stroke" cx="60" cy="60" r="50" />
       </svg>

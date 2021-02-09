@@ -16,7 +16,7 @@ const Main = () => (
     <section className="main-section-container">
       <div className="main-section-top">
         <h2 className="main-section-title">Bref récap du site O'ne RM</h2>
-        <p>
+        <p className="home-paragraph">
           Lorem Elsass ipsum hoplageiss ftomi! schneck gewurztraminer chambon
           purus yeuh. Wurschtsalad quam, sagittis sit turpis réchime vulputate
           eleifend elit amet, sed lotto-owe varius schpeck commodo jetz gehts

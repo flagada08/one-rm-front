@@ -29,6 +29,7 @@ console.log(permission());
           firstname={user.firstname}
           role={user.roles[0]}
           id={user.id}
+          gender={user.gender}
         />
       )))}
       </div>
