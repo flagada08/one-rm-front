@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Instagram, Facebook, Twitter, Youtube,
 } from 'react-feather';
+// import terence from '/public/img/terence';
 
 import './contactpage.scss';
 
@@ -41,7 +42,7 @@ const ContactPage = () => (
 
       <div className="our-team">
         <div className="picture">
-          <img className="img-fluid" src="" />
+          {/* <img className="img-fluid" src={terence} /> */}
         </div>
         <div className="team-content">
           <h3 className="name">Térence Persin, le bg du 08</h3>
