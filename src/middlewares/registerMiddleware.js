@@ -10,7 +10,7 @@ import {
 
 const registerMiddleware = (store) => (next) => (action) => {
   const fetchRegisterData = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/getFitnessRoomList';
+    const API_URL = 'http://54.226.80.94/O-ne-RM/O-NE-RM/public/getFitnessRoomList';
     axios.get(API_URL)
       .then((response) => {
         const { data } = response;
@@ -45,7 +45,7 @@ const registerMiddleware = (store) => (next) => (action) => {
       const fitnessRoomConvertToNumber = Number(fitnessRoom);
       console.log(fitnessRoomConvertToNumber);
       if (password === confirmPassword && password.length > 5) {
-        axios.post('http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/register',
+        axios.post('http://54.226.80.94/O-ne-RM/O-NE-RM/public/register',
           {
             gender,
             firstname,

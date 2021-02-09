@@ -9,7 +9,7 @@ import {
 const recapExerciseMiddleware = (store) => (next) => (action) => {
 // fonction qui permert la récupération des derniére performances
   const fetchDataPerformances = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/getLastPerformances';
+    const API_URL = 'http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/getLastPerformances';
     const TOKEN = localStorage.getItem('token');
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -23,7 +23,7 @@ const recapExerciseMiddleware = (store) => (next) => (action) => {
   };
 
   const fetchExercisesData = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/workout';
+    const API_URL = 'http://54.226.80.94/O-ne-RM/O-NE-RM/public/workout';
     axios.get(API_URL)
       .then((response) => {
         const { data } = response;

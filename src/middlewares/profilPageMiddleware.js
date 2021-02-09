@@ -15,7 +15,7 @@ import { formInputProfilUserData, EDIT_REGISTER_PROFIL_USER } from 'src/actions/
 const profilPageMiddelware = (store) => (next) => (action) => {
   // fonction qui permert la récupération des données de l'utilisateur
   const fetchData = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/profil';
+    const API_URL = 'http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/profil';
     const TOKEN = localStorage.getItem('token');
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -37,7 +37,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   };
 
   const fetchAllUsers = () => {
-    const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user';
+    const API_URL = 'http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/coach/user';
     const TOKEN = localStorage.getItem('token');
     axios.get(API_URL, { headers: { Authorization: `Bearer ${TOKEN}` } })
       .then((response) => {
@@ -50,7 +50,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   };
 
   const fetchMemberData = (id) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/coach/user/${id}/getLastPerformances`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/coach/user/${id}/getLastPerformances`;
     const TOKEN = localStorage.getItem('token');
     const objectifRepetition = store.getState().detailExercise.newObjectifRepetition;
     const objectifWeight = store.getState().detailExercise.newObjectifWeight;
@@ -70,7 +70,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
 
   // fonction qui permet de changer les infos de l'user dans la page profil
   const editRegisterProfilUser = (id) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
     const {
       lastname,
       firstname,
@@ -95,7 +95,7 @@ const profilPageMiddelware = (store) => (next) => (action) => {
   };
 
   const ChangeMemberRank = (id, newRole) => {
-    const API_URL = `http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
+    const API_URL = `http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/user/${id}/edit`;
     const TOKEN = localStorage.getItem('token');
     console.log(id, newRole);
     axios.post(API_URL, {

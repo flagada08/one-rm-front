@@ -12,7 +12,7 @@ const loginMiddleware = (store) => (next) => (action) => {
       const { email, password } = store.getState().loginForm;
       console.log(store.getState().loginForm.loggedIn);
 
-      const API_URL = 'http://charlie-bauduin.vpnuser.lan/Apotheose/O-ne-RM/O-NE-RM/public/api/login_check';
+      const API_URL = 'http://54.226.80.94/O-ne-RM/O-NE-RM/public/api/login_check';
       if (password.length > 5) {
         axios.post(API_URL, {
           username: email,
