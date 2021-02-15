@@ -2,7 +2,10 @@ import React from 'react';
 import {
   Instagram, Facebook, Twitter, Youtube,
 } from 'react-feather';
-// import terence from '/public/img/terence';
+import raphael from '/public/img/raphael.png';
+import terence from '/public/img/terence.png';
+import charlie from '/public/img/charlie.png';
+import laurie from '/public/img/laurie.png';
 
 import './contactpage.scss';
 
@@ -26,11 +29,11 @@ const ContactPage = () => (
     <div className="row">
       <div className="our-team">
         <div className="picture">
-          <img className="img-fluid" src="" />
+          <img className="img-fluid" src={raphael} />
         </div>
         <div className="team-content">
-          <h3 className="name">Raphaël-mouth Demmerlez-vous</h3>
-          <h4 className="title">Product Owner</h4>
+          <h3 className="name">Raphaël Demmerle</h3>
+          <h4 className="title">Product Owner - Lead Dev front</h4>
         </div>
         <ul className="social">
           <li><a href="" aria-hidden="true"><Facebook /></a></li>
@@ -42,11 +45,11 @@ const ContactPage = () => (
 
       <div className="our-team">
         <div className="picture">
-          {/* <img className="img-fluid" src={terence} /> */}
+          <img className="img-fluid" src={terence} />
         </div>
         <div className="team-content">
-          <h3 className="name">Térence Persin, le bg du 08</h3>
-          <h4 className="title">Web Developer</h4>
+          <h3 className="name">Térence Persin</h3>
+          <h4 className="title">Scrum Master - Dev front</h4>
         </div>
         <ul className="social">
           <li><a href="" aria-hidden="true"><Facebook /></a></li>
@@ -58,11 +61,11 @@ const ContactPage = () => (
 
       <div className="our-team">
         <div className="picture">
-          <img className="img-fluid" src="" />
+          <img className="img-fluid" src={charlie} />
         </div>
         <div className="team-content">
-          <h3 className="name">Charlie-mouth Bauduin, mais où est Charlie ?</h3>
-          <h4 className="title">Web Developer</h4>
+          <h3 className="name">Charlie Bauduin</h3>
+          <h4 className="title">Lead Dev back</h4>
         </div>
         <ul className="social">
           <li><a href="" aria-hidden="true"><Facebook /></a></li>
@@ -74,11 +77,11 @@ const ContactPage = () => (
 
       <div className="our-team">
         <div className="picture">
-          <img className="img-fluid" src="" />
+          <img className="img-fluid" src={laurie} />
         </div>
         <div className="team-content">
-          <h3 className="name">Laurie-mouthe Bouleau, aime les steacks bien saignant</h3>
-          <h4 className="title">Web Developer</h4>
+          <h3 className="name">Laurie Bouleau</h3>
+          <h4 className="title">Git Master - Dev back</h4>
         </div>
         <ul className="social">
           <li><a href="" aria-hidden="true"><Facebook /></a></li>

@@ -29,10 +29,12 @@ const OneRM = ({ loggedIn, redirect, loggedOut }) => (
           <Footer />
         </Route>
         <Route exact path="/exercices">
+          {redirect && <Redirect to="/profil" />}
           <Header />
           <ExercisesPage />
         </Route>
         <Route exact path="/contact">
+          {redirect && <Redirect to="/profil" />}
           <Header />
           <ContactPage />
           <Footer />
