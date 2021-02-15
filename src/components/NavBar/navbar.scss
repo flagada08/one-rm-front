@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+
+.navbar-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+
+.navbar-link {
+    color: vars.$light-color;
+    padding: 0.5em;
+    font-size: medium;
+    &:hover {
+    color: white;
+    border-radius: 3px;
+    background: vars.$primary-color;
+    transition: 0.5s;
+    }
+  }
+}

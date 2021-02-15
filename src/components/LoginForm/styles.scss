@@ -1,0 +1,99 @@
+@use 'src/styles/vars';
+
+.form-container{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 0px;
+  top: 90px;
+  background: vars.$darkest-color;
+  width: 100%;
+  height: 80%;
+  z-index: 999;
+  .confirm-password-message{
+    color: red;
+  }
+  .login-title{
+    color: white;
+    margin-bottom: 50px;
+    font-size: large;
+    text-transform: uppercase;
+    line-height: 1.5em;
+  }
+  .button-login-form-container{
+    margin: 5px;
+    .login-form-button {
+      display: inline-block;
+      text-align: center;
+      font-size: 1em;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 2px 5px;
+      border: solid 1px transparent;
+      padding: 0.5em;
+      color: #FFFFFF;
+      background-color: vars.$primary-color;
+      border-radius: 3px;
+      transition: 0.5s;
+        &:hover,
+        &:focus {
+          color: vars.$primary-color;
+          background-color: white;
+        }
+    }
+    .register-form-button {
+      display: inline-block;
+      text-align: center;
+      font-size: 1em;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 2px 5px;
+      border: solid 1px transparent;
+      padding: 0.5em;
+      color: #FFFFFF;
+      background-color: vars.$primary-color;
+      border-radius: 3px;
+      transition: 0.5s;
+        &:hover,
+        &:focus {
+          color: vars.$primary-color;
+          background-color: white;
+        }
+    }
+}
+  .login-form-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    width: 50%;
+
+    .login-form-input{
+      height: 10%;
+      padding: 10px;
+      margin: 5px;
+      text-align: center;
+      border-radius: 3px;
+      font-size: 1.5em;
+      border: none;
+    }
+
+    input[type=text], select {
+      text-align: center;
+      text-align-last: center;
+    }
+    
+    .button-login-form-container{
+      width: 100%;
+    }
+}
+  
+  @media (max-width: vars.$breakpoint-tablet) {
+    .login-form-element{
+    display: flex;
+    align-content: center;
+    padding: 1em;
+    width: 100%;
+    }
+  }
+}

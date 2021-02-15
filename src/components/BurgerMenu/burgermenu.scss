@@ -1,0 +1,30 @@
+@use 'src/styles/vars';
+
+.BurgerMenu {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  z-index: 999;
+
+  .bar {
+    width: 35px;
+    height: 5px;
+    background-color: vars.$primary-color;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+
+  .bar--change1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .bar--change2 {opacity: 0;}
+  
+  .bar--change3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
+

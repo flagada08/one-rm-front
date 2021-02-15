@@ -1,0 +1,70 @@
+@use 'src/styles/vars';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-weight: bolder;
+  width: 100%;
+  background: vars.$darkest-color;
+
+  .logo {
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    animation: 1s linear 1s  running slidein;
+  }
+  
+  .pic { 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 8px;
+    position: relative;
+  }
+
+  @keyframes wave {
+    to {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .header-title {
+    color: white;
+    font-size: x-large;
+    font-weight: 1000;
+  }
+
+  @media (max-width: vars.$breakpoint-tablet) {
+    .navbar-container, .ButtonDeconnection, .ButtonConnection{
+      display: none;
+    }
+    .ButtonDeconnection, .ButtonConnection{
+      margin-right: 17em;
+      margin-top: 2em;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .ButtonDeconnection, .ButtonConnection{
+      margin-right: 6em;
+      margin-top: 2em;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .BurgerMenu{
+      display: none;
+    }
+    
+  }
+}
+
+
+@keyframes slidein {
+  from { transform: rotate(360deg); }
+  to   { transform: scaleX(0deg); }
+}

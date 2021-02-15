@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.burgerliste {
+  display: flex;
+  flex-direction: column;
+  background: vars.$darkest-color;
+  color: vars.$light-color;
+  position: absolute;
+  right: -10px;
+  top: 165%;
+  width: 100vw;
+  height: 100vw;
+  font-weight: 1000;
+  z-index: 999;
+  justify-content: center;
+  .login-link {
+    align-self: center;
+    color: #FFFFFF;
+    background-color: vars.$primary-color;
+    border-radius: 3px;
+  }
+  .navbar-link {
+    display: inline-block;
+    margin: 1em;
+  }
+}

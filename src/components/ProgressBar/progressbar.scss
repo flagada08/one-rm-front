@@ -1,0 +1,24 @@
+@use 'src/styles/vars';
+
+.progressbar-container{
+  height: 100%;
+  width: 100%;
+  background-color: #e0e0de;
+  margin: 4px;
+  border-radius: 20px;
+  .progressbar{
+    height: 20px;
+    align-items: center;
+    transition: all 2s ease-in;
+    background: linear-gradient(to left, #1CB5E0, #0049B7); 
+    border-radius: inherit;
+    text-align: right;
+    .span-progressbar{
+      position: relative;
+      top: 5px;
+      padding: 5px;
+      color: vars.$darkest-color;
+      font-weight: bold;
+    }
+  }
+}

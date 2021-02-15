@@ -1,0 +1,60 @@
+@use 'src/styles/vars';
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: vars.$light-color;
+  font-size: large;
+  font-family: 'Archivo Black', sans-serif;
+  background: vars.$darkest-color;
+  padding: 15px;
+  
+  span {
+    font-size: xx-large;
+  }
+
+  .reseaux-container{
+    display: flex;
+    align-items: center;
+    .reseau-logo{
+      margin: 0 75px;
+      color: vars.$lightest-color;
+    }
+  }
+  .link-footer-container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+    .navbar-link{
+      padding: 0;
+      font-size: 1em;
+      margin-left: 10px;
+    }
+  }
+ 
+}
+
+@media (max-width: 605px) {
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+    .link-footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 100%;
+    font-size: 10px;
+    margin-left: 5px;
+    }
+    .reseaux-container{
+      .reseau-logo{
+        margin: 10px;
+      }
+    }
+  }
+  
+}
