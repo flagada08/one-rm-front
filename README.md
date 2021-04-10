@@ -1,3 +1,1 @@
-# O-ne-RM-front
-
-WELCOME TO THE JUNGLE !
+# one-rm-front
